@@ -1,0 +1,176 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Softlogic Whiteboard API",
+    "version": "1.0.0",
+    "description": "Versioned API snapshot for the SoftLogic Whiteboard v1.0.0 release portal.",
+    "contact": {
+      "name": "Softlogic Team"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://softlogic-whiteboard-backend-testin.vercel.app/api/v1",
+      "description": "Production backend"
+    },
+    {
+      "url": "http://localhost:3000/api/v1",
+      "description": "Local development"
+    }
+  ],
+  "tags": [
+    { "name": "Version" },
+    { "name": "Auth" },
+    { "name": "Users" },
+    { "name": "Admin" },
+    { "name": "Canvas" },
+    { "name": "Slides" },
+    { "name": "Settings" },
+    { "name": "Filter" },
+    { "name": "Export" },
+    { "name": "Live Sessions" },
+    { "name": "Media" },
+    { "name": "Integrations" }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean" },
+          "data": { "type": "object" },
+          "message": { "type": "string" },
+          "errors": {
+            "type": "array",
+            "items": { "type": "object" }
+          },
+          "meta": { "type": "object" }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/version": {
+      "get": {
+        "tags": ["Version"],
+        "summary": "Get version metadata",
+        "security": [],
+        "responses": {
+          "200": { "description": "Version metadata" }
+        }
+      }
+    },
+    "/auth/send-otp": { "post": { "tags": ["Auth"], "summary": "Send OTP to email", "security": [], "responses": { "200": { "description": "OTP sent" } } } },
+    "/auth/verify-otp": { "post": { "tags": ["Auth"], "summary": "Verify OTP and login", "security": [], "responses": { "200": { "description": "Login successful" } } } },
+    "/auth/resend-otp": { "post": { "tags": ["Auth"], "summary": "Resend OTP", "security": [], "responses": { "200": { "description": "OTP resent" } } } },
+    "/auth/google": { "post": { "tags": ["Auth"], "summary": "Google OAuth sign-in", "security": [], "responses": { "200": { "description": "Google sign-in result" } } } },
+    "/auth/google/desktop/start": { "post": { "tags": ["Auth"], "summary": "Start desktop Google OAuth", "security": [], "responses": { "200": { "description": "Desktop OAuth attempt" } } } },
+    "/auth/google/desktop/status/{attemptId}": { "get": { "tags": ["Auth"], "summary": "Poll desktop Google OAuth status", "security": [], "parameters": [{ "name": "attemptId", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "OAuth attempt status" } } } },
+    "/auth/refresh": { "post": { "tags": ["Auth"], "summary": "Refresh access token", "security": [], "responses": { "200": { "description": "Refreshed token" } } } },
+    "/auth/logout": { "post": { "tags": ["Auth"], "summary": "Logout and invalidate refresh token", "security": [], "responses": { "200": { "description": "Logged out" } } } },
+    "/users/me": {
+      "get": { "tags": ["Users"], "summary": "Get current user profile", "responses": { "200": { "description": "Current user profile" } } },
+      "put": { "tags": ["Users"], "summary": "Update current user profile", "responses": { "200": { "description": "Updated user profile" } } },
+      "delete": { "tags": ["Users"], "summary": "Soft-delete current user account", "responses": { "200": { "description": "Deleted user account" } } }
+    },
+    "/admin/organizations": {
+      "get": { "tags": ["Admin"], "summary": "List organizations", "responses": { "200": { "description": "Organization list" } } },
+      "post": { "tags": ["Admin"], "summary": "Create organization", "responses": { "201": { "description": "Organization created" } } }
+    },
+    "/admin/organizations/{id}": {
+      "put": { "tags": ["Admin"], "summary": "Update organization", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Organization updated" } } },
+      "patch": { "tags": ["Admin"], "summary": "Patch organization", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Organization patched" } } }
+    },
+    "/admin/organizations/{id}/logo": {
+      "post": { "tags": ["Admin"], "summary": "Upload organization logo", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Logo uploaded" } } },
+      "delete": { "tags": ["Admin"], "summary": "Remove organization logo", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Logo removed" } } }
+    },
+    "/admin/users": {
+      "get": { "tags": ["Admin"], "summary": "List users", "responses": { "200": { "description": "User list" } } },
+      "post": { "tags": ["Admin"], "summary": "Create user", "responses": { "201": { "description": "User created" } } }
+    },
+    "/admin/users/{id}": {
+      "put": { "tags": ["Admin"], "summary": "Update user", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "User updated" } } },
+      "patch": { "tags": ["Admin"], "summary": "Patch user", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "User patched" } } }
+    },
+    "/admin/subscriptions": {
+      "get": { "tags": ["Admin"], "summary": "List subscriptions", "responses": { "200": { "description": "Subscription list" } } },
+      "post": { "tags": ["Admin"], "summary": "Create subscription", "responses": { "201": { "description": "Subscription created" } } }
+    },
+    "/admin/subscriptions/{id}": {
+      "put": { "tags": ["Admin"], "summary": "Update subscription", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Subscription updated" } } },
+      "patch": { "tags": ["Admin"], "summary": "Patch subscription", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Subscription patched" } } }
+    },
+    "/admin/activity": { "get": { "tags": ["Admin"], "summary": "List admin activity", "responses": { "200": { "description": "Activity list" } } } },
+    "/canvas": {
+      "get": { "tags": ["Canvas"], "summary": "List canvases", "responses": { "200": { "description": "Canvas list" } } },
+      "post": { "tags": ["Canvas"], "summary": "Create canvas", "responses": { "201": { "description": "Canvas created" } } }
+    },
+    "/canvas/{id}": {
+      "get": { "tags": ["Canvas"], "summary": "Get canvas", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Canvas detail" } } },
+      "put": { "tags": ["Canvas"], "summary": "Update canvas", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Canvas updated" } } },
+      "delete": { "tags": ["Canvas"], "summary": "Soft-delete canvas", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Canvas deleted" } } }
+    },
+    "/canvas/{id}/slides": {
+      "get": { "tags": ["Slides"], "summary": "List slides", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Slide list" } } },
+      "post": { "tags": ["Slides"], "summary": "Create slide", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "201": { "description": "Slide created" } } }
+    },
+    "/canvas/{id}/slides/{sid}": {
+      "get": { "tags": ["Slides"], "summary": "Get slide", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }, { "name": "sid", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Slide detail" } } },
+      "put": { "tags": ["Slides"], "summary": "Update slide", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }, { "name": "sid", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Slide updated" } } },
+      "delete": { "tags": ["Slides"], "summary": "Delete slide", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }, { "name": "sid", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Slide deleted" } } }
+    },
+    "/canvas/{id}/slides/reorder": { "post": { "tags": ["Slides"], "summary": "Reorder slides", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Slides reordered" } } } },
+    "/users/me/settings": {
+      "get": { "tags": ["Settings"], "summary": "Get user settings", "responses": { "200": { "description": "Settings" } } },
+      "put": { "tags": ["Settings"], "summary": "Update user settings", "responses": { "200": { "description": "Settings updated" } } }
+    },
+    "/users/me/settings/colors": {
+      "get": { "tags": ["Settings"], "summary": "Get saved colors", "responses": { "200": { "description": "Color settings" } } },
+      "put": { "tags": ["Settings"], "summary": "Update saved colors", "responses": { "200": { "description": "Color settings updated" } } }
+    },
+    "/filter/check": { "post": { "tags": ["Filter"], "summary": "Check text with profanity filter", "responses": { "200": { "description": "Filter result" } } } },
+    "/export/import/convert": { "post": { "tags": ["Export"], "summary": "Convert imported document", "responses": { "200": { "description": "Converted document" } } } },
+    "/export/pdf": { "post": { "tags": ["Export"], "summary": "Export board as PDF", "responses": { "200": { "description": "PDF export started" } } } },
+    "/export/image": { "post": { "tags": ["Export"], "summary": "Export board as image", "responses": { "200": { "description": "Image export started" } } } },
+    "/export/{id}/status": { "get": { "tags": ["Export"], "summary": "Get export status", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Export status" } } } },
+    "/export/{id}/download": { "get": { "tags": ["Export"], "summary": "Download export result", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Export download" } } } },
+    "/live-sessions": { "post": { "tags": ["Live Sessions"], "summary": "Create live session", "responses": { "201": { "description": "Live session created" } } } },
+    "/live-sessions/{id}": { "get": { "tags": ["Live Sessions"], "summary": "Get live session", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Live session detail" } } } },
+    "/live-sessions/{id}/start": { "post": { "tags": ["Live Sessions"], "summary": "Start live session", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Live session started" } } } },
+    "/live-sessions/{id}/end": { "post": { "tags": ["Live Sessions"], "summary": "End live session", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Live session ended" } } } },
+    "/live-sessions/{id}/invites": { "post": { "tags": ["Live Sessions"], "summary": "Invite student to live session", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Invite sent" } } } },
+    "/live-sessions/join-code/verify": { "post": { "tags": ["Live Sessions"], "summary": "Verify join code", "responses": { "200": { "description": "Join code verified" } } } },
+    "/live-sessions/join-code/join": { "post": { "tags": ["Live Sessions"], "summary": "Join session by code", "responses": { "200": { "description": "Joined live session" } } } },
+    "/live-sessions/{id}/messages": {
+      "get": { "tags": ["Live Sessions"], "summary": "List live session messages", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Message list" } } },
+      "post": { "tags": ["Live Sessions"], "summary": "Create live session message", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "201": { "description": "Message created" } } }
+    },
+    "/live-sessions/{id}/media": { "post": { "tags": ["Live Sessions"], "summary": "Attach media to live session", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "201": { "description": "Media attached" } } } },
+    "/live-sessions/{id}/recordings": { "post": { "tags": ["Live Sessions"], "summary": "Attach recording to live session", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "201": { "description": "Recording attached" } } } },
+    "/live-sessions/{id}/share-url": { "post": { "tags": ["Live Sessions"], "summary": "Create live session share URL", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Share URL created" } } } },
+    "/live-sessions/{id}/call-token": { "post": { "tags": ["Live Sessions"], "summary": "Create live call token", "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Call token created" } } } },
+    "/media/upload": { "post": { "tags": ["Media"], "summary": "Upload media file", "responses": { "201": { "description": "Media uploaded" } } } },
+    "/integrations/google-images": { "get": { "tags": ["Integrations"], "summary": "Search Google images", "responses": { "200": { "description": "Image results" } } } },
+    "/integrations/youtube": { "get": { "tags": ["Integrations"], "summary": "Search YouTube videos", "responses": { "200": { "description": "Video results" } } } },
+    "/integrations/dropbox/oauth-url": { "get": { "tags": ["Integrations"], "summary": "Create Dropbox OAuth URL", "responses": { "200": { "description": "OAuth URL" } } } },
+    "/integrations/dropbox/status": { "get": { "tags": ["Integrations"], "summary": "Get Dropbox connection status", "responses": { "200": { "description": "Dropbox status" } } } },
+    "/integrations/dropbox/disconnect": { "post": { "tags": ["Integrations"], "summary": "Disconnect Dropbox", "responses": { "200": { "description": "Dropbox disconnected" } } } },
+    "/integrations/dropbox/files": { "get": { "tags": ["Integrations"], "summary": "List Dropbox files", "responses": { "200": { "description": "Dropbox files" } } } },
+    "/integrations/dropbox/import": { "post": { "tags": ["Integrations"], "summary": "Import Dropbox file", "responses": { "200": { "description": "Dropbox file imported" } } } },
+    "/integrations/lms/status": { "get": { "tags": ["Integrations"], "summary": "Get LMS status", "responses": { "200": { "description": "LMS status" } } } },
+    "/integrations/lms/sync": { "post": { "tags": ["Integrations"], "summary": "Create LMS sync", "responses": { "200": { "description": "LMS sync created" } } } }
+  }
+}

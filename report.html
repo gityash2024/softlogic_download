@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoftLogic Document Preview</title>
+    <meta
+      name="description"
+      content="Formatted SoftLogic Whiteboard documentation and testing report preview."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/app-icon.png" />
+    <link rel="apple-touch-icon" href="./assets/app-icon.png" />
+    <script src="./theme.js?v=202605240031"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=202605240031" />
+    <script src="./release-manifest.js?v=202605240031" defer></script>
+    <script src="./report-viewer.js?v=202605240031" defer></script>
+  </head>
+  <body class="report-viewer-body">
+    <header class="site-header" aria-label="SoftLogic document preview">
+      <div class="header-shell report-header-shell">
+        <div class="brand-lockup">
+          <div class="brand-mark">
+            <img
+              class="brand-logo"
+              src="./assets/softlogic-logo.png"
+              alt="SoftLogic"
+            />
+          </div>
+          <div class="brand-copy">
+            <p class="eyebrow" id="report-page-eyebrow">Document preview</p>
+            <h1 id="report-page-title">SoftLogic Whiteboard</h1>
+          </div>
+        </div>
+        <div class="header-meta">
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle theme"
+            aria-pressed="false"
+            title="Toggle theme"
+          >
+            <svg class="theme-toggle-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <line x1="12" y1="2" x2="12" y2="5"/>
+              <line x1="12" y1="19" x2="12" y2="22"/>
+              <line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/>
+              <line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/>
+              <line x1="2" y1="12" x2="5" y2="12"/>
+              <line x1="19" y1="12" x2="22" y2="12"/>
+              <line x1="4.93" y1="19.07" x2="7.05" y2="16.95"/>
+              <line x1="16.95" y1="7.05" x2="19.07" y2="4.93"/>
+            </svg>
+            <svg class="theme-toggle-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+            </svg>
+          </button>
+          <a class="button-link" href="./" target="_self">Back to downloads</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page report-page">
+      <article class="readme-preview markdown-body" id="report-preview">
+        <p>Loading report...</p>
+      </article>
+    </main>
+  </body>
+</html>

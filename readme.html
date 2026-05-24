@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoftLogic Whiteboard Releases</title>
+    <meta
+      name="description"
+      content="Versioned downloads, API documentation, phase status, release notes, README, and project structure for SoftLogic Whiteboard."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/app-icon.png" />
+    <link rel="apple-touch-icon" href="./assets/app-icon.png" />
+    <script src="./theme.js?v=202605240031"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css"
+    />
+    <link rel="stylesheet" href="./styles.css?v=202605240031" />
+    <script src="./release-manifest.js?v=202605240031" defer></script>
+    <script
+      src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"
+      defer
+    ></script>
+    <script src="./portal.js?v=202605240031" defer></script>
+  </head>
+  <body>
+    <header class="site-header" aria-label="SoftLogic Whiteboard release portal">
+      <div class="header-shell">
+        <div class="brand-lockup">
+          <div class="brand-mark">
+            <img
+              class="brand-logo"
+              src="./assets/softlogic-logo.png"
+              alt="SoftLogic"
+            />
+          </div>
+          <div class="brand-copy">
+            <p class="eyebrow">Release portal</p>
+            <h1>SoftLogic Whiteboard</h1>
+          </div>
+        </div>
+
+        <div class="header-meta" aria-label="Current release">
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle theme"
+            aria-pressed="false"
+            title="Toggle theme"
+          >
+            <svg class="theme-toggle-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <line x1="12" y1="2" x2="12" y2="5"/>
+              <line x1="12" y1="19" x2="12" y2="22"/>
+              <line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/>
+              <line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/>
+              <line x1="2" y1="12" x2="5" y2="12"/>
+              <line x1="19" y1="12" x2="22" y2="12"/>
+              <line x1="4.93" y1="19.07" x2="7.05" y2="16.95"/>
+              <line x1="16.95" y1="7.05" x2="19.07" y2="4.93"/>
+            </svg>
+            <svg class="theme-toggle-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+            </svg>
+          </button>
+          <span id="current-version-label">v1.0.0</span>
+          <span>Stable release</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="portal-shell">
+      <aside class="sidebar" aria-label="Portal navigation">
+        <p class="sidebar-section-label">Sections</p>
+        <nav class="tabbar" role="tablist" aria-label="Release portal sections">
+          <button
+            class="tab-button is-active"
+            id="tab-downloads"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-downloads"
+            data-tab="downloads"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Downloads
+          </button>
+          <button
+            class="tab-button"
+            id="tab-swagger"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-swagger"
+            data-tab="swagger"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            API Docs
+          </button>
+          <button
+            class="tab-button"
+            id="tab-phases"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-phases"
+            data-tab="phases"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Phase Status
+          </button>
+          <button
+            class="tab-button"
+            id="tab-access"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-access"
+            data-tab="access"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+            Access &amp; Creds
+          </button>
+          <button
+            class="tab-button"
+            id="tab-readme"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-readme"
+            data-tab="readme"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            README
+          </button>
+          <button
+            class="tab-button"
+            id="tab-reports"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-reports"
+            data-tab="reports"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Testing Reports
+          </button>
+          <button
+            class="tab-button"
+            id="tab-doc-approval"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-doc-approval"
+            data-tab="doc-approval"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Doc Approval
+          </button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="sidebar-footer-line">Stable build · v1.0.0</div>
+        </div>
+      </aside>
+
+      <main class="page" id="portal-top">
+        <section
+          class="tab-panel is-active"
+          id="panel-downloads"
+          role="tabpanel"
+          aria-labelledby="tab-downloads"
+        >
+          <div class="download-spotlight">
+            <div>
+              <div class="card-meta">
+                <span class="badge primary">Current release</span>
+                <span class="badge">Stable artifacts</span>
+              </div>
+              <h2 id="download-title">SoftLogic Whiteboard</h2>
+              <p>
+                Install the Android and Windows builds or open the hosted
+                Softlogic AI page.
+              </p>
+              <div class="version-picker" aria-label="Choose release version">
+                <label for="release-version-select">Version</label>
+                <select id="release-version-select"></select>
+              </div>
+              <div class="quick-actions" id="download-quick-actions"></div>
+            </div>
+            <div class="version-details-grid" id="version-details-grid"></div>
+          </div>
+          <section class="release-highlights" id="release-highlights" aria-label="Release highlights"></section>
+        </section>
+
+        <section
+          class="tab-panel"
+          id="panel-swagger"
+          role="tabpanel"
+          aria-labelledby="tab-swagger"
+          hidden
+        >
+          <div class="swagger-preview-shell">
+            <div class="swagger-topbar">
+              <strong>OpenAPI 3.0</strong>
+              <a id="swagger-json-link" href="#" target="_blank" rel="noreferrer">Loading swagger.json…</a>
+            </div>
+            <div id="swagger-ui" class="swagger-ui-preview"></div>
+            <div id="swagger-fallback" class="swagger-fallback" hidden></div>
+          </div>
+        </section>
+
+        <section
+          class="tab-panel"
+          id="panel-phases"
+          role="tabpanel"
+          aria-labelledby="tab-phases"
+          hidden
+        >
+          <div class="section-heading compact">
+            <div>
+              <h2>Code-evidence development status</h2>
+            </div>
+          </div>
+          <div class="phase-summary-grid" id="phase-summary-grid"></div>
+          <div class="pending-panel phase-table-panel">
+            <div class="pending-header">
+              <h3>Phase 1 all tickets</h3>
+            </div>
+            <div class="pending-table-wrap">
+              <table class="pending-table phase-ticket-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Epic</th>
+                    <th>Feature</th>
+                    <th>Task</th>
+                    <th>Frontend</th>
+                    <th>Backend</th>
+                  </tr>
+                </thead>
+                <tbody id="phase-one-tickets"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="pending-panel">
+            <div class="pending-header">
+              <h3>Completed tickets in other phases</h3>
+            </div>
+            <div class="pending-table-wrap">
+              <table class="pending-table completed-table">
+                <thead>
+                  <tr>
+                    <th>Phase</th>
+                    <th>ID</th>
+                    <th>Feature</th>
+                    <th>Task</th>
+                    <th>Frontend</th>
+                    <th>Backend</th>
+                  </tr>
+                </thead>
+                <tbody id="completed-phase-tickets"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="tab-panel"
+          id="panel-access"
+          role="tabpanel"
+          aria-labelledby="tab-access"
+          hidden
+        >
+          <div class="section-heading compact">
+            <div>
+              <h2>Access and credential flow</h2>
+            </div>
+          </div>
+          <div class="access-grid" id="access-guide"></div>
+        </section>
+
+        <section
+          class="tab-panel"
+          id="panel-readme"
+          role="tabpanel"
+          aria-labelledby="tab-readme"
+          hidden
+        >
+          <article class="readme-preview markdown-body" id="readme-preview"></article>
+        </section>
+
+        <section
+          class="tab-panel"
+          id="panel-reports"
+          role="tabpanel"
+          aria-labelledby="tab-reports"
+          hidden
+        >
+          <div class="section-heading compact">
+            <div>
+              <h2>Testing reports</h2>
+            </div>
+            <div class="view-toggle" data-target="testing-reports" role="group" aria-label="View mode">
+              <button class="view-toggle-btn is-active" type="button" data-view="grid" aria-label="Grid view" aria-pressed="true" title="Grid view">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </button>
+              <button class="view-toggle-btn" type="button" data-view="list" aria-label="List view" aria-pressed="false" title="List view">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="reports-grid" id="testing-reports"></div>
+        </section>
+
+        <section
+          class="tab-panel"
+          id="panel-doc-approval"
+          role="tabpanel"
+          aria-labelledby="tab-doc-approval"
+          hidden
+        >
+          <div class="section-heading compact">
+            <div>
+              <h2>Doc Approval</h2>
+              <p class="doc-approval-updated" id="doc-approval-updated"></p>
+            </div>
+            <div class="view-toggle" data-target="doc-approval-list" role="group" aria-label="View mode">
+              <button class="view-toggle-btn is-active" type="button" data-view="grid" aria-label="Grid view" aria-pressed="true" title="Grid view">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </button>
+              <button class="view-toggle-btn" type="button" data-view="list" aria-label="List view" aria-pressed="false" title="List view">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="doc-approval-grid" id="doc-approval-list"></div>
+        </section>
+
+        <noscript>
+          <section class="noscript-panel">
+            Enable JavaScript to view the versioned release portal.
+          </section>
+        </noscript>
+      </main>
+    </div>
+
+    <button
+      class="scroll-top-button"
+      id="scroll-top-button"
+      type="button"
+      aria-label="Scroll to top"
+      title="Scroll to top"
+    ></button>
+  </body>
+</html>
