@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.7",
-  lastSynced: "2026-05-21",
+  currentVersion: "v1.0.8",
+  lastSynced: "2026-05-25",
   api: {
     backendBaseUrl: "https://softlogic-whiteboard-backend-testin.vercel.app",
     swaggerUrl: "https://softlogic-whiteboard-backend-testin.vercel.app/api/docs",
@@ -23,7 +23,7 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
     otpNotes: [
       "Original OTP is generated for every login request and delivered by email; in dev/test flows it may also be logged by the backend.",
       "Fixed QA OTP 1234 still requires an active OTP request first.",
-      "This public page intentionally excludes infrastructure secrets such as database URLs, JWT secrets, SMTP passwords, API keys, and cloud credentials."
+      "Infrastructure secrets such as database URLs, JWT secrets, SMTP passwords, and cloud credentials remain excluded. Version 1.0.8 publishes only the AI setup keys requested for classroom AI enablement."
     ],
     userCreationFlow: [
       "Super Admin creates partner/customer organizations and users from the Admin panel.",
@@ -84,10 +84,113 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
   docApprovalLastUpdated: "2026-05-21 09:25 IST",
   releases: [
     {
+      version: "v1.0.8",
+      appVersion: "1.0.8",
+      build: "9",
+      status: "Current",
+      releaseDate: "2026-05-25",
+      title: "Whiteboard AI setup, loader stability, and admin key tools release",
+      summary:
+        "Release bump to v1.0.8 with updated Android APK and one-file Windows installer EXE links, focused on AI modal loader stability, Softlogic-branded processing states, admin API-key reveal/copy controls, and safer AI setup guidance for organisation settings.",
+      artifacts: [
+        {
+          platform: "Android",
+          format: "APK",
+          label: "Download Android APK",
+          href:
+            "https://drive.google.com/file/d/1FOXxhtDagQUI-A-OcQoK90lE0oHhfLKd/view?usp=sharing",
+          description:
+            "Android release build v1.0.8+9 for tablet, mobile, and whiteboard hardware classroom use."
+        },
+        {
+          platform: "Windows",
+          format: "EXE",
+          label: "Download Windows EXE",
+          href:
+            "https://drive.google.com/file/d/1Hzhk4zQvG78fTJFsENqO_ecvvRrN461g/view?usp=sharing",
+          description:
+            "One-file Windows installer build v1.0.8 for desktop classroom stations and teaching workflows."
+        },
+        {
+          platform: "Softlogic AI",
+          format: "Hosted page",
+          label: "Open Softlogic AI",
+          href: "/softlogic-ai",
+          description:
+            "Hosted Softlogic AI page retained with the same Vercel project."
+        }
+      ],
+      aiSetup: {
+        title: "AI features setup for v1.0.8",
+        description:
+          "For this version, add these organisation API keys before using AI features.",
+        path:
+          "Login to whiteboard app > Settings > Licence > Admin Console > Organisation > Organisation Settings",
+        keys: [
+          {
+            label: "Gemini API key",
+            value: "AQ.Ab8RN6JBBoB2UqtMVEOuK7xKymtk8K2CB8vz3zBtDcw9dNTg0w"
+          },
+          {
+            label: "Deepgram API key",
+            value: "a4d45bfd78210e24cc92cd015fcd9124a30f194e"
+          }
+        ]
+      },
+      dashboardMode: "singleUserFriendly",
+      dashboardSection: {
+        title: "What's included in this current whiteboard build (v1.0.8)",
+        items: [
+          "AI Analysis, AI Assist, AI write/pen, and AI Hub loading now use the shared Softlogic processing experience without freezing the whiteboard while generation is running.",
+          "AI loader visuals now reuse the established Softlogic empty-state icon animation so the modal stays familiar, lightweight, and responsive.",
+          "AI processing copy is aligned to Softlogic classroom workflow states and avoids exposing backend/provider implementation wording inside the whiteboard UI.",
+          "Organisation settings now includes API-key reveal and copy controls so admins can verify Gemini and Deepgram keys before AI features are used.",
+          "The download portal now publishes the v1.0.8 APK and one-file Windows installer while preserving every previous release link in the selector.",
+          "This version requires the listed AI setup keys to be added under Organisation Settings before AI features are expected to work.",
+          "Existing whiteboard, dashboard, admin, settings, and download-page layout flows remain unchanged."
+        ]
+      },
+      noteSections: [
+        {
+          title: "AI loader and whiteboard responsiveness",
+          items: [
+            "AI modal loading now uses the same familiar Softlogic icon animation seen in empty states.",
+            "The shared AI loading component was kept lightweight so generate actions do not lock the app UI while work is in progress.",
+            "AI Hub, AI Analysis, AI Assist, AI write/pen, and related modal loading states continue through the same visual system."
+          ]
+        },
+        {
+          title: "AI setup keys",
+          items: [
+            "Organisation settings includes reveal and copy controls for API key fields.",
+            "Version 1.0.8 requires the Gemini and Deepgram keys listed on the Downloads tab before using AI features.",
+            "Setup path: Login to whiteboard app > Settings > Licence > Admin Console > Organisation > Organisation Settings."
+          ]
+        },
+        {
+          title: "Release and compatibility",
+          items: [
+            "Current APK and one-file Windows installer links are frozen as v1.0.8 build 9.",
+            "Flutter app version now reads 1.0.8+9.",
+            "Backend version metadata and API docs are unchanged in this portal-only download update.",
+            "Previous v1.0.7, v1.0.6, v1.0.5, v1.0.3, v1.0.2, v1.0.1, and v1.0.0 APK and EXE links remain available in release history."
+          ]
+        },
+        {
+          title: "Deployment",
+          items: [
+            "Portal current release data now points to v1.0.8.",
+            "Version selector now supports v1.0.8 current with v1.0.7, v1.0.6, v1.0.5, v1.0.3, v1.0.2, v1.0.1, and v1.0.0 as previous downloads.",
+            "Release data update is isolated to the manifest, API-key helper rendering, and static cache references; existing page layout and interaction patterns are preserved."
+          ]
+        }
+      ]
+    },
+    {
       version: "v1.0.7",
       appVersion: "1.0.7",
       build: "8",
-      status: "Current",
+      status: "Previous",
       releaseDate: "2026-05-21",
       title: "Whiteboard writing, settings, and hardware stability release",
       summary:
@@ -942,22 +1045,22 @@ P1-115|Export & Platform Support|Android Build|Setup Google Play Store listing|D
   },
   readmeMarkdown: `# SoftLogic Whiteboard
 
-![Release](https://img.shields.io/badge/release-v1.0.7-123e8b)
-![Build](https://img.shields.io/badge/build-8-117a65)
-![Flutter](https://img.shields.io/badge/flutter-1.0.7%2B8-02569B)
+![Release](https://img.shields.io/badge/release-v1.0.8-123e8b)
+![Build](https://img.shields.io/badge/build-9-117a65)
+![Flutter](https://img.shields.io/badge/flutter-1.0.8%2B9-02569B)
 ![Backend](https://img.shields.io/badge/backend-Node.js%20Express-111827)
 ![Platforms](https://img.shields.io/badge/platforms-Android%20%7C%20Windows-5f6f89)
 
-SoftLogic Whiteboard is a classroom-focused digital whiteboard platform for teaching, drawing, presenting, exporting, live-session groundwork, content preparation, integrations, and AI-assisted education workflows. This download portal publishes the current v1.0.7 release artifacts together with preserved v1.0.6, v1.0.5, v1.0.3, v1.0.2, v1.0.1, and v1.0.0 downloads, API reference, development phase status, and release documentation.
+SoftLogic Whiteboard is a classroom-focused digital whiteboard platform for teaching, drawing, presenting, exporting, live-session groundwork, content preparation, integrations, and AI-assisted education workflows. This download portal publishes the current v1.0.8 release artifacts together with preserved v1.0.7, v1.0.6, v1.0.5, v1.0.3, v1.0.2, v1.0.1, and v1.0.0 downloads, API reference, development phase status, and release documentation.
 
 ## Release Summary
 
 | Field | Value |
 | --- | --- |
-| Release | v1.0.7 |
-| App version | 1.0.7+8 |
-| Build | 8 |
-| Release date | 2026-05-21 |
+| Release | v1.0.8 |
+| App version | 1.0.8+9 |
+| Build | 9 |
+| Release date | 2026-05-25 |
 | Android artifact | APK release link is available on the Downloads tab |
 | Windows artifact | EXE release link is available on the Downloads tab |
 | Softlogic AI | Hosted under the same Vercel portal |
@@ -1039,7 +1142,7 @@ npm test
 
 ## Release Maintenance
 
-1. Keep existing v1.0.6, v1.0.5, v1.0.3, v1.0.2, v1.0.1, and v1.0.0 artifact links frozen while publishing v1.0.7 as the current release.
+1. Keep existing v1.0.7, v1.0.6, v1.0.5, v1.0.3, v1.0.2, v1.0.1, and v1.0.0 artifact links frozen while publishing v1.0.8 as the current release.
 2. Add every future APK or EXE as a new release record instead of overwriting old release records.
 3. Update portal version metadata, release notes, API docs, phase status, and README together when a new release is published.
 4. Deploy backend changes first when API metadata changes, then deploy the portal.
@@ -1048,13 +1151,14 @@ npm test
 ## Verification Checklist
 
 - Downloads tab has current Android APK, Windows EXE, and Softlogic AI actions.
+- Downloads tab shows AI setup keys with reveal and copy controls for v1.0.8.
 - Access & Creds tab documents the QA-safe admin email, OTP, fixed OTP, and user creation flow without infrastructure secrets.
 - API Docs tab renders the bundled OpenAPI preview or a fallback link.
 - Phase Status tab renders Phase 1 and other-phase tables without duplicate status summary tags.
 - README tab renders this documentation from the static manifest.
 - The production Vercel alias points to the latest ready deployment.`,
   structureTree: {
-    name: "SoftLogic v1.0.7",
+    name: "SoftLogic v1.0.8",
     meta: "Versioned release snapshot",
     children: [
       {
@@ -1217,6 +1321,8 @@ npm test
         name: "release-artifacts",
         meta: "Versioned downloadable links with historical support",
         children: [
+          { name: "Android APK v1.0.8 build 9" },
+          { name: "Windows EXE v1.0.8 build 9" },
           { name: "Android APK v1.0.7 build 8" },
           { name: "Windows EXE v1.0.7 build 8" },
           { name: "Android APK v1.0.6 build 7" },
@@ -1239,8 +1345,8 @@ npm test
         meta: "Shared version source across backend, Flutter, and portal",
         children: [
           { name: "Backend package/version metadata: unchanged in this download update" },
-          { name: "Flutter pubspec/app constants: 1.0.7+8" },
-          { name: "Portal current version: v1.0.7 build 8" }
+          { name: "Flutter pubspec/app constants: 1.0.8+9" },
+          { name: "Portal current version: v1.0.8 build 9" }
         ]
       }
     ]

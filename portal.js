@@ -77,6 +77,28 @@
   const statusPill = (value) =>
     `<span class="status-pill ${statusClass(value)}">${escapeHtml(value)}</span>`;
 
+  const maskSecret = (value) => {
+    const length = Math.min(Math.max(String(value || "").length, 16), 36);
+    return "*".repeat(length);
+  };
+
+  const copyText = async (value) => {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(value);
+      return;
+    }
+
+    const textArea = document.createElement("textarea");
+    textArea.value = value;
+    textArea.setAttribute("readonly", "");
+    textArea.style.position = "fixed";
+    textArea.style.left = "-9999px";
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
+  };
+
   const parsePhaseTickets = (csv) =>
     String(csv || "")
       .trim()
@@ -140,6 +162,8 @@
         .join("");
     }
 
+    renderAiSetup();
+
     const versionDetails = $("#version-details-grid");
     if (versionDetails) {
       const details = [
@@ -195,6 +219,139 @@
       }
     }
 
+  };
+
+  const renderAiSetup = () => {
+    const quickActions = $("#download-quick-actions");
+    if (!quickActions) return;
+
+    let aiSetup = $("#release-ai-setup");
+    if (!aiSetup) {
+      quickActions.insertAdjacentHTML(
+        "afterend",
+        '<div class="release-ai-setup" id="release-ai-setup"></div>'
+      );
+      aiSetup = $("#release-ai-setup");
+    }
+
+    const setup = selectedRelease.aiSetup;
+    if (!setup) {
+      aiSetup.hidden = true;
+      aiSetup.innerHTML = "";
+      return;
+    }
+
+    aiSetup.hidden = false;
+    aiSetup.innerHTML = `
+      <div class="release-ai-setup-header">
+        <div>
+          <span class="badge primary">Required for AI features</span>
+          <h3>${escapeHtml(setup.title)}</h3>
+          <p>${escapeHtml(setup.description)}</p>
+        </div>
+      </div>
+      <div class="release-ai-path">
+        <span>Where to add</span>
+        <strong>${escapeHtml(setup.path)}</strong>
+      </div>
+      <div class="release-ai-key-list">
+        ${setup.keys
+          .map(
+            (key) => `
+              <div class="release-ai-key">
+                <div class="release-ai-key-main">
+                  <span>${escapeHtml(key.label)}</span>
+                  <code
+                    class="release-ai-secret"
+                    data-secret="${escapeHtml(key.value)}"
+                    data-revealed="false"
+                  >${escapeHtml(maskSecret(key.value))}</code>
+                </div>
+                <div class="release-ai-key-actions">
+                  <button
+                    class="release-ai-icon-button"
+                    type="button"
+                    data-ai-key-action="toggle"
+                    aria-label="Reveal ${escapeHtml(key.label)}"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <span class="release-ai-button-label">Reveal</span>
+                  </button>
+                  <button
+                    class="release-ai-icon-button"
+                    type="button"
+                    data-ai-key-action="copy"
+                    aria-label="Copy ${escapeHtml(key.label)}"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="2"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                    <span class="release-ai-button-label">Copy</span>
+                  </button>
+                </div>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
+    `;
+  };
+
+  const setupAiSetupActions = () => {
+    const downloadsPanel = $("#panel-downloads");
+    if (!downloadsPanel) return;
+
+    downloadsPanel.addEventListener("click", async (event) => {
+      const button = event.target.closest?.("[data-ai-key-action]");
+      if (!button || !downloadsPanel.contains(button)) return;
+
+      const keyRow = button.closest(".release-ai-key");
+      const secret = keyRow?.querySelector(".release-ai-secret");
+      if (!secret) return;
+
+      const value = secret.dataset.secret || "";
+      const label = keyRow.querySelector(".release-ai-key-main span")?.textContent || "API key";
+      const action = button.dataset.aiKeyAction;
+
+      if (action === "toggle") {
+        const revealed = secret.dataset.revealed === "true";
+        secret.dataset.revealed = String(!revealed);
+        secret.textContent = revealed ? maskSecret(value) : value;
+        const labelNode = button.querySelector(".release-ai-button-label");
+        if (labelNode) {
+          labelNode.textContent = revealed ? "Reveal" : "Hide";
+        }
+        button.setAttribute("aria-label", `${revealed ? "Reveal" : "Hide"} ${label}`);
+        return;
+      }
+
+      if (action === "copy") {
+        try {
+          await copyText(value);
+          const labelNode = button.querySelector(".release-ai-button-label");
+          if (!labelNode) return;
+          const previous = labelNode.textContent;
+          labelNode.textContent = "Copied";
+          button.classList.add("is-copied");
+          window.setTimeout(() => {
+            labelNode.textContent = previous || "Copy";
+            button.classList.remove("is-copied");
+          }, 1400);
+        } catch (error) {
+          const labelNode = button.querySelector(".release-ai-button-label");
+          if (labelNode) {
+            labelNode.textContent = "Copy failed";
+            window.setTimeout(() => {
+              labelNode.textContent = "Copy";
+            }, 1800);
+          }
+        }
+      }
+    });
   };
 
   const setupVersionSelector = () => {
@@ -736,6 +893,7 @@
   renderReadme();
   renderReports();
   renderDocApproval();
+  setupAiSetupActions();
   setupVersionSelector();
   setupTabs();
   activateTab(getCurrentTabFromRoute(), { scroll: false });
