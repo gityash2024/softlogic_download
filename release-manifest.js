@@ -64,24 +64,24 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
       file: "SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
       status: "Ready for review",
       description:
-        "Production licensing with Partner Admin, Parent, reseller branding, and separate teacher, student, and parent license counts."
+        "Production licensing with student-login controls, Google Drive storage policy, AI credit extension, Partner Admin, Parent, reseller branding, and role-specific license counts."
     },
     {
       title: "User Journey Flow",
       file: "SOFTLOGIC_USER_JOURNEY_FLOW.md",
       status: "Ready for review",
       description:
-        "Detailed journey for Super Admin, Partner Admin, Organization Admin, Teacher, Student, and Parent with org-wise permissions."
+        "Detailed journey for Super Admin, Partner Admin, Organization Admin, Teacher, Student, and Parent with org-wise permissions, session-only QR access, Google Drive setup, and AI credit prompts."
     },
     {
       title: "Live Session Flow",
       file: "SOFTLOGIC_LIVE_SESSION_FLOW.md",
       status: "Ready for review",
       description:
-        "Live session flow with Partner Admin support scope, Parent post-session access, recordings, materials, and org-wise isolation."
+        "Live session flow with QR join details, login-enabled and login-disabled student paths, Google Drive recording/material storage, Partner support scope, and org-wise isolation."
     }
   ],
-  docApprovalLastUpdated: "2026-05-21 09:25 IST",
+  docApprovalLastUpdated: "2026-05-25 12:44 IST",
   releases: [
     {
       version: "v1.0.8",

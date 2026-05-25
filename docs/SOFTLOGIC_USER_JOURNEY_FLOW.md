@@ -33,6 +33,7 @@ Production login rule:
 - Google sign-in requires an existing invited/provisioned email.
 - Role comes from the database user record, not from Google.
 - Parent login is allowed only after a parent account exists and is linked to at least one student according to organization policy.
+- Student login is organization-controlled. Some organizations may have student logins enabled, while others may use session-only QR/join-code access without persistent student login.
 
 ### Login flow
 
@@ -59,6 +60,16 @@ Rules:
 - Parent sees only linked student data inside the same organization.
 - Canvases, live sessions, materials, recordings, quizzes, messages, and notifications must remain organization-scoped.
 
+### Admin surface rule
+
+Admin roles should be controlled outside the whiteboard canvas.
+
+Rules:
+
+- Super Admin, Partner Admin, and Organization Admin journeys run through the mobile app admin area or web portal admin console.
+- The whiteboard surface can expose teacher/session tools, but it should not manage organizations, admin roles, subscription counts, student-login activation, Google Drive credentials, billing, or AI credit extension.
+- Every admin action must use role-based permissions and audit logging from mobile app or web portal.
+
 ### License boundary
 
 Production subscription has separate license pools:
@@ -75,6 +86,42 @@ Rules:
 - Partner Admin and Super Admin do not consume customer teacher/student/parent licenses.
 - Organization Admin should use an admin allowance or plan policy, not teacher/student/parent pools.
 - Disabled users do not consume licenses.
+
+### Student login activation
+
+Student login activation is controlled by Super Admin per organization.
+
+Rules:
+
+- Super Admin can enable or disable student logins for each school organization.
+- Super Admin can assign student license/login capacity directly to the organization or through an approved partner/reseller scope.
+- Partner Admin can manage student access only for assigned organizations and only within delegated policy.
+- Organization Admin can create persistent Student login accounts only when student login activation is enabled.
+- If student login activation is disabled, students may join live classes through session-only QR/join-code access when allowed by the school policy.
+- Session-only QR access creates a temporary class participant identity and does not open a persistent Student Dashboard.
+
+### Organization storage rule
+
+Organization file storage must use the organization's Google Drive.
+
+Rules:
+
+- Organization Admin must connect the organization's Google Drive account and credentials before saving organization content.
+- The app should validate the Drive connection and show a setup-required state until it is complete.
+- Whiteboards, imported files, teaching materials, recordings, exports, and live-session content save to the organization's Google Drive.
+- SoftLogic cloud storage is limited to app-specific/system files, metadata, temporary processing, authentication/session data, logs, thumbnails/cache where needed, and platform operations.
+
+### AI credit rule
+
+Hardware license users include AI usage worth INR 700.
+
+Rules:
+
+- AI usage is tracked against the configured user or organization AI credit balance.
+- When included AI credits are exhausted, the user sees a purchase-more-credits popup.
+- The popup shows configurable SoftLogic billing/support email and phone managed by Super Admin or reseller policy.
+- Super Admin can manually extend AI credit iterations/cycles for a user or organization after payment, credit approval, or approved exception.
+- AI credit extensions must be audit logged with actor, target, iteration/count, reason, payment/reference note, timestamp, and old/new balance.
 
 ### Email types
 
@@ -106,6 +153,10 @@ Super Admin can:
 - Create customer organizations.
 - Create Partner Admins and Organization Admins.
 - Create/update subscriptions and license counts.
+- Enable/disable student logins per organization.
+- Assign student license/login capacity directly to organizations or through partner scope.
+- Require and monitor organization Google Drive setup.
+- Extend AI credit iterations after payment or approved exception.
 - Configure branding mode.
 - Upload/remove organization and reseller logos.
 - View all users and audit activity.
@@ -126,7 +177,8 @@ Super Admin can:
 2. Opens Admin Console.
 3. Reviews active users, organizations, partners, subscriptions, license usage, and activity.
 4. Uses Users, Organizations, Subscriptions, and Activity tabs.
-5. Performs sales, onboarding, billing, support, and compliance actions.
+5. Uses admin surfaces outside the whiteboard canvas for role, subscription, Google Drive, student-login, and AI-credit controls.
+6. Performs sales, onboarding, billing, support, and compliance actions.
 
 ### Direct customer onboarding journey
 
@@ -137,9 +189,11 @@ Super Admin can:
 5. Set total teacher licenses.
 6. Set total student licenses.
 7. Set total parent licenses.
-8. Create first Organization Admin as `CUSTOMER_ADMIN`.
-9. Confirm welcome email was sent.
-10. Send license activation/onboarding details.
+8. Choose whether student logins are activated for the organization.
+9. Configure included hardware AI credit policy if applicable.
+10. Create first Organization Admin as `CUSTOMER_ADMIN`.
+11. Confirm welcome email was sent.
+12. Send license activation/onboarding details, including Google Drive setup requirement.
 
 ### Reseller onboarding journey
 
@@ -249,6 +303,9 @@ Organization Admin can:
 - Manage organization branding if allowed.
 - Support teacher/student/parent access issues.
 - Request more teacher, student, or parent licenses.
+- Connect and maintain organization Google Drive credentials for organization content storage.
+- See whether student login activation is enabled for the organization.
+- Request AI credit purchase/extension through SoftLogic or assigned reseller.
 
 Organization Admin cannot:
 
@@ -256,6 +313,7 @@ Organization Admin cannot:
 - Create Partner Admins or Super Admins.
 - Change paid subscription values directly unless policy allows.
 - Bypass teacher/student/parent license counts.
+- Enable student logins or extend AI credits unless Super Admin has explicitly delegated that policy.
 
 ### Account creation journey
 
@@ -267,6 +325,8 @@ Organization Admin cannot:
 6. Organization Admin signs in using OTP or invited Google account.
 7. App routes to admin/dashboard surface.
 8. Organization Admin verifies organization name, logo, license, and usage.
+9. Organization Admin connects the organization's Google Drive account and credentials.
+10. App validates Google Drive access before organization files are saved.
 
 ### Teacher creation journey
 
@@ -286,9 +346,11 @@ Organization Admin cannot:
 2. Selects Student.
 3. Enters name and email.
 4. Backend checks student license availability.
-5. Student user is created as active.
-6. Student welcome email is sent.
-7. Student logs in and opens Student Dashboard.
+5. Backend checks student login activation for the organization.
+6. Student user is created as active only when persistent student logins are enabled.
+7. Student welcome email is sent.
+8. Student logs in and opens Student Dashboard.
+9. If student logins are disabled, Organization Admin uses roster/session policy while students join live classes through session-only QR/join-code access.
 
 ### Parent creation journey
 
@@ -320,6 +382,7 @@ Organization Admin can request:
 - More student licenses.
 - More parent licenses.
 - More recording/material storage.
+- AI credit extension.
 - Upgrade/renewal through SoftLogic or assigned reseller.
 
 ### Failure states
@@ -330,6 +393,8 @@ Organization Admin can request:
 - Parent not linked to student: parent can login but sees no student data until linked, or login is blocked according to policy.
 - User email already exists: admin must use another email or ask Super Admin for transfer.
 - Expired license: user creation/reactivation and new paid activity are blocked.
+- Google Drive not connected: organization content save is blocked or restricted until setup is complete.
+- AI credit exhausted: AI tools show purchase-more-credits popup with configured SoftLogic billing/support contact.
 
 ## Role 4: Teacher Journey
 
@@ -373,7 +438,7 @@ Teacher cannot:
 4. Backend creates `LiveSession`.
 5. Teacher configures title, permissions, chat, audio/video, and recording.
 6. Teacher generates join code.
-7. Teacher invites students by email.
+7. Teacher shares QR/join code and invites students by email when persistent login policy requires it.
 8. Students join.
 9. Teacher teaches using board, chat, quiz, hand raise, media, and controls.
 10. Teacher ends session.
@@ -395,7 +460,8 @@ Student attends live sessions, joins by code, views materials, answers quizzes, 
 
 Student can:
 
-- Login after being invited/provisioned.
+- Login after being invited/provisioned when the organization has student logins enabled.
+- Join through session-only QR/join-code access when student logins are disabled and school policy allows temporary class participation.
 - Join live session by code or invite.
 - Use audio/video if permission allows.
 - View board.
@@ -424,11 +490,13 @@ Student account can be created by:
 
 Student receives:
 
-- Welcome email if new account.
+- Welcome email if new account and persistent student login is enabled.
 - OTP email during login.
 - Live-session invite email when teacher sends code.
 
 ### First login journey
+
+For organizations with student logins enabled:
 
 1. Student opens app/download link.
 2. Student enters invited email.
@@ -436,12 +504,20 @@ Student receives:
 4. Student enters OTP.
 5. App routes to Student Dashboard.
 
+For organizations with student logins disabled:
+
+1. Student does not receive a persistent dashboard login.
+2. Student scans the session QR code or enters the join code shared by teacher.
+3. Backend validates the session, organization, license, join policy, and QR/code expiry.
+4. App creates a temporary class participant identity for that live session.
+5. Student exits the temporary session at class end and does not retain dashboard access.
+
 ### Join session by code
 
 1. Student opens Join Session.
-2. Student enters code from teacher/email.
+2. Student enters code from teacher/email or scans the session QR code.
 3. App calls verify join-code API.
-4. Backend verifies active session code or invite code.
+4. Backend verifies active session code, QR payload, or invite code.
 5. App shows session preview.
 6. Student clicks Join.
 7. Backend creates/updates `LiveSessionParticipant`.
@@ -463,11 +539,14 @@ Student dashboard shows:
 
 Student can open shared materials if organization/session access allows it.
 
+If student logins are disabled, post-class access is limited to the live session policy. Shared materials and recordings remain available only through teacher/admin-controlled sharing, not through a persistent Student Dashboard.
+
 ### Failure states
 
 - Code expired: student asks teacher for new code.
 - Code belongs to another student email: backend blocks join for student role.
 - User not invited: login fails and student contacts school/admin.
+- Student login disabled: student uses approved session-only QR/join-code access instead of dashboard login.
 - License expired: student may lose access to new live classes depending support policy.
 - Teacher ended session: student sees ended/no active session state.
 
@@ -588,6 +667,9 @@ Production routing additions:
 
 - Add or confirm first-class parent auth role mapping when backend supports `PARENT`.
 - Route Parent users to Parent Dashboard.
+- Route Super Admin, Partner Admin, and Organization Admin to mobile/web admin surfaces outside the whiteboard canvas for admin controls.
+- Route persistent Students to Student Dashboard only when student login activation is enabled for the organization.
+- Route session-only QR students directly to temporary live-session view without persistent dashboard access.
 - Block parent users from teacher/student-only live participation routes unless a special observer mode is implemented.
 - Show expired/restricted license state after login.
 
@@ -608,9 +690,12 @@ Production additions:
 
 - Add first-class `PARENT` role or parent account model.
 - Add parent-student linkage model.
+- Add organization-wise student login activation setting.
 - Add license guard after auth.
 - Add teacher/student/parent license guards to user create/reactivate.
 - Add organization status guard.
+- Add Google Drive connection and credential validation guard before organization content save.
+- Add AI credit balance guard, exhaustion popup payload, and manual extension audit model.
 - Add subscription expiry job.
 - Add strict invited-only Google rule if not already enforced in deployed backend.
 - Add partner/reseller scope checks to every admin list/detail action.
@@ -623,7 +708,12 @@ Production additions:
 - Organization Admin can login and manage only own organization.
 - Organization Admin can create Teachers until teacher licenses are full.
 - Organization Admin can create Students until student licenses are full.
+- Super Admin can enable or disable student logins per organization.
+- Students in login-disabled organizations can join with session-only QR/join-code access and cannot open persistent Student Dashboard.
 - Organization Admin can create Parents until parent licenses are full.
+- Organization Admin connects Google Drive before organization content is saved.
+- AI credit exhaustion shows purchase-more-credits popup with configured SoftLogic billing/support contact.
+- Super Admin can manually extend AI credit iterations/cycles with audit trail.
 - Teacher can login, create board, start session, generate code, and invite students.
 - Student can login, join by code, attend session, and view materials.
 - Parent can login and view only linked student schedule, progress, messages, and allowed materials.

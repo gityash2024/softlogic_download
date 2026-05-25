@@ -27,6 +27,9 @@ Super Admin can:
 - Create and manage subscriptions/licenses.
 - Configure branding mode for direct customers and resellers.
 - Create Partner Admins and Organization Admins.
+- Enable or disable student login activation organization-wise.
+- Assign student license/login activation directly to customer organizations or through approved partner/reseller scope.
+- Manually extend AI credit iterations for paid or approved exception cases.
 - View all organizations, subscriptions, users, audit logs, and support data.
 - Suspend/reactivate organizations and subscriptions.
 - Override license state only through audited administrative action.
@@ -43,6 +46,7 @@ Partner Admin can:
 - View assigned customer license status and license usage.
 - See partner-level reports for assigned organizations.
 - Manage reseller branding only if reseller-brand mode is enabled by SoftLogic.
+- Manage student onboarding only for organizations assigned by SoftLogic, and only within the student-login policy enabled by Super Admin.
 
 Partner Admin cannot:
 
@@ -50,6 +54,7 @@ Partner Admin cannot:
 - Create Super Admins.
 - Change global platform configuration.
 - Change commercial license counts unless SoftLogic policy explicitly allows partner-managed subscription edits.
+- Enable student login activation unless Super Admin has delegated that control for the assigned organization.
 
 ### Organization Admin
 
@@ -62,6 +67,8 @@ Organization Admin can:
 - View own organization subscription/license state.
 - View organization classrooms, users, sessions, materials, and recordings according to admin permissions.
 - Request more licenses from SoftLogic or their reseller.
+- Connect and maintain the organization's Google Drive account before saving organization files.
+- Request student login activation/deactivation changes from SoftLogic or assigned reseller if not directly enabled.
 
 ### Teacher
 
@@ -168,6 +175,57 @@ Production enforcement rules:
 - Organization Admin accounts should be controlled by an admin allowance or plan policy, not deducted from teacher/student/parent counts unless business later decides otherwise.
 - Usage counts must be recalculated by the system from active users, not manually trusted from UI input.
 
+### Student login and assignment policy
+
+Some school organizations may have student logins activated and some may not.
+
+Production policy:
+
+- Student login activation is controlled organization-wise by Super Admin.
+- Super Admin can assign student license/login capacity directly to a customer organization.
+- Super Admin can also assign or expose student license/login capacity through an approved partner/reseller scope.
+- Partner Admin can manage student users only for assigned organizations and only within the limits delegated by Super Admin.
+- Organization Admin can create student accounts only when student login activation is enabled for that organization.
+- If student logins are disabled, students may use session-only QR/join-code access where enabled, without a persistent student dashboard login.
+- Session-only student access must still count against the organization's allowed live-session policy and must remain organization-scoped.
+
+### Admin surface policy
+
+Administrative roles and controls must live outside the live whiteboard canvas.
+
+Production policy:
+
+- Super Admin, Partner Admin, and Organization Admin workflows should be controlled from the SoftLogic mobile app admin surface or web portal admin console.
+- The whiteboard canvas may show teacher/session controls, but it should not be the primary place to manage organizations, subscriptions, admin roles, student-login activation, AI credits, or billing state.
+- Admin actions must be permission-checked and audit logged regardless of whether they are performed from mobile app or web portal.
+
+### Organization Google Drive storage policy
+
+Organization content must be saved in the customer's Google Drive storage.
+
+Production policy:
+
+- Organization Admin must connect the organization's Google Drive account and required credentials during onboarding or before first organization content save.
+- The system should block or restrict organization file saves until Google Drive connection is completed and validated.
+- Whiteboards, imported files, teaching materials, live-session files, recordings, exports, and organization-owned classroom content should be stored in the organization's Google Drive.
+- SoftLogic cloud storage must not be used as the primary storage for organization files.
+- SoftLogic cloud storage may be used only for app-specific/system files, metadata, temporary processing, authentication/session data, logs, thumbnails/cache where needed, and platform operation files.
+- Google Drive token/credential handling must follow secure storage, scoped permission, revocation, and audit requirements.
+
+### Hardware AI credit policy
+
+Hardware license users include AI usage worth INR 700.
+
+Production policy:
+
+- Each eligible hardware license user starts with AI credits worth INR 700 or the commercially approved equivalent.
+- AI usage should decrement from the user's or organization's AI credit balance according to the configured AI-credit accounting model.
+- When the AI credit balance reaches the INR 700 included value or otherwise becomes exhausted, the user should see a popup asking them to purchase more AI credits from SoftLogic.
+- The popup must show the configurable SoftLogic billing/support email and phone number managed by Super Admin or reseller policy.
+- Super Admin can manually extend AI credit iterations/cycles for a particular user or organization after payment, credit approval, or approved exception.
+- If a user pays for two cycles/iterations of AI credits, Super Admin can extend that user by two iterations.
+- Every manual AI credit extension must store actor, user/organization, amount or iteration count, reason, payment/reference note, timestamp, and old/new balance.
+
 ### Current implementation gap
 
 Current backend subscription records have generic `seatLimit` and `seatUsage`. For production, keep backward compatibility while adding role-specific counts.
@@ -178,6 +236,9 @@ Migration direction:
 - Add teacher/student/parent license count fields.
 - Update user create/reactivate/login guards to check the correct role-specific pool.
 - Update Admin Console labels from generic seats to role-specific licenses.
+- Add organization-wise student-login activation controls.
+- Add Google Drive connection requirement before organization content storage.
+- Add AI credit balance, exhaustion popup, and manual extension audit model.
 
 ## Sales Channels
 
@@ -452,13 +513,17 @@ Production Admin Console action:
 11. Set start date.
 12. Set end date.
 13. Set storage limit and features.
-14. Save.
+14. Set student login activation policy for the organization.
+15. Set included hardware AI credit policy if applicable.
+16. Save.
 
 Production rule:
 
 - Used license counts should be system-calculated.
 - License count changes must be audit logged.
 - Reducing license counts below current active usage should be blocked or scheduled for renewal after users are disabled.
+- Student login activation changes must be controlled by Super Admin or delegated partner policy and must be audit logged.
+- AI credit extensions must be audit logged separately from teacher/student/parent license counts.
 
 ### 8. Super Admin creates Organization Admin
 
@@ -486,6 +551,7 @@ Welcome email must include:
 - Download page URL.
 - License summary: teacher, student, and parent license counts.
 - Login instruction: use email OTP or invited Google account.
+- Google Drive setup instruction: connect organization Drive before saving organization content.
 - Support contact.
 
 ### 9. Organization Admin creates Teachers, Students, and Parents
@@ -507,8 +573,10 @@ Student creation:
 2. Selects Student role.
 3. Enters student name and email.
 4. Backend checks `usedStudentLicenses < totalStudentLicenses`.
-5. User is created as active Student.
-6. Welcome email is sent.
+5. Backend checks whether student logins are activated for the organization.
+6. User is created as active Student if login activation is enabled.
+7. Welcome email is sent.
+8. If student logins are disabled, the system should keep student access to approved session-only QR/join-code flow instead of creating persistent student dashboard login.
 
 Parent creation:
 
@@ -565,6 +633,13 @@ If subscription is expired:
 - Organization Admin can see renewal-needed state.
 - Teacher cannot start new paid/live activity.
 - Student and Parent access to old materials follows retention policy.
+
+If AI credit is exhausted:
+
+- Block or pause AI generation actions according to plan policy.
+- Show purchase-more-credits popup with configurable SoftLogic billing/support email and phone.
+- Let Super Admin extend AI credit iterations/cycles manually after payment, credit approval, or approved exception.
+- Keep non-AI whiteboard and class features available if the core license remains active.
 
 ## Online Checkout Flow
 
@@ -630,6 +705,7 @@ Upgrade can increase:
 - Student licenses.
 - Parent licenses.
 - Storage.
+- AI credit iterations/cycles.
 - Recording features.
 - Support level.
 - Branding features.
@@ -718,6 +794,8 @@ Rules:
 - Parent can see only linked student data inside the same organization.
 - Recordings/materials must never be available across organization boundaries.
 - Reseller branding must not weaken organization-level data isolation.
+- Organization files must be stored in the organization's connected Google Drive, not in SoftLogic cloud storage as primary file storage.
+- SoftLogic cloud storage is limited to app-specific/system files and platform operations.
 
 ## Production Gaps To Implement Later
 
@@ -732,6 +810,8 @@ Required backend gaps:
 - Add checkout webhook endpoint.
 - Add renewal/expiry scheduled job.
 - Add production billing/reminder email templates.
+- Add Google Drive credential validation and organization content storage routing.
+- Add AI credit balance, exhaustion notification, and manual extension audit support.
 
 Required frontend/admin gaps:
 
@@ -741,6 +821,7 @@ Required frontend/admin gaps:
 - Parent creation/linking UI.
 - Partner Admin scoped organization view.
 - Reseller branding controls.
+- Admin UI outside the whiteboard canvas for student-login activation, Google Drive setup status, and AI credit extension.
 
 ## Acceptance Checklist
 
@@ -752,7 +833,11 @@ Required frontend/admin gaps:
 - Reseller in reseller brand shows reseller branding where configured.
 - Organization Admin can create Teachers until teacher licenses are full.
 - Organization Admin can create Students until student licenses are full.
+- Super Admin can enable or disable student logins per organization.
 - Organization Admin can create Parents until parent licenses are full.
+- Organization Admin must connect Google Drive before organization files are saved.
+- AI credit exhaustion shows purchase-more-credits popup with configured SoftLogic billing/support contact.
+- Super Admin can extend AI credit iterations manually with audit log.
 - Parent account is linked only to students in same organization.
 - Disabled users do not consume role-specific license counts.
 - Expired subscription blocks new paid actions.

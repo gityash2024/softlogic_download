@@ -21,6 +21,7 @@ Current implementation note:
 - Flutter has teacher dashboard live-session controls, student dashboard, join-code screen, live-session provider, socket service, LiveKit call service, whiteboard live-session overlay, and Parent dashboard surface.
 - Production parent access requires first-class parent role or parent-student linkage support in backend.
 - Object storage support exists through S3-compatible environment variables, but production recording/material storage must be fully configured before launch.
+- Final production policy requires organization-owned class files, materials, recordings, exports, and whiteboard content to save in the organization's connected Google Drive. SoftLogic cloud storage is limited to app-specific/system files and platform operations.
 
 ## Actors
 
@@ -32,6 +33,7 @@ Super Admin can:
 - Audit sessions across all organizations.
 - Fix organization/subscription/user issues.
 - Configure production storage, RTC, payment, license, and branding settings.
+- Configure organization-wise student login activation and session-only QR policy.
 - Access all partner and customer scopes for support and compliance.
 
 ### Partner Admin
@@ -53,6 +55,7 @@ Organization Admin can:
 - Support session access issues.
 - See organization-level sessions, materials, and recordings according to admin permissions.
 - Request more teacher, student, or parent licenses.
+- Connect and maintain the organization's Google Drive account before storing organization content.
 
 ### Teacher
 
@@ -78,7 +81,9 @@ Teacher consumes an active teacher license.
 
 Student can:
 
-- Join by session code or invite code.
+- Join by session code, QR code, or invite code.
+- Login with persistent student account only when student login activation is enabled for the organization.
+- Join with session-only QR/join-code identity when student logins are disabled and school policy allows temporary class participation.
 - View board.
 - Join audio/video if allowed.
 - Chat if allowed.
@@ -133,6 +138,10 @@ Production rule:
 - Parent access is limited to linked student records inside the same organization.
 - Storage keys should include organization/session identifiers for operational traceability.
 - Public URLs should not expose private organization data without signed URL or protected endpoint.
+- Organization-owned whiteboards, live-session files, recordings, exports, and teaching materials must be stored in the organization's connected Google Drive.
+- SoftLogic cloud storage must not be the primary storage location for organization files.
+- SoftLogic cloud storage may be used only for app-specific/system files, metadata, temporary processing, authentication/session data, logs, thumbnails/cache where needed, and platform operation files.
+- If Google Drive is not connected or credentials are invalid, organization file save, recording upload, and material upload should be blocked or placed into a setup-required state.
 
 ## License Checks For Live Sessions
 
@@ -152,6 +161,9 @@ Student join checks:
 - Student license pool must allow this active Student.
 - Join code/invite must be valid.
 - Session must be active or joinable.
+- If student logins are enabled for the organization, student must authenticate before joining.
+- If student logins are disabled, session-only QR/join-code access may create a temporary participant identity without persistent Student Dashboard access.
+- Session-only participants must still pass organization, license, session, policy, and expiry checks.
 
 Parent post-session checks:
 
@@ -225,15 +237,29 @@ Teacher clicks Generate/Refresh Code.
 Backend:
 
 - Creates join code.
+- Creates QR code or QR payload linked to the same session policy.
 - Stores expiry.
 - Links code to `LiveSession`.
 - Invalidates old code if refreshing.
+- Signs QR payload with short-lived session reference, organization id, expiry, and nonce.
+- Does not put user credentials, access token, refresh token, or long-lived secret in the QR code.
 
 Teacher sees:
 
 - Code.
+- QR code.
 - Expiry.
 - Copy/share controls.
+
+QR code behavior:
+
+- Teacher can display QR code on the whiteboard screen or share it through approved class communication.
+- Student scans QR code with the SoftLogic app or supported scanner flow.
+- App sends the signed QR payload to the backend verify endpoint.
+- Backend validates signature, expiry, session status, organization, invite policy, student-login policy, license policy, and replay/nonce rules.
+- Backend returns a session preview or a clear failure reason.
+- Login-enabled organizations require student authentication before final join.
+- Login-disabled organizations may use session-only QR access with temporary participant identity and no persistent Student Dashboard.
 
 ### 5. Teacher invites students by email
 
@@ -259,9 +285,11 @@ Student invite email includes:
 - Login instruction: use email OTP or invited Google account.
 - Support contact.
 
-### 6. Student logs in
+### 6. Student logs in or uses session-only QR access
 
-Student must login before joining.
+Student login behavior depends on organization policy.
+
+For organizations with student logins enabled, student must login before joining:
 
 1. Student opens app.
 2. Student enters invited email.
@@ -270,12 +298,20 @@ Student must login before joining.
 5. Student enters OTP.
 6. App routes to Student Dashboard or Join Session screen.
 
+For organizations with student logins disabled:
+
+1. Student scans QR code or enters join code shared by teacher.
+2. Backend validates signed QR/code, session status, organization, license, invite/join policy, and expiry.
+3. Backend creates a temporary session participant identity.
+4. App opens the live-session view for that class only.
+5. Student has no persistent dashboard, saved login session, or post-class account access from this flow.
+
 ### 7. Student verifies code
 
 1. Student opens Join Session.
-2. Student enters code.
+2. Student enters code or scans QR code.
 3. App calls verify join-code API.
-4. Backend verifies code, session status, organization, invite/email policy, and license.
+4. Backend verifies code/QR payload, session status, organization, invite/email policy, student-login policy, expiry, and license.
 5. App shows session preview.
 
 Failure behavior:
@@ -284,6 +320,7 @@ Failure behavior:
 - Wrong-email invite is blocked for student role.
 - Wrong organization is blocked.
 - Expired license blocks new session join if policy requires.
+- Login-disabled organization routes student to session-only participant flow instead of persistent login.
 
 ### 8. Student joins session
 
@@ -401,9 +438,11 @@ Production upload rules:
 
 - Validate active subscription.
 - Validate storage limit.
-- Store object under organization/session path.
+- Validate organization Google Drive connection and credential status.
+- Store organization-owned object in the organization's connected Google Drive under organization/session path.
 - Save metadata in `LiveSessionMediaAsset`.
 - Return protected/signed URL.
+- Use SoftLogic cloud storage only for app-specific/system files, metadata, temporary processing, logs, cache, or platform operations.
 
 Student upload is disabled in current backend unless future policy enables it.
 
@@ -418,14 +457,15 @@ Recording flow:
 3. Egress/recording service captures session if configured.
 4. Teacher stops recording.
 5. Backend stores recording stopped event.
-6. Recording processor uploads file to object storage.
+6. Recording processor uploads organization-owned recording file to the organization's connected Google Drive.
 7. `LiveSessionRecording` moves from processing to ready or failed.
 8. Ready recording appears in classroom materials for allowed users.
 
 Production requirements:
 
 - LiveKit Egress or equivalent recording processor.
-- Production object storage.
+- Organization Google Drive connection for production recording files.
+- SoftLogic cloud storage only for app-specific/system files and temporary processing.
 - Recording status update callback/job.
 - Retention policy by subscription plan.
 - Protected playback endpoint or signed URL.
@@ -610,6 +650,8 @@ Rules:
 - Parent access requires linked student plus parent material policy.
 - Public URLs should not expose private organization data without signed URL or proper access policy.
 - Production should prefer signed URLs or protected download endpoints.
+- Recording/material files should be fetched from the organization's connected Google Drive through protected access flow.
+- SoftLogic cloud storage should serve only app-specific/system files, temporary processing output, metadata, logs, cache, or other platform operation files.
 
 ## Failure And Recovery Cases
 
@@ -669,9 +711,11 @@ Required before full launch:
 
 - First-class Parent role or parent account model.
 - Parent-student linkage model.
+- Organization-wise student login activation and session-only QR policy.
 - Parent-filtered classroom summary and material access checks.
 - Role-specific license count enforcement for Teacher, Student, and Parent.
 - Partner Admin scoped live-session/material visibility.
+- Google Drive connection, credential validation, and organization content storage routing.
 - LiveKit production credentials.
 - TURN credentials for school networks.
 - Recording processor/LiveKit Egress for full session recording.
@@ -686,9 +730,11 @@ Required before full launch:
 - Teacher can create and start live session inside own organization.
 - Live session inherits organization from canvas.
 - Teacher can generate and refresh join code.
+- Teacher can display QR code with signed short-lived session reference and no embedded credentials.
 - Teacher can invite student by email.
 - New student receives welcome email and live-session invite email.
 - Student can login and join by code.
+- Student in login-disabled organization can join through session-only QR/join code without persistent dashboard access.
 - Wrong-email invite code is blocked.
 - Socket presence works.
 - Chat stores and broadcasts messages.
@@ -699,7 +745,7 @@ Required before full launch:
 - LiveKit audio/video connects with production credentials.
 - Screen share works.
 - Recording start/stop events are stored.
-- Recording file is uploaded to production object storage.
+- Recording file is uploaded to the organization's connected Google Drive.
 - Ready recording appears in student materials.
 - Parent can view linked student summaries and allowed ready materials only.
 - Parent cannot access unlinked student data.
