@@ -145,7 +145,26 @@
 
     const quickActions = $("#download-quick-actions");
     if (quickActions) {
+      const spotlight = $(".download-spotlight");
+      const versionDetails = $("#version-details-grid");
+      if (
+        spotlight &&
+        versionDetails?.parentElement === spotlight &&
+        quickActions.parentElement !== spotlight
+      ) {
+        spotlight.insertBefore(quickActions, versionDetails);
+      }
+
+      const adminAction = manifest.softlogicAdmin
+        ? [
+            {
+              href: manifest.softlogicAdmin.url,
+              label: manifest.softlogicAdmin.label || "Open Admin Panel",
+            },
+          ]
+        : [];
       quickActions.innerHTML = selectedRelease.artifacts
+        .concat(adminAction)
         .map((artifact, index) => {
           const localTarget = artifact.href.startsWith("/");
           return `
@@ -163,6 +182,7 @@
     }
 
     renderAiSetup();
+    renderAdminSetup();
 
     const versionDetails = $("#version-details-grid");
     if (versionDetails) {
@@ -221,23 +241,48 @@
 
   };
 
+  const ensureReleaseSetupGrid = () => {
+    const spotlight = $(".download-spotlight");
+    if (!spotlight) return null;
+
+    let grid = $("#release-setup-grid");
+    if (!grid) {
+      spotlight.insertAdjacentHTML(
+        "beforeend",
+        '<div class="release-setup-grid" id="release-setup-grid"></div>'
+      );
+      grid = $("#release-setup-grid");
+    }
+
+    return grid;
+  };
+
+  const syncReleaseSetupGrid = () => {
+    const grid = $("#release-setup-grid");
+    if (!grid) return;
+    grid.hidden = !Array.from(grid.children).some((child) => !child.hidden);
+  };
+
   const renderAiSetup = () => {
-    const quickActions = $("#download-quick-actions");
-    if (!quickActions) return;
+    const setupGrid = ensureReleaseSetupGrid();
+    if (!setupGrid) return;
 
     let aiSetup = $("#release-ai-setup");
     if (!aiSetup) {
-      quickActions.insertAdjacentHTML(
-        "afterend",
+      setupGrid.insertAdjacentHTML(
+        "afterbegin",
         '<div class="release-ai-setup" id="release-ai-setup"></div>'
       );
       aiSetup = $("#release-ai-setup");
+    } else if (aiSetup.parentElement !== setupGrid) {
+      setupGrid.prepend(aiSetup);
     }
 
     const setup = selectedRelease.aiSetup;
     if (!setup) {
       aiSetup.hidden = true;
       aiSetup.innerHTML = "";
+      syncReleaseSetupGrid();
       return;
     }
 
@@ -299,6 +344,81 @@
           .join("")}
       </div>
     `;
+    syncReleaseSetupGrid();
+  };
+
+  const renderAdminSetup = () => {
+    const setupGrid = ensureReleaseSetupGrid();
+    if (!setupGrid) return;
+
+    let admin = $("#release-admin-setup");
+    if (!admin) {
+      setupGrid.insertAdjacentHTML(
+        "beforeend",
+        '<div class="release-ai-setup release-admin-setup" id="release-admin-setup"></div>'
+      );
+      admin = $("#release-admin-setup");
+    } else if (admin.parentElement !== setupGrid) {
+      setupGrid.append(admin);
+    }
+
+    const cfg = manifest.softlogicAdmin;
+    if (!cfg) {
+      admin.hidden = true;
+      admin.innerHTML = "";
+      syncReleaseSetupGrid();
+      return;
+    }
+
+    const copyIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="9" y="9" width="13" height="13" rx="2"/>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+    </svg>`;
+    const eyeIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </svg>`;
+
+    admin.hidden = false;
+    admin.innerHTML = `
+      <div class="release-ai-setup-header release-admin-header">
+        <div>
+          <span class="badge primary">Admin console</span>
+          <h3>${escapeHtml(cfg.title)}</h3>
+        </div>
+      </div>
+      <div class="release-ai-key-list">
+        <div class="release-ai-key">
+          <div class="release-ai-key-main">
+            <span>Admin email</span>
+            <code class="release-ai-secret" data-secret="${escapeHtml(cfg.email)}" data-revealed="true">${escapeHtml(cfg.email)}</code>
+          </div>
+          <div class="release-ai-key-actions">
+            <button class="release-ai-icon-button" type="button" data-ai-key-action="copy" aria-label="Copy admin email">
+              ${copyIcon}
+              <span class="release-ai-button-label">Copy</span>
+            </button>
+          </div>
+        </div>
+        <div class="release-ai-key">
+          <div class="release-ai-key-main">
+            <span>Admin password</span>
+            <code class="release-ai-secret" data-secret="${escapeHtml(cfg.password)}" data-revealed="false">${escapeHtml(maskSecret(cfg.password))}</code>
+          </div>
+          <div class="release-ai-key-actions">
+            <button class="release-ai-icon-button" type="button" data-ai-key-action="toggle" aria-label="Reveal admin password">
+              ${eyeIcon}
+              <span class="release-ai-button-label">Reveal</span>
+            </button>
+            <button class="release-ai-icon-button" type="button" data-ai-key-action="copy" aria-label="Copy admin password">
+              ${copyIcon}
+              <span class="release-ai-button-label">Copy</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+    syncReleaseSetupGrid();
   };
 
   const setupAiSetupActions = () => {

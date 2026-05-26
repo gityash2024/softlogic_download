@@ -154,6 +154,17 @@
     })
     .then((markdown) => {
       preview.innerHTML = renderMarkdown(markdown);
+      window.SOFTLOGIC_DOC_CONTEXT = {
+        resourceType: doc ? "DOC_APPROVAL" : "TESTING_REPORT",
+        resourceId: selected.file,
+        title: selected.title,
+      };
+      preview.dispatchEvent(
+        new CustomEvent("softlogic:doc-rendered", {
+          bubbles: true,
+          detail: window.SOFTLOGIC_DOC_CONTEXT,
+        })
+      );
     })
     .catch((error) => {
       preview.innerHTML = `<h1>Report unavailable</h1><p>${escapeHtml(error.message)}</p>`;

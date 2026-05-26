@@ -18,9 +18,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=202605240031" />
-    <script src="./release-manifest.js?v=202605240031" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=202605260925" />
+    <script src="./release-manifest.js?v=202605260925" defer></script>
     <script src="./report-viewer.js?v=202605240031" defer></script>
+    <script src="./comments.js?v=202605260910" defer></script>
   </head>
   <body class="report-viewer-body">
     <header class="site-header" aria-label="SoftLogic document preview">
@@ -67,10 +68,96 @@
       </div>
     </header>
 
-    <main class="page report-page">
+    <main class="page report-page report-with-comments" id="report-shell">
       <article class="readme-preview markdown-body" id="report-preview">
         <p>Loading report...</p>
       </article>
+      <aside class="comments-panel" id="comments-panel" hidden aria-label="Document comments">
+        <header class="comments-panel-header">
+          <div class="comments-panel-title">
+            <h2>Comments</h2>
+            <span class="comments-count" id="comments-count" aria-live="polite"></span>
+          </div>
+          <div class="comments-panel-actions">
+            <button class="comments-identity-btn" id="comments-identity-btn" type="button" title="Change reviewer identity">
+              <span id="comments-identity-label">Sign in to comment</span>
+            </button>
+          </div>
+          <div class="comments-filter" role="tablist" aria-label="Filter comments">
+            <button type="button" class="comments-filter-btn is-active" data-filter="open" role="tab" aria-selected="true">Open</button>
+            <button type="button" class="comments-filter-btn" data-filter="resolved" role="tab" aria-selected="false">Resolved</button>
+            <button type="button" class="comments-filter-btn" data-filter="all" role="tab" aria-selected="false">All</button>
+          </div>
+        </header>
+        <div class="comments-list" id="comments-list">
+          <p class="comments-empty">Loading comments…</p>
+        </div>
+      </aside>
     </main>
+
+    <div class="selection-toolbar" id="selection-toolbar" hidden role="toolbar" aria-label="Selection actions">
+      <button type="button" class="selection-toolbar-btn" id="add-comment-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="14" height="14"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Add comment
+      </button>
+    </div>
+
+    <div class="identity-modal" id="identity-modal" hidden role="dialog" aria-modal="true" aria-labelledby="identity-modal-title">
+      <div class="identity-modal-backdrop" data-identity-dismiss></div>
+      <form class="identity-modal-card" id="identity-form" novalidate>
+        <header class="identity-modal-header">
+          <h2 id="identity-modal-title">Who's reviewing?</h2>
+          <p>Your name appears on every comment you post. Stored only in this browser.</p>
+        </header>
+        <label class="identity-modal-field">
+          <span>Name</span>
+          <input type="text" id="identity-name" name="name" maxlength="80" required autocomplete="name" placeholder="e.g. Aditya Jain" />
+        </label>
+        <label class="identity-modal-field">
+          <span>Email</span>
+          <input type="email" id="identity-email" name="email" maxlength="254" required autocomplete="email" placeholder="you@company.com" />
+        </label>
+        <p class="identity-modal-error" id="identity-error" hidden></p>
+        <footer class="identity-modal-footer">
+          <button type="button" class="identity-modal-cancel" data-identity-dismiss>Cancel</button>
+          <button type="submit" class="identity-modal-save">Save &amp; continue</button>
+        </footer>
+      </form>
+    </div>
+
+    <div class="identity-modal comment-modal" id="comment-modal" hidden role="dialog" aria-modal="true" aria-labelledby="comment-modal-title">
+      <div class="identity-modal-backdrop" data-comment-dismiss></div>
+      <form class="identity-modal-card comment-modal-card" id="comment-form" novalidate>
+        <header class="identity-modal-header">
+          <h2 id="comment-modal-title">Add comment</h2>
+          <p id="comment-modal-description">Comment on the highlighted text.</p>
+        </header>
+        <label class="identity-modal-field">
+          <span>Comment</span>
+          <textarea id="comment-body" name="comment" maxlength="4000" rows="5" required placeholder="Write your comment"></textarea>
+        </label>
+        <p class="identity-modal-error" id="comment-error" hidden></p>
+        <footer class="identity-modal-footer">
+          <button type="button" class="identity-modal-cancel" data-comment-dismiss>Cancel</button>
+          <button type="submit" class="identity-modal-save" id="comment-submit">Add comment</button>
+        </footer>
+      </form>
+    </div>
+
+    <div class="identity-modal comment-confirm-modal" id="comment-confirm-modal" hidden role="dialog" aria-modal="true" aria-labelledby="comment-confirm-title">
+      <div class="identity-modal-backdrop" data-confirm-dismiss></div>
+      <form class="identity-modal-card comment-confirm-card" id="comment-confirm-form">
+        <header class="identity-modal-header">
+          <h2 id="comment-confirm-title">Confirm action</h2>
+          <p id="comment-confirm-description"></p>
+        </header>
+        <footer class="identity-modal-footer">
+          <button type="button" class="identity-modal-cancel" data-confirm-dismiss>Cancel</button>
+          <button type="submit" class="identity-modal-save comment-confirm-danger" id="comment-confirm-submit">Confirm</button>
+        </footer>
+      </form>
+    </div>
+
+    <div class="comments-toast" id="comments-toast" hidden role="status" aria-live="polite"></div>
   </body>
 </html>

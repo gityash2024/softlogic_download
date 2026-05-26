@@ -1,6 +1,15 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
   currentVersion: "v1.0.8",
   lastSynced: "2026-05-25",
+  softlogicAdmin: {
+    title: "SoftLogic Admin Console",
+    description:
+      "Sign in to manage organisations, users, partners, licences, and admin tooling. Use the credentials below for the default super admin account.",
+    url: "https://adminpanelsoftlogic.vercel.app",
+    label: "Open Admin Panel",
+    email: "admin@softlogicwhiteboard.com",
+    password: "admin123"
+  },
   api: {
     backendBaseUrl: "https://softlogic-whiteboard-backend-testin.vercel.app",
     swaggerUrl: "https://softlogic-whiteboard-backend-testin.vercel.app/api/docs",
@@ -125,7 +134,7 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
         description:
           "For this version, add these organisation API keys before using AI features.",
         path:
-          "Login to whiteboard app > Settings > Licence > Admin Console > Organisation > Organisation Settings",
+          "Login to softlogic admin panel > Organisation > Organisation Settings",
         keys: [
           {
             label: "Gemini API key",
@@ -164,7 +173,7 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
           items: [
             "Organisation settings includes reveal and copy controls for API key fields.",
             "Version 1.0.8 requires the Gemini and Deepgram keys listed on the Downloads tab before using AI features.",
-            "Setup path: Login to whiteboard app > Settings > Licence > Admin Console > Organisation > Organisation Settings."
+            "Setup path: Login to softlogic admin panel > Organisation > Organisation Settings."
           ]
         },
         {
