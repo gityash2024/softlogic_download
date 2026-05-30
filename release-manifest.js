@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.9",
-  lastSynced: "2026-05-27",
+  currentVersion: "v1.0.10",
+  lastSynced: "2026-05-29",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -1443,6 +1443,9 @@ npm test
         name: "release-artifacts",
         meta: "Versioned downloadable links with historical support",
         children: [
+          { name: "Android APK v1.0.10 beta" },
+          { name: "Windows EXE v1.0.10 beta" },
+          { name: "Softlogic AI v1.0.10 beta using existing hosted page" },
           { name: "Android APK v1.0.9 build 10" },
           { name: "Windows EXE v1.0.9 build 10" },
           { name: "Android APK v1.0.8 build 9" },
@@ -1469,10 +1472,79 @@ npm test
         meta: "Shared version source across backend, Flutter, and portal",
         children: [
           { name: "Backend package/version metadata: unchanged in this download update" },
-          { name: "Flutter pubspec/app constants: 1.0.9+10" },
-          { name: "Portal current version: v1.0.9 build 10" }
+          { name: "Flutter pubspec/app constants: 1.0.9+10 artifacts reused for v1.0.10 beta" },
+          { name: "Portal current version: v1.0.10 beta under testing" }
         ]
       }
     ]
   }
 };
+
+(function () {
+  const manifest = window.SOFTLOGIC_RELEASE_MANIFEST;
+  if (!manifest) {
+    return;
+  }
+
+  const baseRelease = manifest.releases.find((release) => release.version === "v1.0.9");
+
+  if (!baseRelease || manifest.releases.some((release) => release.version === "v1.0.10")) {
+    return;
+  }
+
+  const copyItems = (items) =>
+    (items || []).map((item) => ({
+      ...item,
+      items: item.items ? [...item.items] : undefined,
+    }));
+
+  const betaRelease = {
+    ...baseRelease,
+    version: "v1.0.10",
+    appVersion: "1.0.10",
+    build: baseRelease.build,
+    status: "Under testing",
+    releaseType: "UI beta",
+    releaseDate: "2026-05-29",
+    title: "Beta UI testing release",
+    summary:
+      "Release v1.0.10 is an under-testing UI beta entry with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
+    artifacts: baseRelease.artifacts.map((artifact) => ({
+      ...artifact,
+      href:
+        artifact.platform === "Android"
+          ? "https://drive.google.com/file/d/1u5yy7o1EscrG1DzEjArUJyGyfI3uBUlG/view?usp=sharing"
+          : artifact.platform === "Windows"
+            ? "https://drive.google.com/file/d/1xzrpSIdnTtWOmXq2Wb9w2ccFZpgBSv3b/view?usp=sharing"
+            : artifact.href,
+      description: artifact.description
+        .replaceAll("v1.0.9", "v1.0.10 beta")
+        .replaceAll("1.0.9", "1.0.10 beta"),
+    })),
+    betaBanner: {
+      eyebrow: "Beta version",
+      title: "SoftLogic Whiteboard v1.0.10",
+      description:
+        "UI beta is under testing. Android APK and Windows EXE links are updated for v1.0.10.",
+      status: "Under testing",
+      type: "UI",
+      version: "v1.0.10",
+    },
+    aiSetup: {
+      ...baseRelease.aiSetup,
+      title: "AI features setup for v1.0.10 beta",
+    },
+    dashboardSection: {
+      title: "What's included in this beta UI build (v1.0.10)",
+      items: [
+        "New current release entry for v1.0.10 with beta under-testing status.",
+        "Large beta banner added at the top of the download page for clear UI testing visibility.",
+        "Android APK and Windows EXE actions now point to the updated v1.0.10 Google Drive artifacts.",
+        "Previous release history and selector behavior remain unchanged.",
+      ],
+    },
+    noteSections: copyItems(baseRelease.noteSections),
+  };
+
+  manifest.releases.unshift(betaRelease);
+})();

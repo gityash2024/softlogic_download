@@ -111,6 +111,12 @@
 
   const renderSummary = () => {
     setText("#current-version-label", currentRelease.version);
+    setText(".sidebar-footer-line", `${currentRelease.status || "Current"} - ${currentRelease.version}`);
+    const headerStatus = $(".header-meta > span:not(#current-version-label)");
+    if (headerStatus) {
+      headerStatus.textContent = currentRelease.status || "Current release";
+    }
+
     const releaseSummary = $("#release-summary");
     if (!releaseSummary) return;
 
@@ -126,8 +132,64 @@
     `;
   };
 
+  const renderBetaBanner = () => {
+    const panel = $("#panel-downloads");
+    const spotlight = $(".download-spotlight");
+    if (!panel || !spotlight) return;
+
+    let banner = $("#release-beta-banner");
+    if (!selectedRelease.betaBanner) {
+      banner?.remove();
+      return;
+    }
+
+    if (!banner) {
+      spotlight.insertAdjacentHTML("beforebegin", '<section class="release-beta-banner" id="release-beta-banner"></section>');
+      banner = $("#release-beta-banner");
+    }
+
+    const config = selectedRelease.betaBanner;
+    banner.innerHTML = `
+      <div class="release-beta-copy">
+        <span class="release-beta-eyebrow">${escapeHtml(config.eyebrow || "Beta version")}</span>
+        <h2>${escapeHtml(config.title || selectedRelease.version)}</h2>
+        <p>${escapeHtml(config.description || selectedRelease.summary)}</p>
+      </div>
+      <div class="release-beta-stats" aria-label="Beta release status">
+        <div>
+          <span>Version</span>
+          <strong>${escapeHtml(config.version || selectedRelease.version)}</strong>
+        </div>
+        <div>
+          <span>Status</span>
+          <strong>${escapeHtml(config.status || selectedRelease.status)}</strong>
+        </div>
+        <div>
+          <span>Type</span>
+          <strong>${escapeHtml(config.type || selectedRelease.releaseType || "UI")}</strong>
+        </div>
+      </div>
+    `;
+  };
+
   const renderDownloads = () => {
-    setText("#download-title", "SoftLogic Whiteboard");
+    const downloadTitle = $("#download-title");
+    if (downloadTitle) {
+      downloadTitle.hidden = true;
+      downloadTitle.textContent = "";
+    }
+    renderBetaBanner();
+
+    const cardMeta = $(".download-spotlight .card-meta");
+    if (cardMeta) {
+      const secondaryBadge = selectedRelease.betaBanner
+        ? selectedRelease.status
+        : "Stable artifacts";
+      cardMeta.innerHTML = `
+        ${badge(selectedRelease.betaBanner ? "Beta version" : "Current release", "primary")}
+        ${badge(secondaryBadge)}
+      `;
+    }
 
     const versionSelect = $("#release-version-select");
     if (versionSelect && versionSelect.options.length === 0) {
@@ -192,6 +254,9 @@
         ["Release date", selectedRelease.releaseDate],
         ["Status", selectedRelease.status],
       ];
+      if (selectedRelease.releaseType) {
+        details.push(["Type", selectedRelease.releaseType]);
+      }
 
       versionDetails.innerHTML = details
         .map(

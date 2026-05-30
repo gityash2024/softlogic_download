@@ -717,6 +717,104 @@ button { font: inherit; cursor: pointer; }
    Downloads
    ============================================================ */
 
+.release-beta-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  margin: 0 0 18px;
+  padding: 18px 22px;
+  border: 1px solid rgba(9, 105, 218, 0.28);
+  border-radius: var(--r-md);
+  background:
+    linear-gradient(135deg, rgba(9, 105, 218, 0.11), rgba(26, 127, 55, 0.1) 54%, rgba(154, 103, 0, 0.1)),
+    var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.release-beta-copy {
+  min-width: 0;
+}
+
+.release-beta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid rgba(26, 127, 55, 0.3);
+  border-radius: var(--r-pill);
+  background: var(--success-bg);
+  color: var(--success);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.release-beta-banner h2 {
+  max-width: 820px;
+  margin: 12px 0 0;
+  color: var(--ink-950);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.release-beta-banner p {
+  max-width: 760px;
+  margin: 10px 0 0;
+  color: var(--ink-700);
+  font-size: var(--text-md);
+  line-height: 1.55;
+}
+
+.release-beta-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  min-width: 510px;
+  overflow: hidden;
+  border: 1px solid rgba(9, 105, 218, 0.18);
+  border-radius: var(--r-sm);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.release-beta-stats div {
+  min-width: 0;
+  padding: 12px 16px;
+  border-right: 1px solid rgba(9, 105, 218, 0.14);
+}
+
+.release-beta-stats div:last-child {
+  border-right: 0;
+}
+
+:root[data-theme="dark"] .release-beta-stats div {
+  background: transparent;
+}
+
+:root[data-theme="dark"] .release-beta-stats {
+  background: rgba(13, 17, 23, 0.58);
+}
+
+.release-beta-stats span {
+  display: block;
+  color: var(--ink-500);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.release-beta-stats strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink-950);
+  font-size: var(--text-lg);
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
 .download-spotlight {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
@@ -2731,6 +2829,16 @@ button { font: inherit; cursor: pointer; }
 
   .page { padding: 18px 18px 64px; }
 
+  .release-beta-banner {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .release-beta-stats {
+    min-width: 0;
+    width: 100%;
+  }
+
   .download-spotlight {
     grid-template-columns: 1fr;
     padding: 18px 18px;
@@ -2759,6 +2867,7 @@ button { font: inherit; cursor: pointer; }
   }
 
   .download-spotlight h2 { font-size: var(--text-3xl); }
+  .release-beta-banner h2 { font-size: var(--text-3xl); }
 
   /* Responsive tables — stack rows as cards */
   .pending-table,
@@ -2844,6 +2953,19 @@ button { font: inherit; cursor: pointer; }
   .swagger-ui-preview .swagger-ui .wrapper { padding: 10px; }
 
   .scroll-top-button { right: 14px; bottom: 14px; }
+
+  .release-beta-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .release-beta-stats div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(9, 105, 218, 0.14);
+  }
+
+  .release-beta-stats div:last-child {
+    border-bottom: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
