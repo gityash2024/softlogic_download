@@ -164,13 +164,137 @@
           <span>Status</span>
           <strong>${escapeHtml(config.status || selectedRelease.status)}</strong>
         </div>
-        <div>
-          <span>Type</span>
-          <strong>${escapeHtml(config.type || selectedRelease.releaseType || "UI")}</strong>
-        </div>
       </div>
     `;
   };
+
+  const getCategoryBadge = (text) => {
+    const normalized = text.toLowerCase();
+    let label = "Enhancement";
+    let tone = "enhancement";
+    
+    if (normalized.includes("add") || normalized.includes("introduc") || normalized.includes("creat") || normalized.includes("new feature") || normalized.includes("integrat") || normalized.includes("support")) {
+      label = "Feature";
+      tone = "feature";
+    } else if (normalized.includes("fix") || normalized.includes("bug") || normalized.includes("error") || normalized.includes("resolv") || normalized.includes("correct") || normalized.includes("prevent")) {
+      label = "Bugfix";
+      tone = "bugfix";
+    } else if (normalized.includes("test") || normalized.includes("verify") || normalized.includes("check") || normalized.includes("coverage")) {
+      label = "Testing";
+      tone = "testing";
+    } else if (normalized.includes("optimi") || normalized.includes("polish") || normalized.includes("improv") || normalized.includes("refin") || normalized.includes("clean") || normalized.includes("streamlin") || normalized.includes("upgrad") || normalized.includes("enhanc")) {
+      label = "Enhancement";
+      tone = "enhancement";
+    }
+    
+    return `<span class="badge-tag tag-${tone}">${label}</span>`;
+  };
+
+  const renderReleaseHighlights = () => {
+    const releaseHighlights = $("#release-highlights");
+    if (!releaseHighlights) return;
+
+    const timelineNodesHtml = manifest.releases
+      .map((release) => {
+        const isActive = release.version === selectedRelease.version;
+        const statusClass = String(release.status || "").toLowerCase();
+        return `
+          <button 
+            type="button" 
+            class="timeline-node ${isActive ? "is-active" : ""}" 
+            data-version="${escapeHtml(release.version)}"
+            aria-label="View release notes for ${escapeHtml(release.version)}"
+          >
+            <div class="timeline-node-version">
+              <span>${escapeHtml(release.version)}</span>
+              <span class="timeline-node-status ${statusClass}">${escapeHtml(release.status || "Previous")}</span>
+            </div>
+            <div class="timeline-node-date">${escapeHtml(release.releaseDate)}</div>
+          </button>
+        `;
+      })
+      .join("");
+
+    const isSingleUserFriendly =
+      selectedRelease.dashboardMode === "singleUserFriendly" &&
+      selectedRelease.dashboardSection;
+
+    let contentHtml = "";
+    if (isSingleUserFriendly) {
+      const section = selectedRelease.dashboardSection;
+      contentHtml = `
+        <article class="release-highlight-card">
+          <h3>${escapeHtml(section.title)}</h3>
+          <ul>
+            ${section.items
+              .map(
+                (item) => `
+                  <li>
+                    ${getCategoryBadge(item)}
+                    <span>${escapeHtml(item)}</span>
+                  </li>
+                `
+              )
+              .join("")}
+          </ul>
+        </article>
+      `;
+    } else {
+      contentHtml = selectedRelease.noteSections
+        .map(
+          (section) => `
+            <article class="release-highlight-card">
+              <h3>${escapeHtml(section.title)}</h3>
+              <ul>
+                ${section.items
+                  .map(
+                    (item) => `
+                      <li>
+                        ${getCategoryBadge(item)}
+                        <span>${escapeHtml(item)}</span>
+                      </li>
+                    `
+                  )
+                  .join("")}
+              </ul>
+            </article>
+          `
+        )
+        .join("");
+    }
+
+    releaseHighlights.innerHTML = `
+      <div class="timeline-container">
+        <div class="timeline-sidebar">
+          <div class="timeline-nodes">
+            ${timelineNodesHtml}
+          </div>
+        </div>
+        <div class="timeline-content-panel" id="timeline-content-panel">
+          ${contentHtml}
+        </div>
+      </div>
+    `;
+
+    // Add click event listeners to the timeline nodes
+    releaseHighlights.querySelectorAll(".timeline-node").forEach((node) => {
+      node.addEventListener("click", () => {
+        const version = node.dataset.version;
+        if (version === selectedRelease.version) return;
+
+        selectedRelease =
+          manifest.releases.find((r) => r.version === version) || currentRelease;
+
+        const versionSelect = $("#release-version-select");
+        if (versionSelect) {
+          versionSelect.value = selectedRelease.version;
+        }
+
+        renderDownloads();
+      });
+    });
+  };
+
 
   const renderDownloads = () => {
     const downloadTitle = $("#download-title");
@@ -246,63 +370,9 @@
     renderAiSetup();
     renderAdminSetup();
 
-    const versionDetails = $("#version-details-grid");
-    if (versionDetails) {
-      const details = [
-        ["Version", selectedRelease.version],
-        ["Build", selectedRelease.build],
-        ["Release date", selectedRelease.releaseDate],
-        ["Status", selectedRelease.status],
-      ];
-      if (selectedRelease.releaseType) {
-        details.push(["Type", selectedRelease.releaseType]);
-      }
 
-      versionDetails.innerHTML = details
-        .map(
-          ([label, value]) => `
-            <div class="version-detail">
-              <span>${escapeHtml(label)}</span>
-              <strong>${escapeHtml(value)}</strong>
-            </div>
-          `
-        )
-        .join("");
-    }
 
-    const releaseHighlights = $("#release-highlights");
-    if (releaseHighlights) {
-      const isSingleUserFriendly =
-        selectedRelease.dashboardMode === "singleUserFriendly" &&
-        selectedRelease.dashboardSection;
-
-      releaseHighlights.classList.toggle("single-user-friendly", Boolean(isSingleUserFriendly));
-
-      if (isSingleUserFriendly) {
-        const section = selectedRelease.dashboardSection;
-        releaseHighlights.innerHTML = `
-          <article class="release-highlight-card">
-            <h3>${escapeHtml(section.title)}</h3>
-            <ul>
-              ${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
-            </ul>
-          </article>
-        `;
-      } else {
-        releaseHighlights.innerHTML = selectedRelease.noteSections
-          .map(
-            (section) => `
-              <article class="release-highlight-card">
-                <h3>${escapeHtml(section.title)}</h3>
-                <ul>
-                  ${section.items.slice(0, 3).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
-                </ul>
-              </article>
-            `
-          )
-          .join("");
-      }
-    }
+    renderReleaseHighlights();
 
   };
 

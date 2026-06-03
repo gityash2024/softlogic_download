@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.11",
-  lastSynced: "2026-05-30",
+  currentVersion: "v1.0.13",
+  lastSynced: "2026-06-02",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -93,10 +93,209 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
   docApprovalLastUpdated: "2026-05-25 12:44 IST",
   releases: [
     {
+      version: "v1.0.12",
+      appVersion: "1.0.12",
+      build: "13",
+      status: "Previous",
+      releaseDate: "2026-06-02",
+      title: "Dotted drawing, settings sliders, and scoped storage verification release",
+      summary:
+        "Release bump to v1.0.12 with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
+      artifacts: [
+        {
+          platform: "Android",
+          format: "APK",
+          label: "Download Android APK",
+          href:
+            "https://drive.google.com/file/d/1KJkUwpR-wQIlh72rByLSSLZFFmKnyNoO/view?usp=sharing",
+          description:
+            "Android release build v1.0.12 for tablet, mobile, and whiteboard hardware classroom use."
+        },
+        {
+          platform: "Windows",
+          format: "EXE",
+          label: "Download Windows EXE",
+          href:
+            "https://drive.google.com/file/d/14Ga-ufVq6f10gvyTHjMnwPlDFbM5W7jA/view?usp=sharing",
+          description:
+            "One-file Windows installer build v1.0.12 for desktop classroom stations and teaching workflows."
+        },
+        {
+          platform: "Softlogic AI",
+          format: "Hosted page",
+          label: "Open Softlogic AI",
+          href: "/softlogic-ai",
+          description:
+            "Hosted Softlogic AI page retained with the same Vercel project."
+        }
+      ],
+      aiSetup: {
+        title: "AI features setup for v1.0.12",
+        description:
+          "For this version, add these organisation API keys before using AI features.",
+        path:
+          "Login to softlogic admin panel > Organisation > Organisation Settings",
+        keys: [
+          {
+            label: "Gemini API key",
+            value: "AIzaSyDbbv5Xm8so3AIYQahwNeFQ7o1N_wpfyic"
+          },
+          {
+            label: "Deepgram API key",
+            value: "a4d45bfd78210e24cc92cd015fcd9124a30f194e"
+          }
+        ]
+      },
+      dashboardMode: "singleUserFriendly",
+      dashboardSection: {
+        title: "What's included in this whiteboard build (v1.0.12)",
+        items: [
+          "Interactive pen and eraser settings sliders UI layout polish.",
+          "Refined canvas painter dotted pen drawing paths and gesture-based recognition.",
+          "Integrated secure storage verification flows and Scoped Storage directory checks.",
+          "Polished cloud integration dialogs and custom whiteboard file picker filters.",
+          "Expanded automated test suites covering dotted pens, export flows, and screen bounds."
+        ]
+      },
+      noteSections: [
+        {
+          title: "Whiteboard Drawing & Canvas",
+          items: [
+            "Optimized canvas painter stroke rendering paths and drawing controller states.",
+            "Enhanced dotted pen drawing logic, coordinate allocations, and stroke continuities.",
+            "Updated pen_settings_panel.dart and eraser_settings_panel.dart with custom slider UI inputs.",
+            "Polished whiteboard_minimap.dart zooming and bounds tracking persistences."
+          ]
+        },
+        {
+          title: "Storage & File System",
+          items: [
+            "Added storage_access_service.dart and updated bootstrap.dart for Scoped Storage directory checks.",
+            "Polished MainActivity.kt Kotlin adjustments for scoped folder validations.",
+            "Refined whiteboard_export_service.dart and export_destination_dialog.dart validation guides.",
+            "Updated whiteboard_file_picker.dart filtering and folder loader hooks."
+          ]
+        },
+        {
+          title: "Cloud & UI Polish",
+          items: [
+            "Polished cloud_import_dialog.dart Dropbox and GDrive integration preview guides.",
+            "Refined shape_geometry.dart, geometry_panel.dart, and shape_panel.dart classifications."
+          ]
+        },
+        {
+          title: "Testing Suites & Verification",
+          items: [
+            "Added comprehensive test suites: whiteboard_dots_pen_test.dart and whiteboard_export_ui_test.dart.",
+            "Added automated verification for whiteboard_import_ui_test.dart and geometry_panel_test.dart.",
+            "Portal downloads point to current v1.0.12 beta APK while preserving stable v1.0.11 history."
+          ]
+        }
+      ]
+    },
+    {
+      version: "v1.0.11",
+      appVersion: "1.0.11",
+      build: "12",
+      status: "Current",
+      releaseDate: "2026-05-30",
+      title: "Licensing activation, support threads, and whiteboard testing suite release",
+      summary:
+        "Release bump to v1.0.11 with updated Android APK and one-file Windows installer EXE links. This version introduces hardware activation keys, a help desk support module with user thread tracking, and expanded whiteboard verification suites.",
+      artifacts: [
+        {
+          platform: "Android",
+          format: "APK",
+          label: "Download Android APK",
+          href:
+            "https://drive.google.com/file/d/1l2vasQMGgtPr5cCRvMnp-9qguJTF_jNL/view?usp=sharing",
+          description:
+            "Android release build v1.0.11 for tablet, mobile, and whiteboard hardware classroom use."
+        },
+        {
+          platform: "Windows",
+          format: "EXE",
+          label: "Download Windows EXE",
+          href:
+            "https://drive.google.com/file/d/14Ga-ufVq6f10gvyTHjMnwPlDFbM5W7jA/view?usp=sharing",
+          description:
+            "One-file Windows installer build v1.0.11 for desktop classroom stations and teaching workflows."
+        },
+        {
+          platform: "Softlogic AI",
+          format: "Hosted page",
+          label: "Open Softlogic AI",
+          href: "/softlogic-ai",
+          description:
+            "Hosted Softlogic AI page retained with the same Vercel project."
+        }
+      ],
+      aiSetup: {
+        title: "AI features setup for v1.0.11",
+        description:
+          "For this version, add these organisation API keys before using AI features.",
+        path:
+          "Login to softlogic admin panel > Organisation > Organisation Settings",
+        keys: [
+          {
+            label: "Gemini API key",
+            value: "AIzaSyDbbv5Xm8so3AIYQahwNeFQ7o1N_wpfyic"
+          },
+          {
+            label: "Deepgram API key",
+            value: "a4d45bfd78210e24cc92cd015fcd9124a30f194e"
+          }
+        ]
+      },
+      dashboardMode: "singleUserFriendly",
+      dashboardSection: {
+        title: "What's included in this whiteboard build (v1.0.11)",
+        items: [
+          "Hardware activation and licensing system requiring key inputs on startup.",
+          "Help support center with detailed ticket threads, messages, and unread notifications.",
+          "Refined whiteboard multi-touch ink points tracking and import storage checks.",
+          "Comprehensive automated test coverage for drawing, tools, and error boundary components."
+        ]
+      },
+      noteSections: [
+        {
+          title: "Hardware Licensing & Activation",
+          items: [
+            "Added lib/features/license/domain/entities and data/hardware_activation_service.dart.",
+            "Added activation_key_screen.dart and subscription_required_screen.dart for license validation.",
+            "Implemented activation provider state management for first-load license enforcement."
+          ]
+        },
+        {
+          title: "Help Desk Support Tickets",
+          items: [
+            "Added lib/features/support/ and help_threads_screen.dart to list support tickets.",
+            "Added help_new_thread_screen.dart and help_thread_detail_screen.dart with ticket chat views.",
+            "Configured support_unread_provider.dart to track and notify users of ticket replies."
+          ]
+        },
+        {
+          title: "Whiteboard Drawing & Storage",
+          items: [
+            "Refined multi-touch drawing points and stroke alignments inside canvas painter.",
+            "Polished whiteboard import service file pickers and temporary workspace loaders.",
+            "Integrated device_storage_service.dart for secure credential and session mapping."
+          ]
+        },
+        {
+          title: "Testing Suites & Verification",
+          items: [
+            "Added comprehensive test suites: error_interceptor_test.dart and whiteboard_screen_test.dart.",
+            "Added automated verification for geometry instrument overlays and whiteboard write tools."
+          ]
+        }
+      ]
+    },
+    {
       version: "v1.0.10",
       appVersion: "1.0.10",
       build: "11",
-      status: "Current",
+      status: "Previous",
       releaseDate: "2026-05-29",
       title: "Whiteboard browser, geometry guides, and localization packs release",
       summary:
@@ -138,7 +337,7 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
         keys: [
           {
             label: "Gemini API key",
-            value: "AIzaSyDbbv5Xm8so3AIYQahwNeFQ7o1N_wpfyic"
+            value: "AQ.Ab8RN6KUxCawMDe5PhQiwz4oaueLEYpLgFDZXs2_vuVoMZsLlQ"
           },
           {
             label: "Deepgram API key",
@@ -237,7 +436,7 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
         keys: [
           {
             label: "Gemini API key",
-            value: "AIzaSyDbbv5Xm8so3AIYQahwNeFQ7o1N_wpfyic"
+            value: "AQ.Ab8RN6KUxCawMDe5PhQiwz4oaueLEYpLgFDZXs2_vuVoMZsLlQ"
           },
           {
             label: "Deepgram API key",
@@ -350,7 +549,7 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
         keys: [
           {
             label: "Gemini API key",
-            value: "AIzaSyDbbv5Xm8so3AIYQahwNeFQ7o1N_wpfyic"
+            value: "AQ.Ab8RN6KUxCawMDe5PhQiwz4oaueLEYpLgFDZXs2_vuVoMZsLlQ"
           },
           {
             label: "Deepgram API key",
@@ -1272,13 +1471,13 @@ P1-115|Export & Platform Support|Android Build|Setup Google Play Store listing|D
 ![Backend](https://img.shields.io/badge/backend-Node.js%20Express-111827)
 ![Platforms](https://img.shields.io/badge/platforms-Android%20%7C%20Windows-5f6f89)
 
-SoftLogic Whiteboard is a classroom-focused digital whiteboard platform for teaching, drawing, presenting, exporting, live-session groundwork, content preparation, integrations, and AI-assisted education workflows. This download portal publishes the current v1.0.11 beta release artifacts together with preserved v1.0.10, v1.0.9, v1.0.8, v1.0.7, v1.0.6, v1.0.5, v1.0.3, v1.0.2, v1.0.1, and v1.0.0 downloads, API reference, development phase status, and release documentation.
+SoftLogic Whiteboard is a classroom-focused digital whiteboard platform for teaching, drawing, presenting, exporting, live-session groundwork, content preparation, integrations, and AI-assisted education workflows. This download portal publishes the current v1.0.11 release artifacts together with preserved v1.0.10, v1.0.9, v1.0.8, v1.0.7, v1.0.6, v1.0.5, v1.0.3, v1.0.2, v1.0.1, and v1.0.0 downloads, API reference, development phase status, and release documentation.
 
 ## Release Summary
 
 | Field | Value |
 | --- | --- |
-| Release | v1.0.11 beta |
+| Release | v1.0.11 |
 | App version | 1.0.11+12 |
 | Build | 12 |
 | Release date | 2026-05-30 |
@@ -1363,7 +1562,7 @@ npm test
 
 ## Release Maintenance
 
-1. Keep existing v1.0.10, v1.0.9, v1.0.8, v1.0.7, v1.0.6, v1.0.5, v1.0.3, v1.0.2, v1.0.1, and v1.0.0 artifact links frozen while publishing v1.0.11 beta as the current release.
+1. Keep existing v1.0.11, v1.0.10, v1.0.9, v1.0.8, v1.0.7, v1.0.6, v1.0.5, v1.0.3, v1.0.2, v1.0.1, and v1.0.0 artifact links frozen while publishing v1.0.12 beta as the current release.
 2. Add every future APK or EXE as a new release record instead of overwriting old release records.
 3. Update portal version metadata, release notes, API docs, phase status, and README together when a new release is published.
 4. Deploy backend changes first when API metadata changes, then deploy the portal.
@@ -1542,9 +1741,11 @@ npm test
         name: "release-artifacts",
         meta: "Versioned downloadable links with historical support",
         children: [
-          { name: "Android APK v1.0.11 beta" },
-          { name: "Windows EXE v1.0.11 beta" },
-          { name: "Softlogic AI v1.0.11 beta using existing hosted page" },
+          { name: "Android APK v1.0.12 beta" },
+          { name: "Windows EXE v1.0.12 beta" },
+          { name: "Softlogic AI v1.0.12 beta using existing hosted page" },
+          { name: "Android APK v1.0.11 build 12" },
+          { name: "Windows EXE v1.0.11 build 12" },
           { name: "Android APK v1.0.10 build 11" },
           { name: "Windows EXE v1.0.10 build 11" },
           { name: "Android APK v1.0.9 build 10" },
@@ -1573,8 +1774,8 @@ npm test
         meta: "Shared version source across backend, Flutter, and portal",
         children: [
           { name: "Backend package/version metadata: unchanged in this download update" },
-          { name: "Flutter pubspec/app constants: 1.0.10+11 artifacts reused for v1.0.11 beta" },
-          { name: "Portal current version: v1.0.11 beta under testing" }
+          { name: "Flutter pubspec/app constants: 1.0.11+12 artifacts reused for v1.0.13 beta" },
+          { name: "Portal current version: v1.0.13 beta under testing" }
         ]
       }
     ]
@@ -1587,88 +1788,90 @@ npm test
     return;
   }
 
-  const baseRelease = manifest.releases.find((release) => release.version === "v1.0.10");
+  const baseRelease = manifest.releases.find((release) => release.version === "v1.0.12");
 
-  if (!baseRelease || manifest.releases.some((release) => release.version === "v1.0.11")) {
+  if (!baseRelease || manifest.releases.some((release) => release.version === "v1.0.13")) {
     return;
   }
 
   const betaRelease = {
     ...baseRelease,
-    version: "v1.0.11",
-    appVersion: "1.0.11",
-    build: "12",
+    version: "v1.0.13",
+    appVersion: "1.0.13",
+    build: "14",
     status: "Under testing",
     releaseType: "UI beta",
-    releaseDate: "2026-05-30",
-    title: "Licensing activation, support threads, and whiteboard testing suite release",
+    releaseDate: "2026-06-02",
+    title: "Dotted drawing, settings sliders, and scoped storage verification release",
     summary:
-      "Release bump to v1.0.11 is an under-testing UI beta entry with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
+      "Release bump to v1.0.13 is an under-testing UI beta entry with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
     artifacts: baseRelease.artifacts.map((artifact) => ({
       ...artifact,
       href:
         artifact.platform === "Android"
-          ? "https://drive.google.com/file/d/1l2vasQMGgtPr5cCRvMnp-9qguJTF_jNL/view?usp=sharing"
+          ? "https://drive.google.com/file/d/1z28Blu86LT1UMCX_IAKEFSzT5kvhvlT6/view?usp=sharing"
           : artifact.platform === "Windows"
-            ? "https://drive.google.com/file/d/14Ga-ufVq6f10gvyTHjMnwPlDFbM5W7jA/view?usp=sharing"
+            ? "https://drive.google.com/file/d/1rHE22VPZDz-MlWzIxWeMS-p8qzGFMgPs/view?usp=sharing"
             : artifact.href,
       description: artifact.description
-        .replaceAll("v1.0.10", "v1.0.11 beta")
-        .replaceAll("1.0.10", "1.0.11 beta"),
+        .replaceAll("v1.0.12", "v1.0.13 beta")
+        .replaceAll("1.0.12", "1.0.13 beta"),
     })),
     betaBanner: {
       eyebrow: "Beta version",
-      title: "SoftLogic Whiteboard v1.0.11",
+      title: "SoftLogic Whiteboard v1.0.13",
       description:
-        "UI beta is under testing. Android APK and Windows EXE links are updated for v1.0.11.",
+        "UI beta is under testing. Android APK and Windows EXE links are updated for v1.0.13.",
       status: "Under testing",
       type: "UI",
-      version: "v1.0.11",
+      version: "v1.0.13",
     },
     aiSetup: {
       ...baseRelease.aiSetup,
-      title: "AI features setup for v1.0.11 beta",
+      title: "AI features setup for v1.0.13 beta",
     },
     dashboardSection: {
-      title: "What's included in this beta UI build (v1.0.11)",
+      title: "What's included in this beta UI build (v1.0.13)",
       items: [
-        "Hardware activation and licensing system requiring key inputs on startup.",
-        "Help support center with detailed ticket threads, messages, and unread notifications.",
-        "Refined whiteboard multi-touch ink points tracking and import storage checks.",
-        "Comprehensive automated test coverage for drawing, tools, and error boundary components."
+        "Interactive pen and eraser settings sliders UI layout polish.",
+        "Refined canvas painter dotted pen drawing paths and gesture-based recognition.",
+        "Integrated secure storage verification flows and Scoped Storage directory checks.",
+        "Polished cloud integration dialogs and custom whiteboard file picker filters.",
+        "Expanded automated test suites covering dotted pens, export flows, and screen bounds."
       ],
     },
     noteSections: [
       {
-        title: "Hardware Licensing & Activation",
+        title: "Whiteboard Drawing & Canvas",
         items: [
-          "Added lib/features/license/domain/entities and data/hardware_activation_service.dart.",
-          "Added activation_key_screen.dart and subscription_required_screen.dart for license validation.",
-          "Implemented activation provider state management for first-load license enforcement."
+          "Optimized canvas painter stroke rendering paths and drawing controller states.",
+          "Enhanced dotted pen drawing logic, coordinate allocations, and stroke continuities.",
+          "Updated pen_settings_panel.dart and eraser_settings_panel.dart with custom slider UI inputs.",
+          "Polished whiteboard_minimap.dart zooming and bounds tracking persistences."
         ]
       },
       {
-        title: "Help Desk Support Tickets",
+        title: "Storage & File System",
         items: [
-          "Added lib/features/support/ and help_threads_screen.dart to list support tickets.",
-          "Added help_new_thread_screen.dart and help_thread_detail_screen.dart with ticket chat views.",
-          "Configured support_unread_provider.dart to track and notify users of ticket replies."
+          "Added storage_access_service.dart and updated bootstrap.dart for Scoped Storage directory checks.",
+          "Polished MainActivity.kt Kotlin adjustments for scoped folder validations.",
+          "Refined whiteboard_export_service.dart and export_destination_dialog.dart validation guides.",
+          "Updated whiteboard_file_picker.dart filtering and folder loader hooks."
         ]
       },
       {
-        title: "Whiteboard Drawing & Storage",
+        title: "Cloud & UI Polish",
         items: [
-          "Refined multi-touch drawing points and stroke alignments inside canvas painter.",
-          "Polished whiteboard import service file pickers and temporary workspace loaders.",
-          "Integrated device_storage_service.dart for secure credential and session mapping."
+          "Polished cloud_import_dialog.dart Dropbox and GDrive integration preview guides.",
+          "Refined shape_geometry.dart, geometry_panel.dart, and shape_panel.dart classifications."
         ]
       },
       {
         title: "Testing Suites & Verification",
         items: [
-          "Added comprehensive test suites: error_interceptor_test.dart and whiteboard_screen_test.dart.",
-          "Added automated verification for geometry instrument overlays and whiteboard write tools.",
-          "Portal downloads point to current v1.0.11 beta APK and Windows EXE artifacts while preserving stable v1.0.10 history."
+          "Added comprehensive test suites: whiteboard_dots_pen_test.dart and whiteboard_export_ui_test.dart.",
+          "Added automated verification for whiteboard_import_ui_test.dart and geometry_panel_test.dart.",
+          "Portal downloads point to current v1.0.13 beta APK while preserving stable v1.0.11 history."
         ]
       }
     ],
