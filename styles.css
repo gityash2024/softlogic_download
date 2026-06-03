@@ -1116,13 +1116,13 @@ button { font: inherit; cursor: pointer; }
    ============================================================ */
 
 .release-highlights {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  display: block;
+  width: 100%;
+  min-width: 0;
 }
 
 .release-highlights.single-user-friendly {
-  grid-template-columns: minmax(0, 1fr);
+  display: block;
 }
 
 .release-highlight-card {
@@ -2965,6 +2965,19 @@ button { font: inherit; cursor: pointer; }
   .release-beta-stats div:last-child {
     border-bottom: 0;
   }
+
+  .timeline-content-panel .release-highlight-card {
+    padding: 18px;
+  }
+
+  .timeline-content-panel ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .timeline-content-panel li {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3679,8 +3692,9 @@ html[data-theme="light"] .shimmer::after {
    ============================================================ */
 .timeline-container {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 32px;
+  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
   width: 100%;
   margin-top: 24px;
 }
@@ -3844,9 +3858,10 @@ html[data-theme="light"] .timeline-node::before {
 
 /* Glassmorphic detailed highlights content panel */
 .timeline-content-panel {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
+  min-width: 0;
   animation: panelFade 300ms var(--ease-out) both;
 }
 
@@ -3855,10 +3870,11 @@ html[data-theme="light"] .timeline-node::before {
   backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
-  padding: 24px;
+  padding: 24px 28px;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: top center;
+  min-width: 0;
 }
 
 .timeline-content-panel .release-highlight-card:hover {
@@ -3879,8 +3895,8 @@ html[data-theme="light"] .timeline-node::before {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 12px;
 }
 
@@ -3891,6 +3907,20 @@ html[data-theme="light"] .timeline-node::before {
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--border-muted);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+}
+
+.timeline-content-panel li::before {
+  display: none;
+}
+
+.timeline-content-panel li span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 /* Categorized tag badges in HSL */

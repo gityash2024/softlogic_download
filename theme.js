@@ -13,10 +13,7 @@
   function getPreferredTheme() {
     var stored = getStoredTheme();
     if (stored === "light" || stored === "dark") return stored;
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
+    return "dark";
   }
 
   function applyTheme(theme) {
@@ -40,20 +37,6 @@
 
   // Apply theme immediately (runs in <head> before body paints)
   applyTheme(getPreferredTheme());
-
-  // Follow OS changes if user has not picked a theme manually
-  if (window.matchMedia) {
-    try {
-      var mq = window.matchMedia("(prefers-color-scheme: dark)");
-      var handler = function (event) {
-        if (!getStoredTheme()) {
-          applyTheme(event.matches ? "dark" : "light");
-        }
-      };
-      if (mq.addEventListener) mq.addEventListener("change", handler);
-      else if (mq.addListener) mq.addListener(handler);
-    } catch (_) {}
-  }
 
   function toggleTheme() {
     var current = document.documentElement.getAttribute("data-theme") || "light";
@@ -115,11 +98,16 @@
     }
   });
 
+  function restoreInitialUi() {
+    applyTheme(document.documentElement.getAttribute("data-theme") || getPreferredTheme());
+    restoreViews();
+  }
+
   // Apply view preferences on initial DOM ready and after each tab activation
   // (portal.js populates content via innerHTML on load, so the parent class still applies)
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", restoreViews);
+    document.addEventListener("DOMContentLoaded", restoreInitialUi);
   } else {
-    restoreViews();
+    restoreInitialUi();
   }
 })();
