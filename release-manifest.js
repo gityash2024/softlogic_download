@@ -1,5 +1,5 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.14",
+  currentVersion: "v1.0.15",
   lastSynced: "2026-06-04",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
@@ -1741,9 +1741,11 @@ npm test
         name: "release-artifacts",
         meta: "Versioned downloadable links with historical support",
         children: [
-          { name: "Android APK v1.0.14 beta" },
-          { name: "Windows EXE v1.0.14 beta" },
-          { name: "Softlogic AI v1.0.14 beta using existing hosted page" },
+          { name: "Android APK v1.0.15 beta" },
+          { name: "Windows EXE v1.0.15 beta" },
+          { name: "Softlogic AI v1.0.15 beta using existing hosted page" },
+          { name: "Android APK v1.0.14 build 15" },
+          { name: "Windows EXE v1.0.14 build 15" },
           { name: "Android APK v1.0.13 build 14" },
           { name: "Windows EXE v1.0.13 build 14" },
           { name: "Android APK v1.0.11 build 12" },
@@ -1776,8 +1778,8 @@ npm test
         meta: "Shared version source across backend, Flutter, and portal",
         children: [
           { name: "Backend package/version metadata: unchanged in this download update" },
-          { name: "Flutter pubspec/app constants: 1.0.11+12 artifacts reused for v1.0.14 beta" },
-          { name: "Portal current version: v1.0.14 beta under testing" }
+          { name: "Flutter pubspec/app constants: 1.0.11+12 artifacts reused for v1.0.15 beta" },
+          { name: "Portal current version: v1.0.15 beta under testing" }
         ]
       }
     ]
@@ -1792,7 +1794,7 @@ npm test
 
   const baseRelease = manifest.releases.find((release) => release.version === "v1.0.12");
 
-  if (!baseRelease || manifest.releases.some((release) => release.version === "v1.0.14")) {
+  if (!baseRelease || manifest.releases.some((release) => release.version === "v1.0.15")) {
     return;
   }
 
@@ -1871,16 +1873,16 @@ npm test
     ],
   };
 
-  const betaRelease = {
+  const releasev1014 = {
     ...previousRelease,
     version: "v1.0.14",
     appVersion: "1.0.14",
     build: "15",
-    status: "Under testing",
-    releaseType: "UI beta",
+    status: "Previous",
+    releaseType: "Previous",
     releaseDate: "2026-06-04",
     summary:
-      "Release bump to v1.0.14 is an under-testing UI beta entry with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
+      "Release bump to v1.0.14 with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
     artifacts: previousRelease.artifacts.map((artifact) => ({
       ...artifact,
       href:
@@ -1890,34 +1892,74 @@ npm test
             ? "https://drive.google.com/file/d/1VsemDgUMaxMI_lJDKEIBzQsC9SUy5Wkp/view?usp=sharing"
             : artifact.href,
       description: artifact.description
-        .replaceAll("v1.0.13", "v1.0.14 beta")
-        .replaceAll("1.0.13", "1.0.14 beta"),
+        .replaceAll("v1.0.13", "v1.0.14")
+        .replaceAll("1.0.13", "1.0.14"),
     })),
-    betaBanner: {
-      eyebrow: "Beta version",
-      title: "SoftLogic Whiteboard v1.0.14",
-      description:
-        "UI beta is under testing. Android APK and Windows EXE links are updated for v1.0.14.",
-      status: "Under testing",
-      type: "UI",
-      version: "v1.0.14",
-    },
+    betaBanner: undefined,
     aiSetup: {
       ...previousRelease.aiSetup,
-      title: "AI features setup for v1.0.14 beta",
+      title: "AI features setup for v1.0.14",
     },
     dashboardSection: {
       ...previousRelease.dashboardSection,
-      title: "What's included in this beta UI build (v1.0.14)",
+      title: "What's included in this whiteboard build (v1.0.14)",
     },
     noteSections: previousRelease.noteSections.map((section) => ({
       ...section,
       items: section.items.map((item) =>
-        item.replaceAll("v1.0.13", "v1.0.14 beta")
+        item.replaceAll("v1.0.13", "v1.0.14")
+      ),
+    })),
+  };
+
+  const betaRelease = {
+    ...releasev1014,
+    version: "v1.0.15",
+    appVersion: "1.0.15",
+    build: "16",
+    status: "Under testing",
+    releaseType: "UI beta",
+    releaseDate: "2026-06-04",
+    summary:
+      "Release bump to v1.0.15 is an under-testing UI beta entry with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
+    artifacts: releasev1014.artifacts.map((artifact) => ({
+      ...artifact,
+      href:
+        artifact.platform === "Android"
+          ? "https://drive.google.com/file/d/18n78IZqud6I0eOVIkd4ZDCebXeMNinDN/view?usp=sharing"
+          : artifact.platform === "Windows"
+            ? "https://drive.google.com/file/d/1rHYT3xybtPG8BEv5LRaISuEWxcJInLk5/view?usp=sharing"
+            : artifact.href,
+      description: artifact.description
+        .replaceAll("v1.0.14", "v1.0.15 beta")
+        .replaceAll("1.0.14", "1.0.15 beta"),
+    })),
+    betaBanner: {
+      eyebrow: "Beta version",
+      title: "SoftLogic Whiteboard v1.0.15",
+      description:
+        "UI beta is under testing. Android APK and Windows EXE links are updated for v1.0.15.",
+      status: "Under testing",
+      type: "UI",
+      version: "v1.0.15",
+    },
+    aiSetup: {
+      ...releasev1014.aiSetup,
+      title: "AI features setup for v1.0.15 beta",
+    },
+    dashboardSection: {
+      ...releasev1014.dashboardSection,
+      title: "What's included in this beta UI build (v1.0.15)",
+    },
+    noteSections: releasev1014.noteSections.map((section) => ({
+      ...section,
+      items: section.items.map((item) =>
+        item.replaceAll("v1.0.14", "v1.0.15 beta")
       ),
     })),
   };
 
   manifest.releases.unshift(previousRelease);
+  manifest.releases.unshift(releasev1014);
   manifest.releases.unshift(betaRelease);
 })();
