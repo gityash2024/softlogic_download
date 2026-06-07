@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.16",
-  lastSynced: "2026-06-06",
+  currentVersion: "v1.0.17",
+  lastSynced: "2026-06-07",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -1741,9 +1741,9 @@ npm test
         name: "release-artifacts",
         meta: "Versioned downloadable links with historical support",
         children: [
-          { name: "Android APK v1.0.16 beta" },
-          { name: "Windows EXE v1.0.16 beta" },
-          { name: "Softlogic AI v1.0.16 beta using existing hosted page" },
+          { name: "Android APK v1.0.17 beta" },
+          { name: "Windows EXE v1.0.17 beta" },
+          { name: "Softlogic AI v1.0.17 beta using existing hosted page" },
           { name: "Android APK v1.0.15 build 16" },
           { name: "Windows EXE v1.0.15 build 16" },
           { name: "Android APK v1.0.14 build 15" },
@@ -1780,8 +1780,8 @@ npm test
         meta: "Shared version source across backend, Flutter, and portal",
         children: [
           { name: "Backend package/version metadata: unchanged in this download update" },
-          { name: "Flutter pubspec/app constants: 1.0.16+17 artifacts published for v1.0.16 beta" },
-          { name: "Portal current version: v1.0.16 beta under testing" }
+          { name: "Flutter pubspec/app constants: 1.0.17+18 artifacts published for v1.0.17 beta" },
+          { name: "Portal current version: v1.0.17 beta under testing" }
         ]
       }
     ]
@@ -1796,7 +1796,7 @@ npm test
 
   const baseRelease = manifest.releases.find((release) => release.version === "v1.0.12");
 
-  if (!baseRelease || manifest.releases.some((release) => release.version === "v1.0.16")) {
+  if (!baseRelease || manifest.releases.some((release) => release.version === "v1.0.17")) {
     return;
   }
 
@@ -1955,14 +1955,14 @@ npm test
 
   const betaRelease = {
     ...releasev1015,
-    version: "v1.0.16",
-    appVersion: "1.0.16",
-    build: "17",
+    version: "v1.0.17",
+    appVersion: "1.0.17",
+    build: "18",
     status: "Under testing",
     releaseType: "UI beta",
-    releaseDate: "2026-06-06",
+    releaseDate: "2026-06-07",
     summary:
-      "Release bump to v1.0.16 is an under-testing UI beta entry with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
+      "Release bump to v1.0.17 is an under-testing UI beta entry with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
     artifacts: releasev1015.artifacts.map((artifact) => ({
       ...artifact,
       href:
@@ -1972,30 +1972,30 @@ npm test
             ? "https://drive.google.com/file/d/1CcvzGCZki3nckowYQgRs6wrMPqSTWgUe/view?usp=sharing"
             : artifact.href,
       description: artifact.description
-        .replaceAll("v1.0.15", "v1.0.16 beta")
-        .replaceAll("1.0.15", "1.0.16 beta"),
+        .replaceAll("v1.0.15", "v1.0.17 beta")
+        .replaceAll("1.0.15", "1.0.17 beta"),
     })),
     betaBanner: {
       eyebrow: "Beta version",
-      title: "SoftLogic Whiteboard v1.0.16",
+      title: "SoftLogic Whiteboard v1.0.17",
       description:
-        "UI beta is under testing. Android APK and Windows EXE links are updated for v1.0.16.",
+        "UI beta is under testing. Android APK and Windows EXE links are updated for v1.0.17.",
       status: "Under testing",
       type: "UI",
-      version: "v1.0.16",
+      version: "v1.0.17",
     },
     aiSetup: {
       ...releasev1015.aiSetup,
-      title: "AI features setup for v1.0.16 beta",
+      title: "AI features setup for v1.0.17 beta",
     },
     dashboardSection: {
       ...releasev1015.dashboardSection,
-      title: "What's included in this beta UI build (v1.0.16)",
+      title: "What's included in this beta UI build (v1.0.17)",
     },
     noteSections: releasev1015.noteSections.map((section) => ({
       ...section,
       items: section.items.map((item) =>
-        item.replaceAll("v1.0.15", "v1.0.16 beta")
+        item.replaceAll("v1.0.15", "v1.0.17 beta")
       ),
     })),
   };
