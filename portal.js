@@ -138,7 +138,8 @@
     if (!panel || !spotlight) return;
 
     let banner = $("#release-beta-banner");
-    if (!selectedRelease.betaBanner) {
+    const config = selectedRelease.betaBanner || selectedRelease.releaseSpotlight;
+    if (!config) {
       banner?.remove();
       return;
     }
@@ -148,10 +149,9 @@
       banner = $("#release-beta-banner");
     }
 
-    const config = selectedRelease.betaBanner;
     banner.innerHTML = `
       <div class="release-beta-copy">
-        <span class="release-beta-eyebrow">${escapeHtml(config.eyebrow || "Beta version")}</span>
+        <span class="release-beta-eyebrow">${escapeHtml(config.eyebrow || "Release")}</span>
         <h2>${escapeHtml(config.title || selectedRelease.version)}</h2>
         <p>${escapeHtml(config.description || selectedRelease.summary)}</p>
       </div>
@@ -349,22 +349,61 @@
             },
           ]
         : [];
-      quickActions.innerHTML = selectedRelease.artifacts
-        .concat(adminAction)
-        .map((artifact, index) => {
-          const localTarget = artifact.href.startsWith("/");
-          return `
-            <a
-              class="button-link ${index === 0 ? "primary" : ""}"
-              href="${escapeHtml(artifact.href)}"
-              target="${localTarget ? "_self" : "_blank"}"
-              rel="noreferrer"
-            >
-              ${escapeHtml(artifact.label)}
-            </a>
-          `;
-        })
-        .join("");
+
+      const renderArtifactButton = (artifact, index = 0) => {
+        const localTarget = artifact.href.startsWith("/");
+        return `
+          <a
+            class="button-link ${index === 0 ? "primary" : ""}"
+            href="${escapeHtml(artifact.href)}"
+            target="${localTarget ? "_self" : "_blank"}"
+            rel="noreferrer"
+          >
+            ${escapeHtml(artifact.label)}
+          </a>
+        `;
+      };
+
+      if (selectedRelease.downloadGroups?.length) {
+        const portalActions = selectedRelease.artifacts.filter(
+          (artifact) => artifact.platform === "Softlogic AI"
+        );
+        quickActions.innerHTML = `
+          <div class="brand-download-grid">
+            ${selectedRelease.downloadGroups
+              .map(
+                (group) => `
+                  <article class="brand-download-card">
+                    <div class="brand-download-card-header">
+                      <div>
+                        <span>${escapeHtml(group.badge)}</span>
+                        <h3>${escapeHtml(group.title)}</h3>
+                      </div>
+                    </div>
+                    <p>${escapeHtml(group.description)}</p>
+                    <div class="brand-download-actions">
+                      ${group.artifacts
+                        .map((artifact, index) => renderArtifactButton(artifact, index))
+                        .join("")}
+                    </div>
+                  </article>
+                `
+              )
+              .join("")}
+          </div>
+          <div class="portal-link-actions">
+            ${portalActions
+              .concat(adminAction)
+              .map((artifact) => renderArtifactButton(artifact, 1))
+              .join("")}
+          </div>
+        `;
+      } else {
+        quickActions.innerHTML = selectedRelease.artifacts
+          .concat(adminAction)
+          .map((artifact, index) => renderArtifactButton(artifact, index))
+          .join("");
+      }
     }
 
     renderAiSetup();

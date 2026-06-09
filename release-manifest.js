@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
   currentVersion: "v1.0.17",
-  lastSynced: "2026-06-07",
+  lastSynced: "2026-06-08",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -1741,9 +1741,11 @@ npm test
         name: "release-artifacts",
         meta: "Versioned downloadable links with historical support",
         children: [
-          { name: "Android APK v1.0.17 beta" },
-          { name: "Windows EXE v1.0.17 beta" },
-          { name: "Softlogic AI v1.0.17 beta using existing hosted page" },
+          { name: "SoftLogic APK v1.0.17" },
+          { name: "SoftLogic Windows EXE v1.0.17" },
+          { name: "AI Smart Board APK v1.0.17" },
+          { name: "AI Smart Board Windows EXE v1.0.17" },
+          { name: "Softlogic AI v1.0.17 using existing hosted page" },
           { name: "Android APK v1.0.15 build 16" },
           { name: "Windows EXE v1.0.15 build 16" },
           { name: "Android APK v1.0.14 build 15" },
@@ -1780,8 +1782,8 @@ npm test
         meta: "Shared version source across backend, Flutter, and portal",
         children: [
           { name: "Backend package/version metadata: unchanged in this download update" },
-          { name: "Flutter pubspec/app constants: 1.0.17+18 artifacts published for v1.0.17 beta" },
-          { name: "Portal current version: v1.0.17 beta under testing" }
+          { name: "Flutter pubspec/app constants: 1.0.17+18 artifacts published for both branded v1.0.17 builds" },
+          { name: "Portal current version: v1.0.17 current release" }
         ]
       }
     ]
@@ -1953,16 +1955,16 @@ npm test
     })),
   };
 
-  const betaRelease = {
+  const releasev1016 = {
     ...releasev1015,
-    version: "v1.0.17",
-    appVersion: "1.0.17",
-    build: "18",
-    status: "Under testing",
-    releaseType: "UI beta",
-    releaseDate: "2026-06-07",
+    version: "v1.0.16",
+    appVersion: "1.0.16",
+    build: "17",
+    status: "Previous",
+    releaseType: "Previous",
+    releaseDate: "2026-06-06",
     summary:
-      "Release bump to v1.0.17 is an under-testing UI beta entry with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
+      "Release bump to v1.0.16 with updated Android APK and Windows EXE links. Softlogic AI and Admin actions keep their existing hosted links.",
     artifacts: releasev1015.artifacts.map((artifact) => ({
       ...artifact,
       href:
@@ -1972,30 +1974,146 @@ npm test
             ? "https://drive.google.com/file/d/1CcvzGCZki3nckowYQgRs6wrMPqSTWgUe/view?usp=sharing"
             : artifact.href,
       description: artifact.description
-        .replaceAll("v1.0.15", "v1.0.17 beta")
-        .replaceAll("1.0.15", "1.0.17 beta"),
+        .replaceAll("v1.0.15", "v1.0.16")
+        .replaceAll("1.0.15", "1.0.16"),
     })),
-    betaBanner: {
-      eyebrow: "Beta version",
-      title: "SoftLogic Whiteboard v1.0.17",
-      description:
-        "UI beta is under testing. Android APK and Windows EXE links are updated for v1.0.17.",
-      status: "Under testing",
-      type: "UI",
-      version: "v1.0.17",
-    },
+    betaBanner: undefined,
     aiSetup: {
       ...releasev1015.aiSetup,
-      title: "AI features setup for v1.0.17 beta",
+      title: "AI features setup for v1.0.16",
     },
     dashboardSection: {
       ...releasev1015.dashboardSection,
-      title: "What's included in this beta UI build (v1.0.17)",
+      title: "What's included in this whiteboard build (v1.0.16)",
     },
     noteSections: releasev1015.noteSections.map((section) => ({
       ...section,
       items: section.items.map((item) =>
-        item.replaceAll("v1.0.15", "v1.0.17 beta")
+        item.replaceAll("v1.0.15", "v1.0.16")
+      ),
+    })),
+  };
+
+  const releasev1017 = {
+    ...releasev1016,
+    version: "v1.0.17",
+    appVersion: "1.0.17",
+    build: "18",
+    status: "Current release",
+    releaseType: "Current release",
+    releaseDate: "2026-06-08",
+    summary:
+      "Current v1.0.17 release with separate SoftLogic and AI Smart Board Android APK and Windows installer downloads. Softlogic AI and Admin actions keep their existing hosted links.",
+    artifacts: [
+      {
+        platform: "SoftLogic Android",
+        format: "APK",
+        label: "Download SoftLogic APK",
+        href:
+          "https://drive.google.com/file/d/10_PXdi0RUq0Ac-tK9o3wTTynzKwVToMN/view?usp=sharing",
+        description:
+          "SoftLogic Android release build v1.0.17 for tablet, mobile, and whiteboard hardware classroom use."
+      },
+      {
+        platform: "SoftLogic Windows",
+        format: "EXE",
+        label: "Download SoftLogic EXE",
+        href:
+          "https://drive.google.com/file/d/1cIfVk7_f9KTnk88kmbBMB8eTCBsTaZAY/view?usp=sharing",
+        description:
+          "SoftLogic one-file Windows installer v1.0.17 for desktop classroom stations and teaching workflows."
+      },
+      {
+        platform: "AI Smart Board Android",
+        format: "APK",
+        label: "Download AI Smart Board APK",
+        href:
+          "https://drive.google.com/file/d/1ILAMcJePn0T_dvZ38hKGOGveB6X_y6wj/view?usp=sharing",
+        description:
+          "AI Smart Board Android release build v1.0.17 with separate white-label identity."
+      },
+      {
+        platform: "AI Smart Board Windows",
+        format: "EXE",
+        label: "Download AI Smart Board EXE",
+        href:
+          "https://drive.google.com/file/d/1tVENFyPkWpMf2LU27m99PVa98qIG8EKK/view?usp=sharing",
+        description:
+          "AI Smart Board one-file Windows installer v1.0.17 with separate white-label identity."
+      },
+      {
+        platform: "Softlogic AI",
+        format: "Hosted page",
+        label: "Open Softlogic AI",
+        href: "/softlogic-ai",
+        description:
+          "Hosted Softlogic AI page retained with the same Vercel project."
+      }
+    ],
+    downloadGroups: [
+      {
+        title: "SoftLogic",
+        badge: "Original brand",
+        description:
+          "Use the current SoftLogic branded app with existing name, icon, and branding.",
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href:
+              "https://drive.google.com/file/d/10_PXdi0RUq0Ac-tK9o3wTTynzKwVToMN/view?usp=sharing"
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href:
+              "https://drive.google.com/file/d/1cIfVk7_f9KTnk88kmbBMB8eTCBsTaZAY/view?usp=sharing"
+          }
+        ]
+      },
+      {
+        title: "AI Smart Board",
+        badge: "White label",
+        description:
+          "Use the AI Smart Board app with separate app name, icon, and install identity.",
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href:
+              "https://drive.google.com/file/d/1ILAMcJePn0T_dvZ38hKGOGveB6X_y6wj/view?usp=sharing"
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href:
+              "https://drive.google.com/file/d/1tVENFyPkWpMf2LU27m99PVa98qIG8EKK/view?usp=sharing"
+          }
+        ]
+      }
+    ],
+    betaBanner: undefined,
+    releaseSpotlight: {
+      eyebrow: "Current release",
+      title: "SoftLogic Whiteboard v1.0.17",
+      description:
+        "Stable release artifacts are available for both SoftLogic and AI Smart Board.",
+      status: "Current release",
+      type: "Stable",
+      version: "v1.0.17",
+    },
+    aiSetup: {
+      ...releasev1016.aiSetup,
+      title: "AI features setup for v1.0.17",
+    },
+    dashboardSection: {
+      ...releasev1016.dashboardSection,
+      title: "What's included in this whiteboard build (v1.0.17)",
+    },
+    noteSections: releasev1016.noteSections.map((section) => ({
+      ...section,
+      items: section.items.map((item) =>
+        item.replaceAll("v1.0.16", "v1.0.17")
       ),
     })),
   };
@@ -2003,5 +2121,6 @@ npm test
   manifest.releases.unshift(previousRelease);
   manifest.releases.unshift(releasev1014);
   manifest.releases.unshift(releasev1015);
-  manifest.releases.unshift(betaRelease);
+  manifest.releases.unshift(releasev1016);
+  manifest.releases.unshift(releasev1017);
 })();
