@@ -309,9 +309,13 @@
       const secondaryBadge = selectedRelease.betaBanner
         ? selectedRelease.status
         : "Stable artifacts";
+      const updatedBadge = selectedRelease.lastUpdatedAt
+        ? badge(`Last updated: ${selectedRelease.lastUpdatedAt}`)
+        : "";
       cardMeta.innerHTML = `
         ${badge(selectedRelease.betaBanner ? "Beta version" : "Current release", "primary")}
         ${badge(secondaryBadge)}
+        ${updatedBadge}
       `;
     }
 

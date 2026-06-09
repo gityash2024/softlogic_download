@@ -2002,6 +2002,7 @@ npm test
     status: "Current release",
     releaseType: "Current release",
     releaseDate: "2026-06-08",
+    lastUpdatedAt: "2026-06-09 11:51 AM IST",
     summary:
       "Current v1.0.17 release with separate SoftLogic and AI Smart Board Android APK and Windows installer downloads. Softlogic AI and Admin actions keep their existing hosted links.",
     artifacts: [
@@ -2010,7 +2011,7 @@ npm test
         format: "APK",
         label: "Download SoftLogic APK",
         href:
-          "https://drive.google.com/file/d/10_PXdi0RUq0Ac-tK9o3wTTynzKwVToMN/view?usp=sharing",
+          "https://drive.google.com/file/d/1BYjb9Z1sinWfG4Ai8mJrHM-ulnjL7ZHO/view?usp=sharing",
         description:
           "SoftLogic Android release build v1.0.17 for tablet, mobile, and whiteboard hardware classroom use."
       },
@@ -2019,7 +2020,7 @@ npm test
         format: "EXE",
         label: "Download SoftLogic EXE",
         href:
-          "https://drive.google.com/file/d/1cIfVk7_f9KTnk88kmbBMB8eTCBsTaZAY/view?usp=sharing",
+          "https://drive.google.com/file/d/10-fn_L5KueJ1mY9uymoCzIRMa5qgKqCy/view?usp=sharing",
         description:
           "SoftLogic one-file Windows installer v1.0.17 for desktop classroom stations and teaching workflows."
       },
@@ -2028,7 +2029,7 @@ npm test
         format: "APK",
         label: "Download AI Smart Board APK",
         href:
-          "https://drive.google.com/file/d/1ILAMcJePn0T_dvZ38hKGOGveB6X_y6wj/view?usp=sharing",
+          "https://drive.google.com/file/d/1-D6DTs_umsVgRo5ryOiRy1dVHYFv7TTK/view?usp=sharing",
         description:
           "AI Smart Board Android release build v1.0.17 with separate white-label identity."
       },
@@ -2037,7 +2038,7 @@ npm test
         format: "EXE",
         label: "Download AI Smart Board EXE",
         href:
-          "https://drive.google.com/file/d/1tVENFyPkWpMf2LU27m99PVa98qIG8EKK/view?usp=sharing",
+          "https://drive.google.com/file/d/1HeX_M23N3EDJ2uSeErlMFWJ48EX2oIpQ/view?usp=sharing",
         description:
           "AI Smart Board one-file Windows installer v1.0.17 with separate white-label identity."
       },
@@ -2061,13 +2062,13 @@ npm test
             format: "APK",
             label: "Download Android APK",
             href:
-              "https://drive.google.com/file/d/10_PXdi0RUq0Ac-tK9o3wTTynzKwVToMN/view?usp=sharing"
+              "https://drive.google.com/file/d/1BYjb9Z1sinWfG4Ai8mJrHM-ulnjL7ZHO/view?usp=sharing"
           },
           {
             format: "EXE",
             label: "Download Windows EXE",
             href:
-              "https://drive.google.com/file/d/1cIfVk7_f9KTnk88kmbBMB8eTCBsTaZAY/view?usp=sharing"
+              "https://drive.google.com/file/d/10-fn_L5KueJ1mY9uymoCzIRMa5qgKqCy/view?usp=sharing"
           }
         ]
       },
@@ -2081,13 +2082,13 @@ npm test
             format: "APK",
             label: "Download Android APK",
             href:
-              "https://drive.google.com/file/d/1ILAMcJePn0T_dvZ38hKGOGveB6X_y6wj/view?usp=sharing"
+              "https://drive.google.com/file/d/1-D6DTs_umsVgRo5ryOiRy1dVHYFv7TTK/view?usp=sharing"
           },
           {
             format: "EXE",
             label: "Download Windows EXE",
             href:
-              "https://drive.google.com/file/d/1tVENFyPkWpMf2LU27m99PVa98qIG8EKK/view?usp=sharing"
+              "https://drive.google.com/file/d/1HeX_M23N3EDJ2uSeErlMFWJ48EX2oIpQ/view?usp=sharing"
           }
         ]
       }
