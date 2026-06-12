@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.17",
-  lastSynced: "2026-06-08",
+  currentVersion: "v1.0.18",
+  lastSynced: "2026-06-12",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -1999,8 +1999,8 @@ npm test
     version: "v1.0.17",
     appVersion: "1.0.17",
     build: "18",
-    status: "Current release",
-    releaseType: "Current release",
+    status: "Previous",
+    releaseType: "Previous",
     releaseDate: "2026-06-08",
     lastUpdatedAt: "2026-06-09 11:51 AM IST",
     summary:
@@ -2119,9 +2119,137 @@ npm test
     })),
   };
 
+  const releasev1018 = {
+    ...releasev1017,
+    version: "v1.0.18",
+    appVersion: "1.0.18",
+    build: "19",
+    status: "Current release",
+    releaseType: "Production grade",
+    primaryBadge: "Production grade",
+    secondaryBadge: "Current release",
+    releaseDate: "2026-06-12",
+    lastUpdatedAt: "2026-06-12 06:34 AM IST",
+    summary:
+      "Production-grade v1.0.18 release with updated SoftLogic and AI Smart Board Android APK and Windows installer downloads. Previous release artifacts remain available from the version selector.",
+    artifacts: [
+      {
+        platform: "SoftLogic Android",
+        format: "APK",
+        label: "Download SoftLogic APK",
+        href:
+          "https://drive.google.com/file/d/1P_qrDZW-McppNDBJi6QYPjk6NWefEjMW/view?usp=sharing",
+        description:
+          "SoftLogic Android release build v1.0.18 for production tablet, mobile, and whiteboard hardware classroom use."
+      },
+      {
+        platform: "SoftLogic Windows",
+        format: "EXE",
+        label: "Download SoftLogic EXE",
+        href:
+          "https://drive.google.com/file/d/1JxIZMtMUpoUr7aMwxW-k5ivtZxv40XIG/view?usp=sharing",
+        description:
+          "SoftLogic one-file Windows installer v1.0.18 for production desktop classroom stations and teaching workflows."
+      },
+      {
+        platform: "AI Smart Board Android",
+        format: "APK",
+        label: "Download AI Smart Board APK",
+        href:
+          "https://drive.google.com/file/d/1JNEorqSmxeApyF9J77nyOw_B0UuoL_Zq/view?usp=sharing",
+        description:
+          "AI Smart Board Android release build v1.0.18 with separate white-label identity."
+      },
+      {
+        platform: "AI Smart Board Windows",
+        format: "EXE",
+        label: "Download AI Smart Board EXE",
+        href:
+          "https://drive.google.com/file/d/1CxtWfGGKTFCUhK_1yYIZ6_C9pjATapNu/view?usp=sharing",
+        description:
+          "AI Smart Board one-file Windows installer v1.0.18 with separate white-label identity."
+      },
+      {
+        platform: "Softlogic AI",
+        format: "Hosted page",
+        label: "Open Softlogic AI",
+        href: "/softlogic-ai",
+        description:
+          "Hosted Softlogic AI page retained with the same Vercel project."
+      }
+    ],
+    downloadGroups: [
+      {
+        title: "SoftLogic",
+        badge: "Production grade",
+        description:
+          "Use the production-grade SoftLogic branded app with the current name, icon, and branding.",
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href:
+              "https://drive.google.com/file/d/1P_qrDZW-McppNDBJi6QYPjk6NWefEjMW/view?usp=sharing"
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href:
+              "https://drive.google.com/file/d/1JxIZMtMUpoUr7aMwxW-k5ivtZxv40XIG/view?usp=sharing"
+          }
+        ]
+      },
+      {
+        title: "AI Smart Board",
+        badge: "White label",
+        description:
+          "Use the AI Smart Board app with separate app name, icon, and install identity.",
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href:
+              "https://drive.google.com/file/d/1JNEorqSmxeApyF9J77nyOw_B0UuoL_Zq/view?usp=sharing"
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href:
+              "https://drive.google.com/file/d/1CxtWfGGKTFCUhK_1yYIZ6_C9pjATapNu/view?usp=sharing"
+          }
+        ]
+      }
+    ],
+    betaBanner: undefined,
+    releaseSpotlight: {
+      eyebrow: "Production grade",
+      title: "SoftLogic Whiteboard v1.0.18",
+      description:
+        "Production-grade release artifacts are available for SoftLogic and AI Smart Board on Android and Windows.",
+      status: "Current release",
+      type: "Production",
+      version: "v1.0.18",
+    },
+    aiSetup: {
+      ...releasev1017.aiSetup,
+      title: "AI features setup for v1.0.18",
+    },
+    dashboardSection: {
+      ...releasev1017.dashboardSection,
+      title: "What's included in this whiteboard build (v1.0.18)",
+    },
+    noteSections: releasev1017.noteSections.map((section) => ({
+      ...section,
+      items: section.items.map((item) =>
+        item.replaceAll("v1.0.17", "v1.0.18")
+      ),
+    })),
+  };
+
   manifest.releases.unshift(previousRelease);
   manifest.releases.unshift(releasev1014);
   manifest.releases.unshift(releasev1015);
   manifest.releases.unshift(releasev1016);
   manifest.releases.unshift(releasev1017);
+  manifest.releases.unshift(releasev1018);
 })();
