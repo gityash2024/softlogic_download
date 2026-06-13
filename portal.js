@@ -8,12 +8,36 @@
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
+  const environmentStorageKey = "softlogic-release-environment";
+  const environmentKeys = Object.keys(manifest.environments || {});
+  let activeEnvironmentKey = "staging";
+
+  try {
+    const savedEnvironment = window.localStorage.getItem(environmentStorageKey);
+    if (savedEnvironment && environmentKeys.includes(savedEnvironment)) {
+      activeEnvironmentKey = savedEnvironment;
+    }
+  } catch (error) {
+    activeEnvironmentKey = "staging";
+  }
+
+  const activeEnvironment = manifest.environments?.[activeEnvironmentKey];
+  if (activeEnvironment) {
+    manifest.currentVersion = activeEnvironment.currentVersion;
+    manifest.releases = activeEnvironment.releases;
+    manifest.softlogicAdmin = activeEnvironment.softlogicAdmin;
+    manifest.api = activeEnvironment.api;
+    manifest.accessGuide = activeEnvironment.accessGuide || manifest.accessGuide;
+    manifest.activeEnvironment = activeEnvironmentKey;
+  }
+
   const currentRelease =
     manifest.releases.find((release) => release.version === manifest.currentVersion) ||
     manifest.releases[0];
   let selectedRelease = currentRelease;
 
   let swaggerInitialized = false;
+  let swaggerInitializing = false;
   const tabRoutes = {
     downloads: "/downloads",
     swagger: "/api-docs",
@@ -110,6 +134,10 @@
       });
 
   const renderSummary = () => {
+    document.documentElement.dataset.environment = activeEnvironmentKey;
+    const environmentLabel =
+      manifest.environments?.[activeEnvironmentKey]?.label || activeEnvironmentKey;
+    setText(".brand-copy .eyebrow", `${environmentLabel} release portal`);
     setText("#current-version-label", currentRelease.version);
     setText(".sidebar-footer-line", `${currentRelease.status || "Current"} - ${currentRelease.version}`);
     const headerStatus = $(".header-meta > span:not(#current-version-label)");
@@ -130,6 +158,46 @@
         ${badge(currentRelease.status)}
       </div>
     `;
+  };
+
+  const setupEnvironmentSwitch = () => {
+    const headerMeta = $(".header-meta");
+    if (!headerMeta || environmentKeys.length < 2) return;
+
+    const environmentSwitch = document.createElement("div");
+    environmentSwitch.className = "environment-switch";
+    environmentSwitch.setAttribute("role", "group");
+    environmentSwitch.setAttribute("aria-label", "Release environment");
+    environmentSwitch.innerHTML = environmentKeys
+      .map((environmentKey) => {
+        const environment = manifest.environments[environmentKey];
+        const isActive = environmentKey === activeEnvironmentKey;
+        return `
+          <button
+            class="environment-switch-button ${isActive ? "is-active" : ""}"
+            type="button"
+            data-environment="${escapeHtml(environmentKey)}"
+            aria-pressed="${String(isActive)}"
+          >
+            ${escapeHtml(environment.label || environmentKey)}
+          </button>
+        `;
+      })
+      .join("");
+
+    headerMeta.prepend(environmentSwitch);
+    environmentSwitch.addEventListener("click", (event) => {
+      const button = event.target.closest?.("[data-environment]");
+      const nextEnvironment = button?.dataset.environment;
+      if (!nextEnvironment || nextEnvironment === activeEnvironmentKey) return;
+
+      try {
+        window.localStorage.setItem(environmentStorageKey, nextEnvironment);
+      } catch (error) {
+        // The reload still applies the default environment when storage is unavailable.
+      }
+      window.location.reload();
+    });
   };
 
   const renderBetaBanner = () => {
@@ -541,7 +609,7 @@
     }
 
     const cfg = manifest.softlogicAdmin;
-    if (!cfg) {
+    if (!cfg || cfg.showCredentials === false) {
       admin.hidden = true;
       admin.innerHTML = "";
       syncReleaseSetupGrid();
@@ -665,10 +733,11 @@
     });
   };
 
-  const initSwaggerPreview = () => {
-    if (swaggerInitialized) {
+  const initSwaggerPreview = async () => {
+    if (swaggerInitialized || swaggerInitializing) {
       return;
     }
+    swaggerInitializing = true;
 
     const link = $("#swagger-json-link");
     if (link) {
@@ -687,12 +756,34 @@
           <a href="${escapeHtml(manifest.api.swaggerJsonUrl)}" target="_blank" rel="noreferrer">OpenAPI JSON</a>.
         `;
       }
+      swaggerInitializing = false;
       return;
     }
 
     try {
+      const response = await fetch(manifest.api.swaggerJsonUrl, {
+        cache: "no-store",
+      });
+      if (!response.ok) {
+        throw new Error(`OpenAPI snapshot returned HTTP ${response.status}`);
+      }
+      const spec = await response.json();
+      const environmentLabel =
+        manifest.environments?.[activeEnvironmentKey]?.label || activeEnvironmentKey;
+      spec.servers = [
+        {
+          url: manifest.api.apiBaseUrl,
+          description: `${environmentLabel} backend`,
+        },
+      ];
+      spec.info = {
+        ...spec.info,
+        description:
+          `${environmentLabel} API snapshot for the SoftLogic Whiteboard release portal.`,
+      };
+
       window.SwaggerUIBundle({
-        url: manifest.api.swaggerJsonUrl,
+        spec,
         dom_id: "#swagger-ui",
         deepLinking: true,
         docExpansion: "list",
@@ -708,6 +799,8 @@
         fallback.hidden = false;
         fallback.textContent = `API preview could not initialize: ${error.message}`;
       }
+    } finally {
+      swaggerInitializing = false;
     }
   };
 
@@ -726,10 +819,10 @@
     container.innerHTML = `
       <article class="access-card access-hero access-card-wide">
         <div class="access-hero-copy">
-          <span class="badge primary">QA access guide</span>
-          <h3>Admin access and user flow</h3>
+          <span class="badge primary">${escapeHtml(guide.badge || "QA access guide")}</span>
+          <h3>${escapeHtml(guide.title || "Admin access and user flow")}</h3>
           <p>
-            Use these public testing details to sign in, verify OTP behavior, and create users through the admin hierarchy.
+            ${escapeHtml(guide.description || "Use these public testing details to sign in, verify OTP behavior, and create users through the admin hierarchy.")}
             Infrastructure secrets are intentionally excluded.
           </p>
         </div>
@@ -739,11 +832,11 @@
             <strong>${escapeHtml(guide.adminEmail)}</strong>
           </div>
           <div class="credential-tile">
-            <span>Fixed QA OTP</span>
-            <strong>${escapeHtml(guide.fixedOtp)}</strong>
+            <span>${escapeHtml(guide.credentialLabel || "Fixed QA OTP")}</span>
+            <strong>${escapeHtml(guide.credentialValue || guide.fixedOtp)}</strong>
           </div>
           <p class="access-note">
-            Request OTP first, then verify with the delivered OTP or fixed QA OTP when testing auth limits are enabled.
+            ${escapeHtml(guide.accessNote || "Request OTP first, then verify with the delivered OTP or fixed QA OTP when testing auth limits are enabled.")}
           </p>
         </div>
       </article>
@@ -1140,7 +1233,9 @@
       panel.hidden = !active;
     });
 
-    document.title = tabTitles[nextTab] || tabTitles.downloads;
+    const environmentLabel =
+      manifest.environments?.[activeEnvironmentKey]?.label || activeEnvironmentKey;
+    document.title = `${environmentLabel} | ${tabTitles[nextTab] || tabTitles.downloads}`;
 
     if (options.updateUrl) {
       updateRoute(nextTab);
@@ -1184,6 +1279,7 @@
     updateVisibility();
   };
 
+  setupEnvironmentSwitch();
   renderSummary();
   renderDownloads();
   renderAccessGuide();

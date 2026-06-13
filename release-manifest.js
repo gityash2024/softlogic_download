@@ -2252,4 +2252,263 @@ npm test
   manifest.releases.unshift(releasev1016);
   manifest.releases.unshift(releasev1017);
   manifest.releases.unshift(releasev1018);
+
+  const createReleasev1019 = ({
+    environment,
+    primaryBadge,
+    releaseType,
+    status,
+    softlogicApk,
+    softlogicExe,
+    aiSmartBoardApk,
+    aiSmartBoardExe,
+  }) => ({
+    ...releasev1018,
+    version: "v1.0.19",
+    appVersion: "1.0.19",
+    build: "20",
+    status,
+    releaseType,
+    primaryBadge,
+    secondaryBadge: "Current release",
+    releaseDate: "2026-06-13",
+    lastUpdatedAt: "2026-06-13 IST",
+    title: `SoftLogic Whiteboard v1.0.19 ${environment} release`,
+    summary:
+      `${environment} v1.0.19 release with separate SoftLogic and AI Smart Board Android APK and Windows installer downloads.`,
+    artifacts: [
+      {
+        platform: "SoftLogic Android",
+        format: "APK",
+        label: "Download SoftLogic APK",
+        href: softlogicApk,
+        description:
+          `SoftLogic Android v1.0.19 ${environment.toLowerCase()} build for tablet, mobile, and whiteboard hardware classroom use.`
+      },
+      {
+        platform: "SoftLogic Windows",
+        format: "EXE",
+        label: "Download SoftLogic EXE",
+        href: softlogicExe,
+        description:
+          `SoftLogic Windows installer v1.0.19 for the ${environment.toLowerCase()} environment.`
+      },
+      {
+        platform: "AI Smart Board Android",
+        format: "APK",
+        label: "Download AI Smart Board APK",
+        href: aiSmartBoardApk,
+        description:
+          `AI Smart Board Android v1.0.19 ${environment.toLowerCase()} build with separate white-label identity.`
+      },
+      {
+        platform: "AI Smart Board Windows",
+        format: "EXE",
+        label: "Download AI Smart Board EXE",
+        href: aiSmartBoardExe,
+        description:
+          `AI Smart Board Windows installer v1.0.19 for the ${environment.toLowerCase()} environment.`
+      },
+      {
+        platform: "Softlogic AI",
+        format: "Hosted page",
+        label: "Open Softlogic AI",
+        href: "/softlogic-ai",
+        description:
+          "Hosted Softlogic AI page retained with the same Vercel project."
+      }
+    ],
+    downloadGroups: [
+      {
+        title: "SoftLogic",
+        badge: `${environment} build`,
+        description:
+          `Use the SoftLogic branded v1.0.19 app built for ${environment.toLowerCase()}.`,
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href: softlogicApk
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href: softlogicExe
+          }
+        ]
+      },
+      {
+        title: "AI Smart Board",
+        badge: `${environment} build`,
+        description:
+          `Use the AI Smart Board v1.0.19 app built for ${environment.toLowerCase()} with its separate install identity.`,
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href: aiSmartBoardApk
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href: aiSmartBoardExe
+          }
+        ]
+      }
+    ],
+    betaBanner: undefined,
+    releaseSpotlight: {
+      eyebrow: `${environment} environment`,
+      title: "SoftLogic Whiteboard v1.0.19",
+      description:
+        `${environment} release artifacts are available for SoftLogic and AI Smart Board on Android and Windows.`,
+      status,
+      type: environment,
+      version: "v1.0.19",
+    },
+    aiSetup: {
+      ...releasev1018.aiSetup,
+      title: "AI features setup for v1.0.19",
+    },
+    dashboardSection: {
+      ...releasev1018.dashboardSection,
+      title: "What's included in this whiteboard build (v1.0.19)",
+    },
+    noteSections: releasev1018.noteSections.map((section) => ({
+      ...section,
+      items: section.items.map((item) =>
+        item.replaceAll("v1.0.18", "v1.0.19")
+      ),
+    })),
+  });
+
+  const stagingReleasev1019 = createReleasev1019({
+    environment: "Staging",
+    primaryBadge: "Staging build",
+    releaseType: "Staging",
+    status: "Current staging release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1jSHu7_F-Ten2WnO4qbiRMzeIunkgCkRV/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/17rVKqt21yggnrlT2WR3E4RyAuFy0E655/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1AOt7N9la5Aa_CWpKUiVOjw_mexMG2FfQ/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1p5QU9HOGSei3KngLoNdlVG7ORzVB0Ypn/view?usp=sharing",
+  });
+
+  const productionReleasev1019 = createReleasev1019({
+    environment: "Production",
+    primaryBadge: "Production grade",
+    releaseType: "Production grade",
+    status: "Current production release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1cxYJp_y7TdLuvRZXYamaFdNEoi6HxXgb/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1j8g17WGZ-Ttb-CU_5DQeDQsV1hUJ5uB1/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1IOU7MZMivVoIEfxUkMB45kZFD5apBwUp/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1_hv_K9sZoJLnKbl4FlFUqrvJ5XKfx-Ub/view?usp=sharing",
+  });
+  productionReleasev1019.aiSetup = undefined;
+
+  const sharedAdmin = {
+    ...manifest.softlogicAdmin,
+    email: undefined,
+    password: undefined,
+    showCredentials: false,
+  };
+  const stagingAccessGuide = {
+    ...manifest.accessGuide,
+    badge: "Staging QA access guide",
+    title: "Staging admin access and user flow",
+    description:
+      "Use these staging testing details to verify OTP behavior and user creation through the UAT admin hierarchy.",
+    credentialLabel: "Fixed QA OTP",
+    credentialValue: manifest.accessGuide.fixedOtp,
+    accessNote:
+      "Request OTP first, then verify with the delivered OTP or fixed QA OTP when staging testing limits are enabled.",
+  };
+  const productionAccessGuide = {
+    adminEmail: "anirudha@softlogic.co.in",
+    fixedOtp: "Disabled",
+    badge: "Production access policy",
+    title: "Production authentication and user flow",
+    description:
+      "Use the AWS production admin and email-delivered authentication flow. Development shortcuts are disabled.",
+    credentialLabel: "Fixed QA OTP",
+    credentialValue: "Disabled in production",
+    accessNote:
+      "Use the email-delivered OTP. Development fixed-OTP shortcuts and relaxed authentication limits must remain disabled.",
+    loginFlow: [
+      "Open the production SoftLogic Whiteboard app.",
+      "Enter the authorized production user email address.",
+      "Select Send OTP to create an active OTP request.",
+      "Use only the OTP delivered through the configured production email provider.",
+      "After verification, the dashboard opens with permissions from the saved production role."
+    ],
+    otpNotes: [
+      "Production fixed OTP is disabled.",
+      "Testing authentication limits remain disabled.",
+      "Passwords, OTP values, provider credentials, and infrastructure secrets are never published in this portal."
+    ],
+    userCreationFlow: [
+      "Super Admin creates partner/customer organizations and users from the AWS production admin panel.",
+      "Partner Admin can create customer admins, teachers, and students under managed customer organizations.",
+      "Customer Admin or Admin can create teachers and students for their managed organization.",
+      "Created users complete the approved production sign-in or password setup flow, and access follows the stored role."
+    ],
+    roleHierarchy: [
+      "SUPER_ADMIN",
+      "PARTNER_ADMIN",
+      "CUSTOMER_ADMIN / ADMIN",
+      "TEACHER / STUDENT"
+    ]
+  };
+
+  manifest.environments = {
+    staging: {
+      label: "Staging",
+      currentVersion: "v1.0.19",
+      releases: [stagingReleasev1019, ...manifest.releases],
+      softlogicAdmin: {
+        ...sharedAdmin,
+        description:
+          "Open the UAT admin panel connected to the DigitalOcean staging backend.",
+        url: "https://adminpanelsoftlogic.vercel.app",
+      },
+      api: {
+        backendBaseUrl: "https://softlogic-api.mymultimeds.com",
+        swaggerUrl: "https://softlogic-api.mymultimeds.com/api/docs",
+        swaggerJsonUrl: "./swagger/openapi-v1.0.0.json",
+        backendSwaggerJsonUrl: "https://softlogic-api.mymultimeds.com/api/docs.json",
+        publicVersionUrl: "https://softlogic-api.mymultimeds.com/api/version",
+        apiVersionUrl: "https://softlogic-api.mymultimeds.com/api/v1/version",
+        apiBaseUrl: "https://softlogic-api.mymultimeds.com/api/v1",
+      },
+      accessGuide: stagingAccessGuide,
+    },
+    production: {
+      label: "Production",
+      currentVersion: "v1.0.19",
+      releases: [productionReleasev1019],
+      softlogicAdmin: {
+        ...sharedAdmin,
+        description:
+          "Open the production admin panel served by Nginx on AWS.",
+        url: "https://ai.softeractive.com",
+      },
+      api: {
+        backendBaseUrl: "https://api.softeractive.com",
+        swaggerUrl: "https://api.softeractive.com/api/docs",
+        swaggerJsonUrl: "./swagger/openapi-v1.0.0.json",
+        backendSwaggerJsonUrl: "https://api.softeractive.com/api/docs.json",
+        publicVersionUrl: "https://api.softeractive.com/api/version",
+        apiVersionUrl: "https://api.softeractive.com/api/v1/version",
+        apiBaseUrl: "https://api.softeractive.com/api/v1",
+      },
+      accessGuide: productionAccessGuide,
+    },
+  };
 })();
