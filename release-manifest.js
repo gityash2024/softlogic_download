@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.18",
-  lastSynced: "2026-06-12",
+  currentVersion: "v1.0.20",
+  lastSynced: "2026-06-14",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -2413,6 +2413,158 @@ npm test
   });
   productionReleasev1019.aiSetup = undefined;
 
+  const createReleasev1020 = ({
+    environment,
+    primaryBadge,
+    releaseType,
+    status,
+    softlogicApk,
+    softlogicExe,
+    aiSmartBoardApk,
+    aiSmartBoardExe,
+  }) => ({
+    ...releasev1018,
+    version: "v1.0.20",
+    appVersion: "1.0.20",
+    build: "21",
+    status,
+    releaseType,
+    primaryBadge,
+    secondaryBadge: "Current release",
+    releaseDate: "2026-06-14",
+    lastUpdatedAt: "2026-06-14 IST",
+    title: `SoftLogic Whiteboard v1.0.20 ${environment} release`,
+    summary:
+      `${environment} v1.0.20 release with separate SoftLogic and AI Smart Board Android APK and Windows installer downloads.`,
+    artifacts: [
+      {
+        platform: "SoftLogic Android",
+        format: "APK",
+        label: "Download SoftLogic APK",
+        href: softlogicApk,
+        description:
+          `SoftLogic Android v1.0.20 ${environment.toLowerCase()} build for tablet, mobile, and whiteboard hardware classroom use.`
+      },
+      {
+        platform: "SoftLogic Windows",
+        format: "EXE",
+        label: "Download SoftLogic EXE",
+        href: softlogicExe,
+        description:
+          `SoftLogic Windows installer v1.0.20 for the ${environment.toLowerCase()} environment.`
+      },
+      {
+        platform: "AI Smart Board Android",
+        format: "APK",
+        label: "Download AI Smart Board APK",
+        href: aiSmartBoardApk,
+        description:
+          `AI Smart Board Android v1.0.20 ${environment.toLowerCase()} build with separate white-label identity.`
+      },
+      {
+        platform: "AI Smart Board Windows",
+        format: "EXE",
+        label: "Download AI Smart Board EXE",
+        href: aiSmartBoardExe,
+        description:
+          `AI Smart Board Windows installer v1.0.20 for the ${environment.toLowerCase()} environment.`
+      }
+    ],
+    downloadGroups: [
+      {
+        title: "SoftLogic",
+        badge: `${environment} build`,
+        description:
+          `Use the SoftLogic branded v1.0.20 app built for ${environment.toLowerCase()}.`,
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href: softlogicApk
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href: softlogicExe
+          }
+        ]
+      },
+      {
+        title: "AI Smart Board",
+        badge: `${environment} build`,
+        description:
+          `Use the AI Smart Board v1.0.20 app built for ${environment.toLowerCase()} with its separate install identity.`,
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href: aiSmartBoardApk
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href: aiSmartBoardExe
+          }
+        ]
+      }
+    ],
+    betaBanner: undefined,
+    releaseSpotlight: {
+      eyebrow: `${environment} environment`,
+      title: "SoftLogic Whiteboard v1.0.20",
+      description:
+        `${environment} release artifacts are available for SoftLogic and AI Smart Board on Android and Windows.`,
+      status,
+      type: environment,
+      version: "v1.0.20",
+    },
+    aiSetup: {
+      ...releasev1018.aiSetup,
+      title: "AI features setup for v1.0.20",
+    },
+    dashboardSection: {
+      ...releasev1018.dashboardSection,
+      title: "What's included in this whiteboard build (v1.0.20)",
+    },
+    noteSections: releasev1018.noteSections.map((section) => ({
+      ...section,
+      items: section.items.map((item) =>
+        item.replaceAll("v1.0.18", "v1.0.20")
+      ),
+    })),
+  });
+
+  const stagingReleasev1020 = createReleasev1020({
+    environment: "Staging",
+    primaryBadge: "Staging build",
+    releaseType: "Staging",
+    status: "Current staging release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1wLusfF1aPR3_gC4N2WQBA-xP3gsk8aFI/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1icsvUDfYTRE4VzuFAB1EoB1zONSU4ycM/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1ZSYrLn5JsNDgIGBFhevQErT0NCWlIvZB/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1Ldnxqk3Vci1k3J49dDcHLDDTv-OMaMGw/view?usp=sharing",
+  });
+
+  const productionReleasev1020 = createReleasev1020({
+    environment: "Production",
+    primaryBadge: "Production grade",
+    releaseType: "Production grade",
+    status: "Current production release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1cY0VVH2_UpJ9nWAnB7oBVmSqdXFx3D8p/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1MXQE5A88p-wb8JVknrIhZPGGfIe1rQl9/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1GYFnzqZZ_mSL31pCTU_QtY_QovIdHeNk/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1JbadcQgug6LhGd0P6TDk8mQdSnAyO_zG/view?usp=sharing",
+  });
+  productionReleasev1020.aiSetup = undefined;
+
   const sharedAdmin = {
     ...manifest.softlogicAdmin,
     email: undefined,
@@ -2470,8 +2622,8 @@ npm test
   manifest.environments = {
     staging: {
       label: "Staging",
-      currentVersion: "v1.0.19",
-      releases: [stagingReleasev1019, ...manifest.releases],
+      currentVersion: "v1.0.20",
+      releases: [stagingReleasev1020, stagingReleasev1019, ...manifest.releases],
       softlogicAdmin: {
         ...sharedAdmin,
         description:
@@ -2491,8 +2643,8 @@ npm test
     },
     production: {
       label: "Production",
-      currentVersion: "v1.0.19",
-      releases: [productionReleasev1019],
+      currentVersion: "v1.0.20",
+      releases: [productionReleasev1020, productionReleasev1019],
       softlogicAdmin: {
         ...sharedAdmin,
         description:

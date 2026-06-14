@@ -1104,6 +1104,22 @@ button { font: inherit; cursor: pointer; }
 .version-picker select:hover { border-color: var(--border-strong); }
 .version-picker select:focus { box-shadow: 0 0 0 3px var(--ring); border-color: var(--brand); }
 
+.version-admin-action {
+  display: inline-flex;
+  margin-top: 18px;
+  margin-left: 10px;
+  vertical-align: top;
+}
+
+.version-admin-action[hidden] {
+  display: none;
+}
+
+.version-admin-action .button-link {
+  min-height: 36px;
+  align-items: center;
+}
+
 .quick-actions {
   display: flex;
   flex-wrap: wrap;
@@ -3263,6 +3279,17 @@ button { font: inherit; cursor: pointer; }
   .version-picker select {
     width: 100%;
     min-width: 0;
+  }
+
+  .version-admin-action {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .version-admin-action .button-link {
+    width: 100%;
+    justify-content: center;
   }
 
   .readme-preview { padding: 22px 18px; }

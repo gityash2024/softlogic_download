@@ -401,6 +401,45 @@
       versionSelect.value = selectedRelease.version;
     }
 
+    const renderArtifactButton = (artifact, index = 0) => {
+      const localTarget = artifact.href.startsWith("/");
+      return `
+        <a
+          class="button-link ${index === 0 ? "primary" : ""}"
+          href="${escapeHtml(artifact.href)}"
+          target="${localTarget ? "_self" : "_blank"}"
+          rel="noreferrer"
+        >
+          ${escapeHtml(artifact.label)}
+        </a>
+      `;
+    };
+
+    const versionPicker = $(".version-picker");
+    let versionAdminAction = $("#version-admin-action");
+    if (versionPicker && !versionAdminAction) {
+      versionPicker.insertAdjacentHTML(
+        "afterend",
+        '<div class="version-admin-action" id="version-admin-action"></div>'
+      );
+      versionAdminAction = $("#version-admin-action");
+    }
+    if (versionAdminAction) {
+      if (manifest.softlogicAdmin?.url) {
+        versionAdminAction.hidden = false;
+        versionAdminAction.innerHTML = renderArtifactButton(
+          {
+            href: manifest.softlogicAdmin.url,
+            label: manifest.softlogicAdmin.label || "Open Admin Panel",
+          },
+          1
+        );
+      } else {
+        versionAdminAction.hidden = true;
+        versionAdminAction.innerHTML = "";
+      }
+    }
+
     const quickActions = $("#download-quick-actions");
     if (quickActions) {
       const spotlight = $(".download-spotlight");
@@ -412,29 +451,6 @@
       ) {
         spotlight.insertBefore(quickActions, versionDetails);
       }
-
-      const adminAction = manifest.softlogicAdmin
-        ? [
-            {
-              href: manifest.softlogicAdmin.url,
-              label: manifest.softlogicAdmin.label || "Open Admin Panel",
-            },
-          ]
-        : [];
-
-      const renderArtifactButton = (artifact, index = 0) => {
-        const localTarget = artifact.href.startsWith("/");
-        return `
-          <a
-            class="button-link ${index === 0 ? "primary" : ""}"
-            href="${escapeHtml(artifact.href)}"
-            target="${localTarget ? "_self" : "_blank"}"
-            rel="noreferrer"
-          >
-            ${escapeHtml(artifact.label)}
-          </a>
-        `;
-      };
 
       if (selectedRelease.downloadGroups?.length) {
         const portalActions = selectedRelease.artifacts.filter(
@@ -465,14 +481,12 @@
           </div>
           <div class="portal-link-actions">
             ${portalActions
-              .concat(adminAction)
               .map((artifact) => renderArtifactButton(artifact, 1))
               .join("")}
           </div>
         `;
       } else {
         quickActions.innerHTML = selectedRelease.artifacts
-          .concat(adminAction)
           .map((artifact, index) => renderArtifactButton(artifact, index))
           .join("");
       }
