@@ -2565,6 +2565,158 @@ npm test
   });
   productionReleasev1020.aiSetup = undefined;
 
+  const createReleasev1021 = ({
+    environment,
+    primaryBadge,
+    releaseType,
+    status,
+    softlogicApk,
+    softlogicExe,
+    aiSmartBoardApk,
+    aiSmartBoardExe,
+  }) => ({
+    ...releasev1018,
+    version: "v1.0.21",
+    appVersion: "1.0.21",
+    build: "22",
+    status,
+    releaseType,
+    primaryBadge,
+    secondaryBadge: "Current release",
+    releaseDate: "2026-06-17",
+    lastUpdatedAt: "2026-06-17 IST",
+    title: `SoftLogic Whiteboard v1.0.21 ${environment} release`,
+    summary:
+      `${environment} v1.0.21 release with separate SoftLogic and AI Smart Board Android APK and Windows installer downloads.`,
+    artifacts: [
+      {
+        platform: "SoftLogic Android",
+        format: "APK",
+        label: "Download SoftLogic APK",
+        href: softlogicApk,
+        description:
+          `SoftLogic Android v1.0.21 ${environment.toLowerCase()} build for tablet, mobile, and whiteboard hardware classroom use.`
+      },
+      {
+        platform: "SoftLogic Windows",
+        format: "EXE",
+        label: "Download SoftLogic EXE",
+        href: softlogicExe,
+        description:
+          `SoftLogic Windows installer v1.0.21 for the ${environment.toLowerCase()} environment.`
+      },
+      {
+        platform: "AI Smart Board Android",
+        format: "APK",
+        label: "Download AI Smart Board APK",
+        href: aiSmartBoardApk,
+        description:
+          `AI Smart Board Android v1.0.21 ${environment.toLowerCase()} build with separate white-label identity.`
+      },
+      {
+        platform: "AI Smart Board Windows",
+        format: "EXE",
+        label: "Download AI Smart Board EXE",
+        href: aiSmartBoardExe,
+        description:
+          `AI Smart Board Windows installer v1.0.21 for the ${environment.toLowerCase()} environment.`
+      }
+    ],
+    downloadGroups: [
+      {
+        title: "SoftLogic",
+        badge: `${environment} build`,
+        description:
+          `Use the SoftLogic branded v1.0.21 app built for ${environment.toLowerCase()}.`,
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href: softlogicApk
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href: softlogicExe
+          }
+        ]
+      },
+      {
+        title: "AI Smart Board",
+        badge: `${environment} build`,
+        description:
+          `Use the AI Smart Board v1.0.21 app built for ${environment.toLowerCase()} with its separate install identity.`,
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href: aiSmartBoardApk
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href: aiSmartBoardExe
+          }
+        ]
+      }
+    ],
+    betaBanner: undefined,
+    releaseSpotlight: {
+      eyebrow: `${environment} environment`,
+      title: "SoftLogic Whiteboard v1.0.21",
+      description:
+        `${environment} release artifacts are available for SoftLogic and AI Smart Board on Android and Windows.`,
+      status,
+      type: environment,
+      version: "v1.0.21",
+    },
+    aiSetup: {
+      ...releasev1018.aiSetup,
+      title: "AI features setup for v1.0.21",
+    },
+    dashboardSection: {
+      ...releasev1018.dashboardSection,
+      title: "What's included in this whiteboard build (v1.0.21)",
+    },
+    noteSections: releasev1018.noteSections.map((section) => ({
+      ...section,
+      items: section.items.map((item) =>
+        item.replaceAll("v1.0.18", "v1.0.21")
+      ),
+    })),
+  });
+
+  const stagingReleasev1021 = createReleasev1021({
+    environment: "Staging",
+    primaryBadge: "Staging build",
+    releaseType: "Staging",
+    status: "Current staging release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1kVhsdFdXbgu_Wlz4hr4nbJfOzSHPJ86V/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1VBzoP_8yyoOAFIL06K6i8y02YsRj-5IS/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1j2hcyrxWGWWLqVJAcmkt_kGOHkIouf4U/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1Hde_A51W5tBvKXxlb0PjQJgSCyk2fD8s/view?usp=sharing",
+  });
+
+  const productionReleasev1021 = createReleasev1021({
+    environment: "Production",
+    primaryBadge: "Production grade",
+    releaseType: "Production grade",
+    status: "Current production release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1azOYb2yLuIQ9MQ0tfq4V3Ho5j4gBdEOg/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1vrC9Qp0ruwqMpbhqrtymAUs0L40DU-CD/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1NRw21SQbznMgd4nGD8BHCxgNFrAMZoNd/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1x4f45Rpr36umSiQbR9TOjK2nn4R-bQ5J/view?usp=sharing",
+  });
+  productionReleasev1021.aiSetup = undefined;
+
   const sharedAdmin = {
     ...manifest.softlogicAdmin,
     email: undefined,
@@ -2622,8 +2774,13 @@ npm test
   manifest.environments = {
     staging: {
       label: "Staging",
-      currentVersion: "v1.0.20",
-      releases: [stagingReleasev1020, stagingReleasev1019, ...manifest.releases],
+      currentVersion: "v1.0.21",
+      releases: [
+        stagingReleasev1021,
+        stagingReleasev1020,
+        stagingReleasev1019,
+        ...manifest.releases,
+      ],
       softlogicAdmin: {
         ...sharedAdmin,
         description:
@@ -2643,8 +2800,12 @@ npm test
     },
     production: {
       label: "Production",
-      currentVersion: "v1.0.20",
-      releases: [productionReleasev1020, productionReleasev1019],
+      currentVersion: "v1.0.21",
+      releases: [
+        productionReleasev1021,
+        productionReleasev1020,
+        productionReleasev1019,
+      ],
       softlogicAdmin: {
         ...sharedAdmin,
         description:
