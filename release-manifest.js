@@ -2717,6 +2717,158 @@ npm test
   });
   productionReleasev1021.aiSetup = undefined;
 
+  const createReleasev1022 = ({
+    environment,
+    primaryBadge,
+    releaseType,
+    status,
+    softlogicApk,
+    softlogicExe,
+    aiSmartBoardApk,
+    aiSmartBoardExe,
+  }) => ({
+    ...releasev1018,
+    version: "v1.0.22",
+    appVersion: "1.0.22",
+    build: "23",
+    status,
+    releaseType,
+    primaryBadge,
+    secondaryBadge: "Current release",
+    releaseDate: "2026-06-21",
+    lastUpdatedAt: "2026-06-21 IST",
+    title: `SoftLogic Whiteboard v1.0.22 ${environment} release`,
+    summary:
+      `${environment} v1.0.22 release with separate SoftLogic and AI Smart Board Android APK and Windows installer downloads.`,
+    artifacts: [
+      {
+        platform: "SoftLogic Android",
+        format: "APK",
+        label: "Download SoftLogic APK",
+        href: softlogicApk,
+        description:
+          `SoftLogic Android v1.0.22 ${environment.toLowerCase()} build for tablet, mobile, and whiteboard hardware classroom use.`
+      },
+      {
+        platform: "SoftLogic Windows",
+        format: "EXE",
+        label: "Download SoftLogic EXE",
+        href: softlogicExe,
+        description:
+          `SoftLogic Windows installer v1.0.22 for the ${environment.toLowerCase()} environment.`
+      },
+      {
+        platform: "AI Smart Board Android",
+        format: "APK",
+        label: "Download AI Smart Board APK",
+        href: aiSmartBoardApk,
+        description:
+          `AI Smart Board Android v1.0.22 ${environment.toLowerCase()} build with separate white-label identity.`
+      },
+      {
+        platform: "AI Smart Board Windows",
+        format: "EXE",
+        label: "Download AI Smart Board EXE",
+        href: aiSmartBoardExe,
+        description:
+          `AI Smart Board Windows installer v1.0.22 for the ${environment.toLowerCase()} environment.`
+      }
+    ],
+    downloadGroups: [
+      {
+        title: "SoftLogic",
+        badge: `${environment} build`,
+        description:
+          `Use the SoftLogic branded v1.0.22 app built for ${environment.toLowerCase()}.`,
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href: softlogicApk
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href: softlogicExe
+          }
+        ]
+      },
+      {
+        title: "AI Smart Board",
+        badge: `${environment} build`,
+        description:
+          `Use the AI Smart Board v1.0.22 app built for ${environment.toLowerCase()} with its separate install identity.`,
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href: aiSmartBoardApk
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href: aiSmartBoardExe
+          }
+        ]
+      }
+    ],
+    betaBanner: undefined,
+    releaseSpotlight: {
+      eyebrow: `${environment} environment`,
+      title: "SoftLogic Whiteboard v1.0.22",
+      description:
+        `${environment} release artifacts are available for SoftLogic and AI Smart Board on Android and Windows.`,
+      status,
+      type: environment,
+      version: "v1.0.22",
+    },
+    aiSetup: {
+      ...releasev1018.aiSetup,
+      title: "AI features setup for v1.0.22",
+    },
+    dashboardSection: {
+      ...releasev1018.dashboardSection,
+      title: "What's included in this whiteboard build (v1.0.22)",
+    },
+    noteSections: releasev1018.noteSections.map((section) => ({
+      ...section,
+      items: section.items.map((item) =>
+        item.replaceAll("v1.0.18", "v1.0.22")
+      ),
+    })),
+  });
+
+  const stagingReleasev1022 = createReleasev1022({
+    environment: "Staging",
+    primaryBadge: "Staging build",
+    releaseType: "Staging",
+    status: "Current staging release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1NPq0HQAfU5iPPdXYiGUVELsKP-6KGTQy/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1Irp8DYfU_zjMiIHPvzHHGJrr9zQ42AVB/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1WsQAAkW-UD0_RHD_uzwcymHntT4stQyU/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1U08fb_-iVB5Gc3nAmY4GAjI4QL7SAkLx/view?usp=sharing",
+  });
+
+  const productionReleasev1022 = createReleasev1022({
+    environment: "Production",
+    primaryBadge: "Production grade",
+    releaseType: "Production grade",
+    status: "Current production release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1bID3eRU_hEXMIeifJdjp6qjR7SioaIQe/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1RZWSdfCu_mEbaMDVznpYNgeHW0wRIOyI/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1Rcu9oa9UdMdea4S_8KaqJVYSELgYp_74/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1Kiphjo6p5VeK0zcQNQZiDhPdqA3W8g1F/view?usp=sharing",
+  });
+  productionReleasev1022.aiSetup = undefined;
+
   const sharedAdmin = {
     ...manifest.softlogicAdmin,
     email: undefined,
@@ -2774,8 +2926,9 @@ npm test
   manifest.environments = {
     staging: {
       label: "Staging",
-      currentVersion: "v1.0.21",
+      currentVersion: "v1.0.22",
       releases: [
+        stagingReleasev1022,
         stagingReleasev1021,
         stagingReleasev1020,
         stagingReleasev1019,
@@ -2800,8 +2953,9 @@ npm test
     },
     production: {
       label: "Production",
-      currentVersion: "v1.0.21",
+      currentVersion: "v1.0.22",
       releases: [
+        productionReleasev1022,
         productionReleasev1021,
         productionReleasev1020,
         productionReleasev1019,
