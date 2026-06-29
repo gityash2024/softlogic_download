@@ -2869,6 +2869,68 @@ npm test
   });
   productionReleasev1022.aiSetup = undefined;
 
+  const createReleasev1023 = (options) => {
+    const release = createReleasev1022(options);
+    const updateText = (value) =>
+      typeof value === "string"
+        ? value.replaceAll("v1.0.22", "v1.0.23")
+        : value;
+
+    return {
+      ...release,
+      version: "v1.0.23",
+      appVersion: "1.0.23",
+      build: "24",
+      releaseDate: "2026-06-29",
+      lastUpdatedAt: "2026-06-29 IST",
+      title: updateText(release.title),
+      summary: updateText(release.summary),
+      artifacts: release.artifacts.map((artifact) => ({
+        ...artifact,
+        description: updateText(artifact.description),
+      })),
+      downloadGroups: release.downloadGroups.map((group) => ({
+        ...group,
+        description: updateText(group.description),
+      })),
+      releaseSpotlight: {
+        ...release.releaseSpotlight,
+        title: updateText(release.releaseSpotlight.title),
+        description: updateText(release.releaseSpotlight.description),
+        version: "v1.0.23",
+      },
+      aiSetup: release.aiSetup
+        ? {
+            ...release.aiSetup,
+            title: updateText(release.aiSetup.title),
+          }
+        : release.aiSetup,
+      dashboardSection: {
+        ...release.dashboardSection,
+        title: updateText(release.dashboardSection.title),
+      },
+      noteSections: release.noteSections.map((section) => ({
+        ...section,
+        items: section.items.map((item) => updateText(item)),
+      })),
+    };
+  };
+
+  const stagingReleasev1023 = createReleasev1023({
+    environment: "Staging",
+    primaryBadge: "Staging build",
+    releaseType: "Staging",
+    status: "Current staging release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1zwW94TCrVMeedBJWPLVySDCa4y742BUm/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1xEAe1xR6-Ku5SNjYsY8t9qDwQ6xVjZ0U/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1pp-31NgjE3bxjLEw_18jIgQBKHZ7LVtc/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1b0QuD9Lb6Ae4hEfmqBwCEn6uepXs_DoI/view?usp=sharing",
+  });
+
   const sharedAdmin = {
     ...manifest.softlogicAdmin,
     email: undefined,
@@ -2926,8 +2988,9 @@ npm test
   manifest.environments = {
     staging: {
       label: "Staging",
-      currentVersion: "v1.0.22",
+      currentVersion: "v1.0.23",
       releases: [
+        stagingReleasev1023,
         stagingReleasev1022,
         stagingReleasev1021,
         stagingReleasev1020,
