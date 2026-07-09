@@ -2881,8 +2881,8 @@ npm test
       version: "v1.0.23",
       appVersion: "1.0.23",
       build: "24",
-      releaseDate: "2026-07-05",
-      lastUpdatedAt: "2026-07-05 IST",
+      releaseDate: "2026-07-09",
+      lastUpdatedAt: "2026-07-09 IST",
       title: updateText(release.title),
       summary: updateText(release.summary),
       artifacts: release.artifacts.map((artifact) => ({
@@ -2922,13 +2922,13 @@ npm test
     releaseType: "Staging",
     status: "Current staging release",
     softlogicApk:
-      "https://drive.google.com/file/d/1OETQZo25r59tLOhdzWY932gGVLlLQbMj/view?usp=sharing",
+      "https://drive.google.com/file/d/1myFRmphFWgs5jB7I1rJaotLOOZJb9QcX/view?usp=sharing",
     softlogicExe:
-      "https://drive.google.com/file/d/1d36PwgBCx_W7xjPPq_vS4F0R09tMhmjS/view?usp=sharing",
+      "https://drive.google.com/file/d/1Sew9zNjRtgNkvLLG_L0cErHFcCUFw1Ta/view?usp=sharing",
     aiSmartBoardApk:
-      "https://drive.google.com/file/d/1Lqtp4XUwZtYQATwGYtpdkfIT269kG75N/view?usp=sharing",
+      "https://drive.google.com/file/d/1edUaaDcw4yn4rTW2ejA3cFQlmAeMwzHi/view?usp=sharing",
     aiSmartBoardExe:
-      "https://drive.google.com/file/d/1l8qURpqXmLJjrRDM_aCrjdk8UFtTSN6x/view?usp=sharing",
+      "https://drive.google.com/file/d/1K7k43qnp_mCe9uTh_qNDkynmDA6o6mIm/view?usp=sharing",
   });
 
   const sharedAdmin = {
