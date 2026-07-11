@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.20",
-  lastSynced: "2026-06-14",
+  currentVersion: "v1.0.23",
+  lastSynced: "2026-07-10",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -2881,8 +2881,8 @@ npm test
       version: "v1.0.23",
       appVersion: "1.0.23",
       build: "24",
-      releaseDate: "2026-07-09",
-      lastUpdatedAt: "2026-07-09 IST",
+      releaseDate: "2026-07-10",
+      lastUpdatedAt: "2026-07-10 11:35 PM IST",
       title: updateText(release.title),
       summary: updateText(release.summary),
       artifacts: release.artifacts.map((artifact) => ({
@@ -2922,14 +2922,30 @@ npm test
     releaseType: "Staging",
     status: "Current staging release",
     softlogicApk:
-      "https://drive.google.com/file/d/1myFRmphFWgs5jB7I1rJaotLOOZJb9QcX/view?usp=sharing",
+      "https://drive.google.com/file/d/1QOeUsqljsT25vNi1Y6AL2L-sN27MYe4H/view?usp=sharing",
     softlogicExe:
-      "https://drive.google.com/file/d/1Sew9zNjRtgNkvLLG_L0cErHFcCUFw1Ta/view?usp=sharing",
+      "https://drive.google.com/file/d/1GUzUTx1LL17Tk0UEG72wDE1qczOEo6lf/view?usp=sharing",
     aiSmartBoardApk:
-      "https://drive.google.com/file/d/1edUaaDcw4yn4rTW2ejA3cFQlmAeMwzHi/view?usp=sharing",
+      "https://drive.google.com/file/d/1dHMncNlM1YpE4DTNRct0FUBNM1pv936S/view?usp=sharing",
     aiSmartBoardExe:
-      "https://drive.google.com/file/d/1K7k43qnp_mCe9uTh_qNDkynmDA6o6mIm/view?usp=sharing",
+      "https://drive.google.com/file/d/1CoPuEAzNQFsVxUk3bbebwqt_nnNnIVMw/view?usp=sharing",
   });
+
+  const productionReleasev1023 = createReleasev1023({
+    environment: "Production",
+    primaryBadge: "Production grade",
+    releaseType: "Production grade",
+    status: "Current production release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1DVWNM_LcQySWg6SrePFeTMAMvGSboklW/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1YJTPwiXmW9K83RlyGZb23QgHUJw06V2F/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1vlOdnXTeLIuCvJdRlZSyWq3oiSKP9p7F/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1HvtgxyfpMLNUhugCJeFMOD-Tw5kftxW-/view?usp=sharing",
+  });
+  productionReleasev1023.aiSetup = undefined;
 
   const sharedAdmin = {
     ...manifest.softlogicAdmin,
@@ -3016,8 +3032,9 @@ npm test
     },
     production: {
       label: "Production",
-      currentVersion: "v1.0.22",
+      currentVersion: "v1.0.23",
       releases: [
+        productionReleasev1023,
         productionReleasev1022,
         productionReleasev1021,
         productionReleasev1020,
