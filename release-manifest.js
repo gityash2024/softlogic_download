@@ -3081,6 +3081,34 @@ npm test
     },
     noteSections: [
       {
+        title: "What's New in v1.0.24",
+        items: [
+          "Updated activation key email template as per the required branding/flavour.",
+          "Removed download portal link from session code email template.",
+          "Live session improvements — student & parent joined screen data population.",
+          "Restricted meeting editing access to selected students only.",
+          "Added assessment submission option with material upload support.",
+          "Digital Book / PDF opening support inside Android Whiteboard panel.",
+          "Fixed App Tour flows for Teacher, Admin, and other user roles.",
+          "Storage options testing and functionality improvements.",
+          "Improved independent Split Screen functionality.",
+          "AI Tool App Tour enhancements.",
+          "Improved whiteboard object handling (graphs, tables, Venn diagrams movement).",
+          "Heat Map Data Matrix visibility fix.",
+          "Optimized content loading performance.",
+          "Enhanced 3D models with improved visual differentiation.",
+          "Improved export flow (folder selection window enhancement).",
+          "Fixed multi-selection delete and multi-page deletion issues.",
+          "Improved Open Menu options and PPT import workflow.",
+          "PPT import improvements (preview, page selection, formatting & image preservation).",
+          "Whiteboard session save/open compatibility fixes.",
+          "Fixed image export invalid data error.",
+          "Improved Palm Eraser functionality.",
+          "Improved Pixel Eraser smoothness.",
+          "Fixed shape rendering issues (circle pixel alignment)."
+        ]
+      },
+      {
         title: "Assessment System (Flutter App)",
         items: [
           "New in-session assessment panel widget (live_session_assessments_section.dart) embedded inside live sessions for both teacher and student roles.",
