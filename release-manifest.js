@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.23",
-  lastSynced: "2026-07-10",
+  currentVersion: "v1.0.24",
+  lastSynced: "2026-07-31",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -2947,6 +2947,246 @@ npm test
   });
   productionReleasev1023.aiSetup = undefined;
 
+  const createReleasev1024 = ({
+    environment,
+    primaryBadge,
+    releaseType,
+    status,
+    softlogicApk,
+    softlogicExe,
+    aiSmartBoardApk,
+    aiSmartBoardExe,
+  }) => ({
+    version: "v1.0.24",
+    appVersion: "1.0.24",
+    build: "25",
+    status,
+    releaseType,
+    primaryBadge,
+    secondaryBadge: "Current release",
+    releaseDate: "2026-07-31",
+    lastUpdatedAt: "2026-07-31 09:30 PM IST",
+    title: `SoftLogic Whiteboard v1.0.24 ${environment} release`,
+    summary:
+      `${environment} v1.0.24 release introducing the full in-session Assessment System (MCQ quizzes, file submissions, teacher grading), Digital Book PDF viewer, Play Store demo accounts, and a comprehensive set of whiteboard and backend improvements.`,
+    artifacts: [
+      {
+        platform: "SoftLogic Android",
+        format: "APK",
+        label: "Download SoftLogic APK",
+        href: softlogicApk,
+        description:
+          `SoftLogic AI Android v1.0.24 ${environment.toLowerCase()} build for tablet, mobile, and whiteboard hardware classroom use.`
+      },
+      {
+        platform: "SoftLogic Windows",
+        format: "EXE",
+        label: "Download SoftLogic EXE",
+        href: softlogicExe,
+        description:
+          `SoftLogic AI Windows installer v1.0.24 for the ${environment.toLowerCase()} environment.`
+      },
+      {
+        platform: "AI Smart Board Android",
+        format: "APK",
+        label: "Download AI Smart Board APK",
+        href: aiSmartBoardApk,
+        description:
+          `AI Smart Board Android v1.0.24 ${environment.toLowerCase()} build with separate white-label identity.`
+      },
+      {
+        platform: "AI Smart Board Windows",
+        format: "EXE",
+        label: "Download AI Smart Board EXE",
+        href: aiSmartBoardExe,
+        description:
+          `AI Smart Board Windows installer v1.0.24 for the ${environment.toLowerCase()} environment.`
+      }
+    ],
+    downloadGroups: [
+      {
+        title: "SoftLogic",
+        badge: `${environment} build`,
+        description:
+          `Use the SoftLogic branded v1.0.24 app built for ${environment.toLowerCase()}.`,
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href: softlogicApk
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href: softlogicExe
+          }
+        ]
+      },
+      {
+        title: "AI Smart Board",
+        badge: `${environment} build`,
+        description:
+          `Use the AI Smart Board v1.0.24 app built for ${environment.toLowerCase()} with its separate install identity.`,
+        artifacts: [
+          {
+            format: "APK",
+            label: "Download Android APK",
+            href: aiSmartBoardApk
+          },
+          {
+            format: "EXE",
+            label: "Download Windows EXE",
+            href: aiSmartBoardExe
+          }
+        ]
+      }
+    ],
+    betaBanner: undefined,
+    releaseSpotlight: {
+      eyebrow: `${environment} environment`,
+      title: "SoftLogic Whiteboard v1.0.24",
+      description:
+        `${environment} release artifacts are available for SoftLogic and AI Smart Board on Android and Windows.`,
+      status,
+      type: environment,
+      version: "v1.0.24",
+    },
+    aiSetup: {
+      title: "AI features setup for v1.0.24",
+      description:
+        "For this version, add these organisation API keys before using AI features.",
+      path:
+        "Login to softlogic admin panel > Organisation > Organisation Settings",
+      keys: [
+        {
+          label: "Gemini API key",
+          value: "AIzaSyDbbv5Xm8so3AIYQahwNeFQ7o1N_wpfyic"
+        },
+        {
+          label: "Deepgram API key",
+          value: "a4d45bfd78210e24cc92cd015fcd9124a30f194e"
+        }
+      ]
+    },
+    dashboardMode: "singleUserFriendly",
+    dashboardSection: {
+      title: "What's included in this whiteboard build (v1.0.24)",
+      items: [
+        "Full in-session Assessment System — MCQ quizzes, file upload submissions, and teacher grading inside live sessions.",
+        "Digital Book / PDF Viewer — view and control PDF documents directly inside the whiteboard canvas.",
+        "Play Store demo account support with isPlayStoreDemo flag and dedicated route guards.",
+        "Whiteboard improvements: whole-element drag surface, 3D resource catalog enhancements, and export service expansion.",
+        "Backend assessment submission API: submit answers, retrieve submissions, pre-sign file URLs for teacher review."
+      ]
+    },
+    noteSections: [
+      {
+        title: "Assessment System (Flutter App)",
+        items: [
+          "New in-session assessment panel widget (live_session_assessments_section.dart) embedded inside live sessions for both teacher and student roles.",
+          "MCQ Quiz Dialog — students can take multiple-choice quizzes directly inside the live session room (mcq_quiz_dialog.dart, 407 lines).",
+          "MCQ Score Dialog — post-quiz score and result display shown to students after quiz submission (mcq_score_dialog.dart, 383 lines).",
+          "File Upload Submission Dialog — students can upload file-based assessment submissions within the app (file_upload_submission_dialog.dart, 455 lines).",
+          "Assessment data layer: assessment_model.dart, assessment_provider.dart, assessment_remote_datasource.dart — full local state management and API integration.",
+          "Live session details screen fully revamped with improved layout, padding, and assessment section integration.",
+          "Live session room screen polished with expanded teacher and student controls."
+        ]
+      },
+      {
+        title: "Assessment System (Backend)",
+        items: [
+          "New POST /assessments/:id/submit endpoint — accepts MCQ answers or file upload submissions from students.",
+          "New GET /assessments/:id/submissions endpoint — teachers retrieve all student submissions for an assessment.",
+          "New GET /assessments/:id/submissions/:submissionId endpoint — detail view for grading individual submissions.",
+          "Backend pre-signs uploaded file submission URLs so teachers can securely view student-uploaded files.",
+          "submissionCount now correctly mapped and returned on assessment list objects.",
+          "Database migration adding assessment_submissions table (migration 20260723200900)."
+        ]
+      },
+      {
+        title: "Assessment System (Admin Panel)",
+        items: [
+          "AssessmentSubmissionsModal.tsx — teachers can view all student submissions for an assessment from the admin panel.",
+          "StudentAssessmentSubmitModal.tsx — web-based student submission flow added to the admin portal.",
+          "LiveSessionDetailPage.tsx updated with assessment section and submission UX.",
+          "Role-conditional assessment action buttons fixed on the previous session page (RolePortalPage.tsx).",
+          "Assessment grading payload corrected: renamed score field to totalScore to match backend validation schema.",
+          "TypeScript build errors resolved in grading and submission modals (blocked Vercel deployment).",
+          "Web student assessment submission state management fixed.",
+          "assessment.api.ts updated with file upload and submission API endpoints."
+        ]
+      },
+      {
+        title: "Whiteboard Enhancements (Flutter App)",
+        items: [
+          "Digital Book / PDF Viewer — new digital_book_pdf_service.dart (361 lines) and digital_book_pdf_controller.dart (496 lines) for in-whiteboard PDF viewing and page control.",
+          "Whole-element drag surface — new whole_element_drag_surface.dart overlay for reliable element repositioning on the canvas.",
+          "3D Resource Catalog — enhanced three_d_resource_catalog.dart and three_d_resource_editor_panel.dart with improved browsing and editing.",
+          "Activity Embed Widget — new activity_embed_widget_data.dart model added to whiteboard data layer.",
+          "Whiteboard export service significantly expanded with additional destination options and validation (whiteboard_export_service.dart).",
+          "More tools editor panels expanded with new tool configurations (more_tool_editor_panels.dart, 190 insertions).",
+          "Canvas painter stroke rendering refined with updated coordinate allocations.",
+          "Graph widget overlay and table widget overlay improvements.",
+          "Shape geometry calculations refined in shape_geometry.dart.",
+          "Whiteboard split-pane state management added with new test coverage."
+        ]
+      },
+      {
+        title: "Auth, Licensing & Cloud (Flutter App)",
+        items: [
+          "Play Store demo account: isPlayStoreDemo flag added to UserEntity, AuthRepository, and login screen handling.",
+          "Route guards updated to handle demo account routing scenarios.",
+          "Activation provider improvements for licensing state management.",
+          "Cloud import dialog (cloud_import_dialog.dart) and content library service (content_library_service.dart) significantly expanded."
+        ]
+      },
+      {
+        title: "Backend Fixes & Improvements",
+        items: [
+          "PPT conversion flow fixed in import-conversion.service.ts for reliable PowerPoint-to-image processing.",
+          "Live session invitation email updated with improved code delivery content.",
+          "Email template polish and bug fixes across activation key and welcome email flows.",
+          "Play Store demo account migration (20260728193000) adding isPlayStoreDemo boolean column to users table.",
+          "scripts/play-store-demo.ts added for demo account seeding and management.",
+          "Content library service improvements for cloud content access."
+        ]
+      },
+      {
+        title: "Admin Panel Fixes",
+        items: [
+          "Login rate limiting removed — client-side login attempt lockout completely disabled (login-attempt-lockout.ts rewritten as passthrough).",
+          "No server-side rate limiting is active in staging (passthroughRateLimiter middleware confirmed)."
+        ]
+      },
+      {
+        title: "Testing Suites & Verification",
+        items: [
+          "New test suites added: login_screen_test.dart, digital_book_pdf_service_test.dart, content_library_service_test.dart.",
+          "Expanded tests: whiteboard_more_tools_test.dart (+366 lines), whiteboard_content_tools_test.dart (+152 lines).",
+          "New whiteboard_document_service_test.dart, whiteboard_export_codec_test.dart, three_d_resource_catalog_service_test.dart.",
+          "whiteboard_split_pane_state_test.dart added for split-pane state coverage.",
+          "Backend assessment routes test (assessment.routes.test.ts) and service test (assessment.service.test.ts) added."
+        ]
+      }
+    ]
+  });
+
+  const stagingReleasev1024 = createReleasev1024({
+    environment: "Staging",
+    primaryBadge: "Staging build",
+    releaseType: "Staging",
+    status: "Current staging release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1GMWfJha4gDl0pP2haHulon4vFQcTTYF2/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1_p3FWHK2Moh-U-kDJP8OQ-FMnkofwG8u/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1l9BZPnnB5drAAvNTNqrZmZFOA4wCVSMI/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1UsKQUAYdVd5LKHf_5uzHOEg8cslzXiKl/view?usp=sharing",
+  });
+
+
   const sharedAdmin = {
     ...manifest.softlogicAdmin,
     email: undefined,
@@ -3004,8 +3244,9 @@ npm test
   manifest.environments = {
     staging: {
       label: "Staging",
-      currentVersion: "v1.0.23",
+      currentVersion: "v1.0.24",
       releases: [
+        stagingReleasev1024,
         stagingReleasev1023,
         stagingReleasev1022,
         stagingReleasev1021,
