@@ -3068,17 +3068,8 @@ npm test
         }
       ]
     },
-    dashboardMode: "singleUserFriendly",
-    dashboardSection: {
-      title: "What's included in this whiteboard build (v1.0.24)",
-      items: [
-        "Full in-session Assessment System — MCQ quizzes, file upload submissions, and teacher grading inside live sessions.",
-        "Digital Book / PDF Viewer — view and control PDF documents directly inside the whiteboard canvas.",
-        "Play Store demo account support with isPlayStoreDemo flag and dedicated route guards.",
-        "Whiteboard improvements: whole-element drag surface, 3D resource catalog enhancements, and export service expansion.",
-        "Backend assessment submission API: submit answers, retrieve submissions, pre-sign file URLs for teacher review."
-      ]
-    },
+    dashboardMode: undefined,
+    dashboardSection: undefined,
     noteSections: [
       {
         title: "What's New in v1.0.24",
