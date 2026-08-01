@@ -2964,8 +2964,8 @@ npm test
     releaseType,
     primaryBadge,
     secondaryBadge: "Current release",
-    releaseDate: "2026-07-31",
-    lastUpdatedAt: "2026-07-31 09:30 PM IST",
+    releaseDate: "2026-08-01",
+    lastUpdatedAt: "2026-08-01 10:35 AM IST",
     title: `SoftLogic Whiteboard v1.0.24 ${environment} release`,
     summary:
       `${environment} v1.0.24 release introducing the full in-session Assessment System (MCQ quizzes, file submissions, teacher grading), Digital Book PDF viewer, Play Store demo accounts, and a comprehensive set of whiteboard and backend improvements.`,
