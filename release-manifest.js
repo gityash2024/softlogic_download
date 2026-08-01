@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
   currentVersion: "v1.0.24",
-  lastSynced: "2026-07-31",
+  lastSynced: "2026-08-01",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -3196,13 +3196,13 @@ npm test
     releaseType: "Staging",
     status: "Current staging release",
     softlogicApk:
-      "https://drive.google.com/file/d/1GMWfJha4gDl0pP2haHulon4vFQcTTYF2/view?usp=sharing",
+      "https://drive.google.com/file/d/1-_eufJn7_mJUNTPkwPJnw_Wygq7--qdz/view?usp=sharing",
     softlogicExe:
-      "https://drive.google.com/file/d/1_p3FWHK2Moh-U-kDJP8OQ-FMnkofwG8u/view?usp=sharing",
+      "https://drive.google.com/file/d/1JPbCDkvnmCliGRDuqwsI1YJknFOAYYCi/view?usp=sharing",
     aiSmartBoardApk:
-      "https://drive.google.com/file/d/1l9BZPnnB5drAAvNTNqrZmZFOA4wCVSMI/view?usp=sharing",
+      "https://drive.google.com/file/d/165GjY78D3Ay43V1V1NZjSL-gQlXD9kEh/view?usp=sharing",
     aiSmartBoardExe:
-      "https://drive.google.com/file/d/1UsKQUAYdVd5LKHf_5uzHOEg8cslzXiKl/view?usp=sharing",
+      "https://drive.google.com/file/d/1plrkU6GYXEXPLafvV7o0GTgQJ74LS0nF/view?usp=sharing",
   });
 
 
