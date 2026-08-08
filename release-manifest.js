@@ -3260,6 +3260,55 @@ npm test
     ]
   };
 
+  const pocRelease = {
+    version: "POC LLM",
+    appVersion: "1.0.0-poc",
+    build: "1",
+    status: "Proof of Concept",
+    releaseDate: new Date().toISOString().split('T')[0],
+    title: "SoftLogic AI Proof of Concept (POC LLM)",
+    summary: "Complete POC LLM integrating AI capabilities into the SoftLogic Whiteboard. This build includes all POC features, functionalities, and generative AI models.",
+    artifacts: [
+      {
+        platform: "Android",
+        format: "APK",
+        label: "Download Android APK",
+        href: "https://drive.google.com/file/d/17eoIUF1lkTaj0xF1dmoRprx969d_xNCk/view?usp=sharing",
+        description: "Android release build for POC LLM on tablet, mobile, and whiteboard hardware."
+      },
+      {
+        platform: "Windows",
+        format: "EXE",
+        label: "Download Windows EXE",
+        href: "https://drive.google.com/file/d/1UdfH0DxJthc1oHahc0p0BYw1zkuZCne7/view?usp=sharing",
+        description: "One-file Windows installer build for POC LLM testing on desktop stations."
+      }
+    ],
+    dashboardMode: "singleUserFriendly",
+    dashboardSection: {
+      title: "What's included in this POC LLM build",
+      items: [
+        "Complete Proof of Concept for LLM integration within the whiteboard environment.",
+        "Interactive AI Assist for real-time contextual help, analysis, and generation.",
+        "Smart Write and enhanced handwriting recognition using generative AI.",
+        "Generative Text-to-Media (images) for creating educational assets on the canvas.",
+        "Offline tools, PDF viewers, and robust teaching templates all fully integrated.",
+        "Cloud sync, autosave, and multi-touch capabilities combined with AI."
+      ]
+    },
+    noteSections: []
+  };
+
+  const pocAccessGuide = {
+    ...manifest.accessGuide,
+    badge: "POC access guide",
+    title: "POC authentication and user flow",
+    description: "Access details for testing the POC LLM builds. No versions or updates applied.",
+    credentialLabel: "POC Environment",
+    credentialValue: "Unlocked",
+    accessNote: "Install the provided builds to explore all AI features and whiteboard integrations without restrictions."
+  };
+
   manifest.environments = {
     staging: {
       label: "Staging",
@@ -3317,5 +3366,26 @@ npm test
       },
       accessGuide: productionAccessGuide,
     },
+    poc: {
+      label: "POC",
+      currentVersion: "POC LLM",
+      releases: [pocRelease],
+      softlogicAdmin: {
+        ...sharedAdmin,
+        description: "Admin panel details for POC.",
+        url: "https://adminpanelsoftlogic.vercel.app",
+        showCredentials: false
+      },
+      api: {
+        backendBaseUrl: "https://softlogic-whiteboard-backend-testin.vercel.app",
+        swaggerUrl: "https://softlogic-whiteboard-backend-testin.vercel.app/api/docs",
+        swaggerJsonUrl: "./swagger/openapi-v1.0.0.json",
+        backendSwaggerJsonUrl: "https://softlogic-whiteboard-backend-testin.vercel.app/api/docs.json",
+        publicVersionUrl: "https://softlogic-whiteboard-backend-testin.vercel.app/api/version",
+        apiVersionUrl: "https://softlogic-whiteboard-backend-testin.vercel.app/api/v1/version",
+        apiBaseUrl: "https://softlogic-whiteboard-backend-testin.vercel.app/api/v1"
+      },
+      accessGuide: pocAccessGuide,
+    }
   };
 })();

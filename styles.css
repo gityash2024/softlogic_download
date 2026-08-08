@@ -4341,6 +4341,61 @@ html[data-theme="light"] .tag-bugfix {
 }
 
 html[data-theme="light"] .tag-testing {
+
+/* Categorized tag badges in HSL */
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--r-xs);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Dark theme specific HSL badges */
+html[data-theme="dark"] .tag-feature {
+  background: hsla(210, 100%, 55%, 0.15);
+  color: hsl(210, 100%, 75%);
+  border: 1px solid hsla(210, 100%, 55%, 0.3);
+}
+
+html[data-theme="dark"] .tag-bugfix {
+  background: hsla(350, 90%, 60%, 0.15);
+  color: hsl(350, 90%, 75%);
+  border: 1px solid hsla(350, 90%, 60%, 0.3);
+}
+
+html[data-theme="dark"] .tag-testing {
+  background: hsla(280, 80%, 65%, 0.15);
+  color: hsl(280, 80%, 75%);
+  border: 1px solid hsla(280, 80%, 65%, 0.3);
+}
+
+html[data-theme="dark"] .tag-enhancement {
+  background: hsla(150, 75%, 45%, 0.15);
+  color: hsl(150, 75%, 70%);
+  border: 1px solid hsla(150, 75%, 45%, 0.3);
+}
+
+/* Light theme specific HSL badges */
+html[data-theme="light"] .tag-feature {
+  background: hsla(210, 100%, 40%, 0.08);
+  color: hsl(210, 95%, 40%);
+  border: 1px solid hsla(210, 100%, 40%, 0.15);
+}
+
+html[data-theme="light"] .tag-bugfix {
+  background: hsla(350, 90%, 45%, 0.08);
+  color: hsl(350, 90%, 45%);
+  border: 1px solid hsla(350, 90%, 45%, 0.15);
+}
+
+html[data-theme="light"] .tag-testing {
   background: hsla(280, 80%, 45%, 0.08);
   color: hsl(280, 80%, 45%);
   border: 1px solid hsla(280, 80%, 45%, 0.15);
@@ -4352,4 +4407,34 @@ html[data-theme="light"] .tag-enhancement {
   border: 1px solid hsla(150, 75%, 35%, 0.15);
 }
 
+:root[data-environment="poc"][data-theme="light"] {
+  --brand: #7c3aed;
+  --brand-hover: #6d28d9;
+  --brand-active: #5b21b6;
+  --brand-50: #f5f3ff;
+  --brand-100: #ede9fe;
+  --brand-200: #ddd6fe;
+  --brand-fg: #6d28d9;
 
+  --canvas: #faf5ff;
+  --canvas-2: #f3e8ff;
+}
+
+:root[data-environment="poc"][data-theme="dark"] {
+  --brand: #a78bfa;
+  --brand-hover: #c4b5fd;
+  --brand-active: #ddd6fe;
+  --brand-50: rgba(167, 139, 250, 0.14);
+  --brand-100: rgba(167, 139, 250, 0.24);
+  --brand-200: rgba(167, 139, 250, 0.42);
+  --brand-fg: #c4b5fd;
+
+  --canvas: #150f24;
+  --canvas-2: #201736;
+}
+
+:root[data-environment="poc"] .site-header {
+  border-bottom-color: rgba(167, 139, 250, 0.48);
+  background: linear-gradient(100deg, #150f24 0%, #2e1065 62%, #4c1d95 100%);
+  box-shadow: 0 2px 12px rgba(46, 16, 101, 0.16);
+}
