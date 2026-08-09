@@ -397,8 +397,8 @@
                 <a class="poc-hero-card" href="${escapeHtml(artifact.href)}" target="_blank">
                   <div class="poc-card-icon">
                     ${artifact.platform === 'Android' ? 
-                      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19h-11a2.5 2.5 0 0 1-2.5-2.5v-8a2.5 2.5 0 0 1 2.5-2.5h11a2.5 2.5 0 0 1 2.5 2.5v8a2.5 2.5 0 0 1-2.5 2.5z"/><path d="M8 6V4a2 2 0 0 1 4 0v2"/><path d="M16 6V4a2 2 0 0 0-4 0v2"/></svg>' : 
-                      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+                      '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19h-11a2.5 2.5 0 0 1-2.5-2.5v-8a2.5 2.5 0 0 1 2.5-2.5h11a2.5 2.5 0 0 1 2.5 2.5v8a2.5 2.5 0 0 1-2.5 2.5z"/><path d="M8 6V4a2 2 0 0 1 4 0v2"/><path d="M16 6V4a2 2 0 0 0-4 0v2"/></svg>' : 
+                      '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
                     }
                   </div>
                   <div class="poc-card-content">
