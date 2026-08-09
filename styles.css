@@ -4448,6 +4448,11 @@ html[data-theme="light"] .tag-enhancement {
   margin: 0 auto; /* Center the page content */
 }
 
+:root[data-environment="poc"] .download-spotlight,
+:root[data-environment="poc"] .release-highlights {
+  display: none !important;
+}
+
 :root[data-environment="poc"] .sidebar {
   display: none !important; /* Hide sidebar completely in POC mode */
 }

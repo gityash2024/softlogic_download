@@ -399,8 +399,8 @@
                 <a class="poc-hero-card" href="${escapeHtml(artifact.href)}" target="_blank">
                   <div class="poc-card-icon">
                     ${artifact.platform === 'Android' ? 
-                      '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19h-11a2.5 2.5 0 0 1-2.5-2.5v-8a2.5 2.5 0 0 1 2.5-2.5h11a2.5 2.5 0 0 1 2.5 2.5v8a2.5 2.5 0 0 1-2.5 2.5z"/><path d="M8 6V4a2 2 0 0 1 4 0v2"/><path d="M16 6V4a2 2 0 0 0-4 0v2"/></svg>' : 
-                      '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+                      '<svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.5 12.3l1.8-3.1-0.9-0.5-1.8 3.1C15.2 11.2 13.6 11 12 11s-3.2 0.2-4.6 0.8L5.6 8.7 4.7 9.2l1.8 3.1C4.4 13.5 3 15.5 3 18h18c0-2.5-1.4-4.5-3.5-5.7zM8.5 16c-0.6 0-1-0.4-1-1s0.4-1 1-1 1 0.4 1 1-0.4 1-1 1zm7 0c-0.6 0-1-0.4-1-1s0.4-1 1-1 1 0.4 1 1-0.4 1-1 1z"/></svg>' : 
+                      '<svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M2.5 11.5V5.5L11 4.5V11.5H2.5ZM12 4.25L21.5 3V11.5H12V4.25ZM2.5 12.5H11V19.5L2.5 18.5V12.5ZM12 12.5H21.5V21L12 19.75V12.5Z"/></svg>'
                     }
                   </div>
                   <div class="poc-card-content">
