@@ -1305,20 +1305,10 @@
     });
 
     $$(".tab-panel").forEach((panel) => {
-      let active = panel.id === `panel-${nextTab}`;
-      if (activeEnvironmentKey === "poc" && panel.id === "panel-downloads") {
-        active = false;
-      }
+      const active = panel.id === `panel-${nextTab}`;
       panel.classList.toggle("is-active", active);
       panel.hidden = !active;
     });
-
-    const pocHeroPanel = $("#poc-hero-panel");
-    if (pocHeroPanel) {
-      const pocActive = activeEnvironmentKey === "poc" && nextTab === "downloads";
-      pocHeroPanel.classList.toggle("is-active", pocActive);
-      pocHeroPanel.hidden = !pocActive;
-    }
 
     const environmentLabel =
       manifest.environments?.[activeEnvironmentKey]?.label || activeEnvironmentKey;
