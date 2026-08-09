@@ -4340,8 +4340,6 @@ html[data-theme="light"] .tag-bugfix {
   border: 1px solid hsla(350, 90%, 45%, 0.15);
 }
 
-html[data-theme="light"] .tag-testing {
-
 /* Categorized tag badges in HSL */
 .badge-tag {
   display: inline-flex;
@@ -4396,9 +4394,9 @@ html[data-theme="light"] .tag-bugfix {
 }
 
 html[data-theme="light"] .tag-testing {
-  background: hsla(280, 80%, 45%, 0.08);
-  color: hsl(280, 80%, 45%);
-  border: 1px solid hsla(280, 80%, 45%, 0.15);
+  background: hsla(280, 90%, 50%, 0.08);
+  color: hsl(280, 90%, 50%);
+  border: 1px solid hsla(280, 90%, 50%, 0.15);
 }
 
 html[data-theme="light"] .tag-enhancement {
