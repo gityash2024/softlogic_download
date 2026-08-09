@@ -384,10 +384,12 @@
 
   const renderDownloads = () => {
     const pocHeroPanel = $("#poc-hero-panel");
-    const panelDownloads = $("#panel-downloads");
+    const downloadSpotlight = $(".download-spotlight");
+    const releaseHighlights = $(".release-highlights");
     
     if (activeEnvironmentKey === "poc") {
-      if (panelDownloads) panelDownloads.hidden = true;
+      if (downloadSpotlight) downloadSpotlight.hidden = true;
+      if (releaseHighlights) releaseHighlights.hidden = true;
       if (pocHeroPanel) {
         pocHeroPanel.hidden = false;
         pocHeroPanel.innerHTML = `
@@ -421,7 +423,8 @@
       }
       return;
     } else {
-      if (panelDownloads) panelDownloads.hidden = false;
+      if (downloadSpotlight) downloadSpotlight.hidden = false;
+      if (releaseHighlights) releaseHighlights.hidden = false;
       if (pocHeroPanel) pocHeroPanel.hidden = true;
     }
 
@@ -1302,10 +1305,20 @@
     });
 
     $$(".tab-panel").forEach((panel) => {
-      const active = panel.id === `panel-${nextTab}`;
+      let active = panel.id === `panel-${nextTab}`;
+      if (activeEnvironmentKey === "poc" && panel.id === "panel-downloads") {
+        active = false;
+      }
       panel.classList.toggle("is-active", active);
       panel.hidden = !active;
     });
+
+    const pocHeroPanel = $("#poc-hero-panel");
+    if (pocHeroPanel) {
+      const pocActive = activeEnvironmentKey === "poc" && nextTab === "downloads";
+      pocHeroPanel.classList.toggle("is-active", pocActive);
+      pocHeroPanel.hidden = !pocActive;
+    }
 
     const environmentLabel =
       manifest.environments?.[activeEnvironmentKey]?.label || activeEnvironmentKey;
