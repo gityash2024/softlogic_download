@@ -307,6 +307,24 @@
           </ul>
         </article>
       `;
+    } else if (selectedRelease.dashboardMode === "bulletList" && selectedRelease.dashboardSection) {
+      const section = selectedRelease.dashboardSection;
+      contentHtml = `
+        <article class="release-highlight-card plain-bullet-list">
+          <h3>${escapeHtml(section.title)}</h3>
+          <ul style="display: flex; flex-direction: column; gap: 12px; list-style-type: disc; padding-left: 20px;">
+            ${section.items
+              .map(
+                (item) => `
+                  <li style="color: var(--text-secondary); font-size: 14px; line-height: 1.5; padding: 0; background: none; border: none; align-items: flex-start; justify-content: flex-start;">
+                    <span style="display: inline-block;">${escapeHtml(item)}</span>
+                  </li>
+                `
+              )
+              .join("")}
+          </ul>
+        </article>
+      `;
     } else {
       contentHtml = selectedRelease.noteSections
         .map(

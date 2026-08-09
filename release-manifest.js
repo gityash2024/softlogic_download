@@ -3284,16 +3284,17 @@ npm test
         description: "One-file Windows installer build for POC LLM testing on desktop stations."
       }
     ],
-    dashboardMode: "singleUserFriendly",
+    dashboardMode: "bulletList",
     dashboardSection: {
-      title: "What's included in this POC LLM build",
+      title: "POC LLM Specifications and Features",
       items: [
-        "Complete Proof of Concept for LLM integration within the whiteboard environment.",
+        "Local LLM: free and offline after the model download.",
+        "OpenRouter: configured to use a free model (google/gemma-4-26b-a4b-it:free), but requires internet and an OpenRouter API key.",
+        "Image generation: uses Pollinations’ free endpoint and requires internet.",
         "Interactive AI Assist for real-time contextual help, analysis, and generation.",
         "Smart Write and enhanced handwriting recognition using generative AI.",
-        "Generative Text-to-Media (images) for creating educational assets on the canvas.",
-        "Offline tools, PDF viewers, and robust teaching templates all fully integrated.",
-        "Cloud sync, autosave, and multi-touch capabilities combined with AI."
+        "Generative Text-to-Media for creating educational assets on the canvas.",
+        "Complete Proof of Concept for LLM integration within the whiteboard environment."
       ]
     },
     noteSections: []
@@ -3370,12 +3371,7 @@ npm test
       label: "POC",
       currentVersion: "POC LLM",
       releases: [pocRelease],
-      softlogicAdmin: {
-        ...sharedAdmin,
-        description: "Admin panel details for POC.",
-        url: "https://adminpanelsoftlogic.vercel.app",
-        showCredentials: false
-      },
+      softlogicAdmin: null,
       api: {
         backendBaseUrl: "https://softlogic-whiteboard-backend-testin.vercel.app",
         swaggerUrl: "https://softlogic-whiteboard-backend-testin.vercel.app/api/docs",
