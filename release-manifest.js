@@ -3284,17 +3284,17 @@ npm test
         description: "One-file Windows installer build for POC LLM testing on desktop stations."
       }
     ],
-    dashboardMode: "bulletList",
+    dashboardMode: "pocHero",
     dashboardSection: {
       title: "POC LLM Specifications and Features",
       items: [
-        "Local LLM: free and offline after the model download.",
-        "OpenRouter: configured to use a free model (google/gemma-4-26b-a4b-it:free), but requires internet and an OpenRouter API key.",
-        "Image generation: uses Pollinations’ free endpoint and requires internet.",
-        "Interactive AI Assist for real-time contextual help, analysis, and generation.",
-        "Smart Write and enhanced handwriting recognition using generative AI.",
-        "Generative Text-to-Media for creating educational assets on the canvas.",
-        "Complete Proof of Concept for LLM integration within the whiteboard environment."
+        "<strong>Local LLM:</strong> free and offline after the model download.",
+        "<strong>OpenRouter:</strong> configured to use a free model (google/gemma-4-26b-a4b-it:free), but requires internet and an OpenRouter API key.",
+        "<strong>Image generation:</strong> uses Pollinations’ free endpoint and requires internet.",
+        "<strong>Interactive AI Assist:</strong> real-time contextual help, analysis, and generation.",
+        "<strong>Smart Write:</strong> enhanced handwriting recognition using generative AI.",
+        "<strong>Generative Text-to-Media:</strong> for creating educational assets on the canvas.",
+        "<strong>Complete Proof of Concept:</strong> for LLM integration within the whiteboard environment."
       ]
     },
     noteSections: []

@@ -383,6 +383,48 @@
 
 
   const renderDownloads = () => {
+    const pocHeroPanel = $("#poc-hero-panel");
+    const panelDownloads = $("#panel-downloads");
+    
+    if (activeEnvironmentKey === "poc") {
+      if (panelDownloads) panelDownloads.hidden = true;
+      if (pocHeroPanel) {
+        pocHeroPanel.hidden = false;
+        pocHeroPanel.innerHTML = `
+          <div class="poc-hero-layout">
+            <div class="poc-hero-left">
+              ${selectedRelease.artifacts.map(artifact => `
+                <a class="poc-hero-card" href="${escapeHtml(artifact.href)}" target="_blank">
+                  <div class="poc-card-icon">
+                    ${artifact.platform === 'Android' ? 
+                      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19h-11a2.5 2.5 0 0 1-2.5-2.5v-8a2.5 2.5 0 0 1 2.5-2.5h11a2.5 2.5 0 0 1 2.5 2.5v8a2.5 2.5 0 0 1-2.5 2.5z"/><path d="M8 6V4a2 2 0 0 1 4 0v2"/><path d="M16 6V4a2 2 0 0 0-4 0v2"/></svg>' : 
+                      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+                    }
+                  </div>
+                  <div class="poc-card-content">
+                    <h3>${escapeHtml(artifact.label)}</h3>
+                    <p>${escapeHtml(artifact.description)}</p>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
+            <div class="poc-hero-right">
+              <h2>${escapeHtml(selectedRelease.dashboardSection.title)}</h2>
+              <ul class="poc-hero-features">
+                ${selectedRelease.dashboardSection.items.map(item => `
+                  <li>${item}</li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+        `;
+      }
+      return;
+    } else {
+      if (panelDownloads) panelDownloads.hidden = false;
+      if (pocHeroPanel) pocHeroPanel.hidden = true;
+    }
+
     const downloadTitle = $("#download-title");
     if (downloadTitle) {
       downloadTitle.hidden = true;
