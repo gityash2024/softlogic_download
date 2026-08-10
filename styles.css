@@ -4665,3 +4665,10 @@ html[data-theme="light"] .tag-enhancement {
   margin: 0;
   line-height: 1.4;
 }
+
+.poc-card-timestamp {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 8px;
+  opacity: 0.8;
+}

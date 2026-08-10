@@ -406,6 +406,7 @@
                   <div class="poc-card-content">
                     <h3>${escapeHtml(artifact.label)}</h3>
                     <p>${escapeHtml(artifact.description)}</p>
+                    ${artifact.timestamp ? `<div class="poc-card-timestamp">${escapeHtml(artifact.timestamp)}</div>` : ''}
                   </div>
                 </a>
               `).join('')}

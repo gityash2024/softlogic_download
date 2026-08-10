@@ -3273,15 +3273,17 @@ npm test
         platform: "Android",
         format: "APK",
         label: "Download Android APK",
-        href: "https://drive.google.com/file/d/17eoIUF1lkTaj0xF1dmoRprx969d_xNCk/view?usp=sharing",
-        description: "Android release build for POC LLM on tablet, mobile, and whiteboard hardware."
+        href: "https://drive.google.com/file/d/1s6sRLBxVqCDFB1DnkcDGjsjslkNrctKP/view?usp=sharing",
+        description: "Android release build for POC LLM on tablet, mobile, and whiteboard hardware.",
+        timestamp: "Aug 10, 2026 13:10 IST"
       },
       {
         platform: "Windows",
         format: "EXE",
         label: "Download Windows EXE",
-        href: "https://drive.google.com/file/d/1UdfH0DxJthc1oHahc0p0BYw1zkuZCne7/view?usp=sharing",
-        description: "One-file Windows installer build for POC LLM testing on desktop stations."
+        href: "https://drive.google.com/file/d/1OozYjanhj_q8JCCnh5fdT0dcIq4KCXk4/view?usp=sharing",
+        description: "One-file Windows installer build for POC LLM testing on desktop stations.",
+        timestamp: "Aug 10, 2026 13:10 IST"
       }
     ],
     dashboardMode: "pocHero",
