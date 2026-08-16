@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
   currentVersion: "v1.0.24",
-  lastSynced: "2026-08-01",
+  lastSynced: "2026-08-16",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -138,11 +138,11 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
         keys: [
           {
             label: "Gemini API key",
-            value: "AIzaSyDbbv5Xm8so3AIYQahwNeFQ7o1N_wpfyic"
+            value: "Configured per organization"
           },
           {
             label: "Deepgram API key",
-            value: "a4d45bfd78210e24cc92cd015fcd9124a30f194e"
+            value: "Configured per organization"
           }
         ]
       },
@@ -239,11 +239,11 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
         keys: [
           {
             label: "Gemini API key",
-            value: "AIzaSyDbbv5Xm8so3AIYQahwNeFQ7o1N_wpfyic"
+            value: "Configured per organization"
           },
           {
             label: "Deepgram API key",
-            value: "a4d45bfd78210e24cc92cd015fcd9124a30f194e"
+            value: "Configured per organization"
           }
         ]
       },
@@ -337,11 +337,11 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
         keys: [
           {
             label: "Gemini API key",
-            value: "AQ.Ab8RN6KUxCawMDe5PhQiwz4oaueLEYpLgFDZXs2_vuVoMZsLlQ"
+            value: "Configured per organization"
           },
           {
             label: "Deepgram API key",
-            value: "a4d45bfd78210e24cc92cd015fcd9124a30f194e"
+            value: "Configured per organization"
           }
         ]
       },
@@ -436,11 +436,11 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
         keys: [
           {
             label: "Gemini API key",
-            value: "AQ.Ab8RN6KUxCawMDe5PhQiwz4oaueLEYpLgFDZXs2_vuVoMZsLlQ"
+            value: "Configured per organization"
           },
           {
             label: "Deepgram API key",
-            value: "a4d45bfd78210e24cc92cd015fcd9124a30f194e"
+            value: "Configured per organization"
           }
         ]
       },
@@ -549,11 +549,11 @@ window.SOFTLOGIC_RELEASE_MANIFEST = {
         keys: [
           {
             label: "Gemini API key",
-            value: "AQ.Ab8RN6KUxCawMDe5PhQiwz4oaueLEYpLgFDZXs2_vuVoMZsLlQ"
+            value: "Configured per organization"
           },
           {
             label: "Deepgram API key",
-            value: "a4d45bfd78210e24cc92cd015fcd9124a30f194e"
+            value: "Configured per organization"
           }
         ]
       },
@@ -2956,6 +2956,8 @@ npm test
     softlogicExe,
     aiSmartBoardApk,
     aiSmartBoardExe,
+    releaseDate = "2026-08-01",
+    lastUpdatedAt = "2026-08-01 10:35 AM IST",
   }) => ({
     version: "v1.0.24",
     appVersion: "1.0.24",
@@ -2964,8 +2966,8 @@ npm test
     releaseType,
     primaryBadge,
     secondaryBadge: "Current release",
-    releaseDate: "2026-08-01",
-    lastUpdatedAt: "2026-08-01 10:35 AM IST",
+    releaseDate,
+    lastUpdatedAt,
     title: `SoftLogic Whiteboard v1.0.24 ${environment} release`,
     summary:
       `${environment} v1.0.24 release introducing the full in-session Assessment System (MCQ quizzes, file submissions, teacher grading), Digital Book PDF viewer, Play Store demo accounts, and a comprehensive set of whiteboard and backend improvements.`,
@@ -3060,11 +3062,11 @@ npm test
       keys: [
         {
           label: "Gemini API key",
-          value: "AIzaSyDbbv5Xm8so3AIYQahwNeFQ7o1N_wpfyic"
+          value: "Configured per organization"
         },
         {
           label: "Deepgram API key",
-          value: "a4d45bfd78210e24cc92cd015fcd9124a30f194e"
+          value: "Configured per organization"
         }
       ]
     },
@@ -3196,13 +3198,84 @@ npm test
     releaseType: "Staging",
     status: "Current staging release",
     softlogicApk:
-      "https://drive.google.com/file/d/1-_eufJn7_mJUNTPkwPJnw_Wygq7--qdz/view?usp=sharing",
+      "https://drive.google.com/file/d/1Ko8u_zSFIWdRm1LgA6M9WItwfx5zEuDf/view?usp=sharing",
     softlogicExe:
-      "https://drive.google.com/file/d/1JPbCDkvnmCliGRDuqwsI1YJknFOAYYCi/view?usp=sharing",
+      "https://drive.google.com/file/d/1IVEGlVoKix1-0PY3lcefvOevAd5WOn9W/view?usp=sharing",
     aiSmartBoardApk:
-      "https://drive.google.com/file/d/165GjY78D3Ay43V1V1NZjSL-gQlXD9kEh/view?usp=sharing",
+      "https://drive.google.com/file/d/1UUJDkqJyDl5yTOsIQsWQzgXP-w-fGVzF/view?usp=sharing",
     aiSmartBoardExe:
-      "https://drive.google.com/file/d/1plrkU6GYXEXPLafvV7o0GTgQJ74LS0nF/view?usp=sharing",
+      "https://drive.google.com/file/d/1Tw86iI-ZKr7KwrzAiIQo9zP6f-G8d9q5/view?usp=sharing",
+    releaseDate: "2026-08-13",
+    lastUpdatedAt: "2026-08-13 11:05 PM IST",
+  });
+
+  const productionReleasev1028 = createReleasev1024({
+    environment: "Production",
+    primaryBadge: "Production grade",
+    releaseType: "Production grade",
+    status: "Current production release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1gbuN61DTglq3Hl8EoasyLD3Wf6w6xJHu/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1g4LwkFodj_05F51945Q_kxd3olzgmlgj/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1iGOkcED2ZMnsl7mBbYowvd6JD79Frtm4/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/16r-ZUJ4G-YaXHl5PtmpWt3uf6qPYhD3_/view?usp=sharing",
+    releaseDate: "2026-08-16",
+    lastUpdatedAt: "2026-08-16 06:36 PM IST",
+  });
+  Object.assign(productionReleasev1028, {
+    version: "v1.0.28",
+    appVersion: "1.0.28",
+    build: "28",
+    title: "SoftLogic Whiteboard v1.0.28 Production release",
+    summary:
+      "Production Android and Windows installers for SoftLogic and AI Smart Board, with the latest whiteboard, cloud-storage, packaging, and regression-test improvements.",
+    artifacts: productionReleasev1028.artifacts.map((artifact) => ({
+      ...artifact,
+      description: artifact.description.replaceAll("v1.0.24", "v1.0.28"),
+    })),
+    downloadGroups: productionReleasev1028.downloadGroups.map((group) => ({
+      ...group,
+      description: group.description.replaceAll("v1.0.24", "v1.0.28"),
+    })),
+    releaseSpotlight: {
+      ...productionReleasev1028.releaseSpotlight,
+      title: "SoftLogic Whiteboard v1.0.28",
+      description:
+        "Production release artifacts are available for SoftLogic and AI Smart Board on Android and Windows.",
+      version: "v1.0.28",
+    },
+    aiSetup: undefined,
+    versionJumpNotice:
+      "This release moves directly from v1.0.23 to v1.0.28 because intermediate builds were used for Google Play Console policy and warning resolution, validation, and version-code progression. No customer-facing release was skipped.",
+    noteSections: [
+      {
+        title: "Release delivery and Google Play compliance",
+        items: [
+          "Direct production progression from v1.0.23 to v1.0.28 after Google Play Console policy and warning remediation; no customer-facing release was skipped.",
+          "Android version code advanced to 28 for Play Store release sequencing.",
+          "Production installer metadata and cloud-storage callback compatibility were validated for the released builds.",
+          "This release is optional; no forced update is enabled."
+        ]
+      },
+      {
+        title: "Recent Flutter improvements",
+        items: [
+          "Whiteboard writing, canvas rendering, pen settings, settings dialogs, and AI markdown preview refinements.",
+          "Cloud storage integration, import dialogs, export destinations, and storage-policy handling improvements.",
+          "App-tour and route-guidance updates for clearer role-based navigation.",
+          "Android write-acceleration bridge and production packaging updates."
+        ]
+      },
+      {
+        title: "Regression coverage",
+        items: [
+          "Expanded coverage for app versioning, network client behavior, route guards, AI markdown rendering, multi-touch, write tools, cloud-storage policy, and menu flows."
+        ]
+      }
+    ]
   });
 
 
@@ -3344,8 +3417,9 @@ npm test
     },
     production: {
       label: "Production",
-      currentVersion: "v1.0.23",
+      currentVersion: "v1.0.28",
       releases: [
+        productionReleasev1028,
         productionReleasev1023,
         productionReleasev1022,
         productionReleasev1021,

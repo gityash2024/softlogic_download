@@ -156,6 +156,7 @@
         ${badge(`Build ${currentRelease.build}`)}
         ${badge(currentRelease.releaseDate)}
         ${badge(currentRelease.status)}
+        ${currentRelease.versionJumpNotice ? `<span class="badge" title="${escapeHtml(currentRelease.versionJumpNotice)}" aria-label="${escapeHtml(currentRelease.versionJumpNotice)}">ⓘ</span>` : ""}
       </div>
     `;
   };
