@@ -4525,14 +4525,10 @@ html[data-theme="light"] .tag-enhancement {
 
 /* POC Hero Layout */
 .poc-hero-layout {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  max-width: 1200px;
+  max-width: 760px;
   margin: 0 auto;
-  align-items: stretch;
-  height: 100%;
   position: relative;
+  padding-top: 64px;
 }
 
 .poc-version-picker {
@@ -4543,10 +4539,6 @@ html[data-theme="light"] .tag-enhancement {
 }
 
 @media (max-width: 900px) {
-  .poc-hero-layout {
-    flex-direction: column;
-  }
-
   .poc-version-picker {
     position: static;
   }
@@ -4560,62 +4552,6 @@ html[data-theme="light"] .tag-enhancement {
   justify-content: center;
 }
 
-.poc-hero-right {
-  flex: 1.2;
-  background: var(--surface);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--r-lg);
-  padding: 32px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-:root[data-environment="poc"][data-theme="dark"] .poc-hero-right {
-  background: linear-gradient(145deg, rgba(109, 40, 217, 0.05), transparent 80%), var(--surface);
-}
-
-.poc-hero-right h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 24px;
-  color: var(--brand-fg);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 12px;
-}
-
-.poc-hero-features {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.poc-hero-features li {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  position: relative;
-  padding-left: 28px;
-}
-
-.poc-hero-features li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 2px;
-  color: var(--brand);
-  font-weight: bold;
-}
-
-.poc-hero-features strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
 .poc-hero-card {
   display: flex;
   flex-direction: row;
@@ -4624,7 +4560,8 @@ html[data-theme="light"] .tag-enhancement {
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: var(--r-md);
-  padding: 24px;
+  min-height: 150px;
+  padding: 30px;
   text-decoration: none;
   transition: all 0.2s ease;
   position: relative;

@@ -426,14 +426,6 @@
                 </a>
               `).join('')}
             </div>
-            <div class="poc-hero-right">
-              <h2>${escapeHtml(selectedRelease.dashboardSection.title)}</h2>
-              <ul class="poc-hero-features">
-                ${selectedRelease.dashboardSection.items.map(item => `
-                  <li>${item}</li>
-                `).join('')}
-              </ul>
-            </div>
           </div>
         `;
         pocHeroPanel.querySelector("#poc-release-version-select")?.addEventListener("change", (event) => {

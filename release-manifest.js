@@ -3450,19 +3450,6 @@ npm test
         timestamp: "Aug 10, 2026 13:10 IST"
       }
     ],
-    dashboardMode: "pocHero",
-    dashboardSection: {
-      title: "POC LLM Specifications and Features",
-      items: [
-        "<strong>Local LLM:</strong> free and offline after the model download.",
-        "<strong>OpenRouter:</strong> configured to use a free model (google/gemma-4-26b-a4b-it:free), but requires internet and an OpenRouter API key.",
-        "<strong>Image generation:</strong> uses Pollinations’ free endpoint and requires internet.",
-        "<strong>Interactive AI Assist:</strong> real-time contextual help, analysis, and generation.",
-        "<strong>Smart Write:</strong> enhanced handwriting recognition using generative AI.",
-        "<strong>Generative Text-to-Media:</strong> for creating educational assets on the canvas.",
-        "<strong>Complete Proof of Concept:</strong> for LLM integration within the whiteboard environment."
-      ]
-    },
     noteSections: []
   };
 
@@ -3492,17 +3479,6 @@ npm test
         timestamp: "Aug 27, 2026"
       }
     ],
-    dashboardMode: "pocHero",
-    dashboardSection: {
-      title: "POC LLM Specifications and Features",
-      items: [
-        "<strong>Free provider recovery:</strong> retries transient gateway and image-generation failures before reporting an error.",
-        "<strong>Offline runtime + gateway:</strong> local on-device LLM support with streamed free-provider fallback for online tasks.",
-        "<strong>AI workspace polish:</strong> improved provider integration, structured results, and formatted AI output presentation.",
-        "<strong>Image generation:</strong> uses free providers with automatic fallback and bounded retry handling.",
-        "<strong>Complete Proof of Concept:</strong> AI tools, references, and whiteboard integrations remain available in one workspace."
-      ]
-    },
     noteSections: []
   };
 
