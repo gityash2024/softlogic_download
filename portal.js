@@ -396,8 +396,22 @@
         pocHeroPanel.innerHTML = `
           <div class="poc-hero-layout">
             <div class="poc-hero-left">
+              <div class="version-picker poc-version-picker" aria-label="Choose POC release version">
+                <label for="poc-release-version-select">Version</label>
+                <select id="poc-release-version-select">
+                  ${manifest.releases
+                    .map(
+                      (release) => `
+                        <option value="${escapeHtml(release.version)}" ${release.version === selectedRelease.version ? "selected" : ""}>
+                          ${escapeHtml(release.version)}
+                        </option>
+                      `
+                    )
+                    .join("")}
+                </select>
+              </div>
               ${selectedRelease.artifacts.map(artifact => `
-                <a class="poc-hero-card" href="${escapeHtml(artifact.href)}" target="_blank">
+                <a class="poc-hero-card" href="${escapeHtml(artifact.href)}" target="_blank" rel="noreferrer">
                   <div class="poc-card-icon">
                     ${artifact.platform === 'Android' ? 
                       '<svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.5 12.3l1.8-3.1-0.9-0.5-1.8 3.1C15.2 11.2 13.6 11 12 11s-3.2 0.2-4.6 0.8L5.6 8.7 4.7 9.2l1.8 3.1C4.4 13.5 3 15.5 3 18h18c0-2.5-1.4-4.5-3.5-5.7zM8.5 16c-0.6 0-1-0.4-1-1s0.4-1 1-1 1 0.4 1 1-0.4 1-1 1zm7 0c-0.6 0-1-0.4-1-1s0.4-1 1-1 1 0.4 1 1-0.4 1-1 1z"/></svg>' : 
@@ -422,6 +436,12 @@
             </div>
           </div>
         `;
+        pocHeroPanel.querySelector("#poc-release-version-select")?.addEventListener("change", (event) => {
+          selectedRelease =
+            manifest.releases.find((release) => release.version === event.target.value) ||
+            currentRelease;
+          renderDownloads();
+        });
       }
       return;
     } else {

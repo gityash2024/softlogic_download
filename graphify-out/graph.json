@@ -1,0 +1,4481 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "comments.js",
+      "file_type": "code",
+      "source_file": "comments.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "comments",
+      "community": 18,
+      "norm_label": "comments.js"
+    },
+    {
+      "label": "portal.js",
+      "file_type": "code",
+      "source_file": "portal.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "portal",
+      "community": 19,
+      "norm_label": "portal.js"
+    },
+    {
+      "label": "release-manifest.js",
+      "file_type": "code",
+      "source_file": "release-manifest.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "release_manifest",
+      "community": 21,
+      "norm_label": "release-manifest.js"
+    },
+    {
+      "label": "report-viewer.js",
+      "file_type": "code",
+      "source_file": "report-viewer.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "report_viewer",
+      "community": 22,
+      "norm_label": "report-viewer.js"
+    },
+    {
+      "label": "server.py",
+      "file_type": "code",
+      "source_file": "server.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "server",
+      "community": 15,
+      "norm_label": "server.py"
+    },
+    {
+      "label": "CleanURLHandler",
+      "file_type": "code",
+      "source_file": "server.py",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "server_cleanurlhandler",
+      "community": 15,
+      "norm_label": "cleanurlhandler"
+    },
+    {
+      "label": ".send_head()",
+      "file_type": "code",
+      "source_file": "server.py",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "server_cleanurlhandler_send_head",
+      "community": 15,
+      "norm_label": ".send_head()"
+    },
+    {
+      "label": "._maybe_rewrite()",
+      "file_type": "code",
+      "source_file": "server.py",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "server_cleanurlhandler_maybe_rewrite",
+      "community": 15,
+      "norm_label": "._maybe_rewrite()"
+    },
+    {
+      "label": ".end_headers()",
+      "file_type": "code",
+      "source_file": "server.py",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "server_cleanurlhandler_end_headers",
+      "community": 15,
+      "norm_label": ".end_headers()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "server.py",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "server_main",
+      "community": 15,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Local dev server with clean-URL rewriting that mirrors Vercel's behavior.  Witho",
+      "file_type": "rationale",
+      "source_file": "server.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "server_rationale_1",
+      "community": 15,
+      "norm_label": "local dev server with clean-url rewriting that mirrors vercel's behavior.  witho"
+    },
+    {
+      "label": "theme.js",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "theme",
+      "community": 7,
+      "norm_label": "theme.js"
+    },
+    {
+      "label": "getStoredTheme()",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "theme_getstoredtheme",
+      "community": 7,
+      "norm_label": "getstoredtheme()"
+    },
+    {
+      "label": "setStoredTheme()",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "theme_setstoredtheme",
+      "community": 7,
+      "norm_label": "setstoredtheme()"
+    },
+    {
+      "label": "getPreferredTheme()",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "theme_getpreferredtheme",
+      "community": 7,
+      "norm_label": "getpreferredtheme()"
+    },
+    {
+      "label": "applyTheme()",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "theme_applytheme",
+      "community": 7,
+      "norm_label": "applytheme()"
+    },
+    {
+      "label": "toggleTheme()",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "theme_toggletheme",
+      "community": 7,
+      "norm_label": "toggletheme()"
+    },
+    {
+      "label": "getStoredView()",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "theme_getstoredview",
+      "community": 7,
+      "norm_label": "getstoredview()"
+    },
+    {
+      "label": "setStoredView()",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "theme_setstoredview",
+      "community": 7,
+      "norm_label": "setstoredview()"
+    },
+    {
+      "label": "applyViewToContainer()",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "theme_applyviewtocontainer",
+      "community": 7,
+      "norm_label": "applyviewtocontainer()"
+    },
+    {
+      "label": "restoreViews()",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "theme_restoreviews",
+      "community": 7,
+      "norm_label": "restoreviews()"
+    },
+    {
+      "label": "restoreInitialUi()",
+      "file_type": "code",
+      "source_file": "theme.js",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "theme_restoreinitialui",
+      "community": 7,
+      "norm_label": "restoreinitialui()"
+    },
+    {
+      "label": "vercel.json",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "vercel",
+      "community": 17,
+      "norm_label": "vercel.json"
+    },
+    {
+      "label": "cleanUrls",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "vercel_cleanurls",
+      "community": 17,
+      "norm_label": "cleanurls"
+    },
+    {
+      "label": "trailingSlash",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "vercel_trailingslash",
+      "community": 17,
+      "norm_label": "trailingslash"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme",
+      "community": 20,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow",
+      "community": 2,
+      "norm_label": "softlogic_live_session_flow.md"
+    },
+    {
+      "label": "SoftLogic Live Session Flow",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "community": 2,
+      "norm_label": "softlogic live session flow"
+    },
+    {
+      "label": "Purpose",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_purpose",
+      "community": 2,
+      "norm_label": "purpose"
+    },
+    {
+      "label": "Actors",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_actors",
+      "community": 2,
+      "norm_label": "actors"
+    },
+    {
+      "label": "Super Admin",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_super_admin",
+      "community": 2,
+      "norm_label": "super admin"
+    },
+    {
+      "label": "Partner Admin",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_partner_admin",
+      "community": 2,
+      "norm_label": "partner admin"
+    },
+    {
+      "label": "Organization Admin",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_organization_admin",
+      "community": 2,
+      "norm_label": "organization admin"
+    },
+    {
+      "label": "Teacher",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_teacher",
+      "community": 2,
+      "norm_label": "teacher"
+    },
+    {
+      "label": "Student",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L80",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_student",
+      "community": 2,
+      "norm_label": "student"
+    },
+    {
+      "label": "Parent",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L96",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_parent",
+      "community": 2,
+      "norm_label": "parent"
+    },
+    {
+      "label": "Data Ownership",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L120",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_data_ownership",
+      "community": 2,
+      "norm_label": "data ownership"
+    },
+    {
+      "label": "License Checks For Live Sessions",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L146",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_license_checks_for_live_sessions",
+      "community": 2,
+      "norm_label": "license checks for live sessions"
+    },
+    {
+      "label": "End-To-End Session Flow",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L176",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "community": 3,
+      "norm_label": "end-to-end session flow"
+    },
+    {
+      "label": "1. Teacher prepares class",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L178",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_1_teacher_prepares_class",
+      "community": 3,
+      "norm_label": "1. teacher prepares class"
+    },
+    {
+      "label": "2. Teacher creates live session",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L195",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_2_teacher_creates_live_session",
+      "community": 3,
+      "norm_label": "2. teacher creates live session"
+    },
+    {
+      "label": "3. Teacher starts session",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L214",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_3_teacher_starts_session",
+      "community": 3,
+      "norm_label": "3. teacher starts session"
+    },
+    {
+      "label": "4. Teacher generates join code",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L233",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_4_teacher_generates_join_code",
+      "community": 3,
+      "norm_label": "4. teacher generates join code"
+    },
+    {
+      "label": "5. Teacher invites students by email",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L264",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_5_teacher_invites_students_by_email",
+      "community": 3,
+      "norm_label": "5. teacher invites students by email"
+    },
+    {
+      "label": "6. Student logs in or uses session-only QR access",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L288",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_6_student_logs_in_or_uses_session_only_qr_access",
+      "community": 3,
+      "norm_label": "6. student logs in or uses session-only qr access"
+    },
+    {
+      "label": "7. Student verifies code",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L309",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_7_student_verifies_code",
+      "community": 3,
+      "norm_label": "7. student verifies code"
+    },
+    {
+      "label": "8. Student joins session",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L325",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_8_student_joins_session",
+      "community": 3,
+      "norm_label": "8. student joins session"
+    },
+    {
+      "label": "9. Realtime board sync",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L334",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_9_realtime_board_sync",
+      "community": 3,
+      "norm_label": "9. realtime board sync"
+    },
+    {
+      "label": "10. Audio/video through LiveKit",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L352",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_10_audio_video_through_livekit",
+      "community": 3,
+      "norm_label": "10. audio/video through livekit"
+    },
+    {
+      "label": "11. Chat",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L369",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_11_chat",
+      "community": 3,
+      "norm_label": "11. chat"
+    },
+    {
+      "label": "12. Hand raise",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L385",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_12_hand_raise",
+      "community": 3,
+      "norm_label": "12. hand raise"
+    },
+    {
+      "label": "13. Quiz",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L395",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_13_quiz",
+      "community": 3,
+      "norm_label": "13. quiz"
+    },
+    {
+      "label": "14. Controls",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L417",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_14_controls",
+      "community": 3,
+      "norm_label": "14. controls"
+    },
+    {
+      "label": "15. Media upload",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L433",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_15_media_upload",
+      "community": 3,
+      "norm_label": "15. media upload"
+    },
+    {
+      "label": "16. Recording",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L451",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_16_recording",
+      "community": 3,
+      "norm_label": "16. recording"
+    },
+    {
+      "label": "17. Teacher ends session",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L473",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_17_teacher_ends_session",
+      "community": 3,
+      "norm_label": "17. teacher ends session"
+    },
+    {
+      "label": "18. Post-session student access",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L485",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_18_post_session_student_access",
+      "community": 3,
+      "norm_label": "18. post-session student access"
+    },
+    {
+      "label": "19. Post-session parent access",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L502",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_19_post_session_parent_access",
+      "community": 3,
+      "norm_label": "19. post-session parent access"
+    },
+    {
+      "label": "API Map",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L520",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_api_map",
+      "community": 2,
+      "norm_label": "api map"
+    },
+    {
+      "label": "Organization-Wise Access Rules",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L581",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_organization_wise_access_rules",
+      "community": 10,
+      "norm_label": "organization-wise access rules"
+    },
+    {
+      "label": "Super Admin access",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L583",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_super_admin_access",
+      "community": 10,
+      "norm_label": "super admin access"
+    },
+    {
+      "label": "Partner Admin access",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L591",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_partner_admin_access",
+      "community": 10,
+      "norm_label": "partner admin access"
+    },
+    {
+      "label": "Organization Admin access",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L603",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_organization_admin_access",
+      "community": 10,
+      "norm_label": "organization admin access"
+    },
+    {
+      "label": "Teacher session access",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L611",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_teacher_session_access",
+      "community": 10,
+      "norm_label": "teacher session access"
+    },
+    {
+      "label": "Student session access",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L619",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_student_session_access",
+      "community": 10,
+      "norm_label": "student session access"
+    },
+    {
+      "label": "Parent session/material access",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L628",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_parent_session_material_access",
+      "community": 10,
+      "norm_label": "parent session/material access"
+    },
+    {
+      "label": "Recording/material access",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L643",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_recording_material_access",
+      "community": 10,
+      "norm_label": "recording/material access"
+    },
+    {
+      "label": "Failure And Recovery Cases",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L656",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_failure_and_recovery_cases",
+      "community": 2,
+      "norm_label": "failure and recovery cases"
+    },
+    {
+      "label": "Join code expired",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L658",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_join_code_expired",
+      "community": 2,
+      "norm_label": "join code expired"
+    },
+    {
+      "label": "Wrong organization",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L666",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_wrong_organization",
+      "community": 2,
+      "norm_label": "wrong organization"
+    },
+    {
+      "label": "Parent not linked",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L674",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_parent_not_linked",
+      "community": 2,
+      "norm_label": "parent not linked"
+    },
+    {
+      "label": "Parent opens unauthorized recording",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L682",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_parent_opens_unauthorized_recording",
+      "community": 2,
+      "norm_label": "parent opens unauthorized recording"
+    },
+    {
+      "label": "License expired",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L690",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_license_expired",
+      "community": 2,
+      "norm_label": "license expired"
+    },
+    {
+      "label": "Recording processing fails",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L699",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_recording_processing_fails",
+      "community": 2,
+      "norm_label": "recording processing fails"
+    },
+    {
+      "label": "Production Gaps To Complete",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L708",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_production_gaps_to_complete",
+      "community": 2,
+      "norm_label": "production gaps to complete"
+    },
+    {
+      "label": "Production Acceptance Checklist",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L728",
+      "_origin": "ast",
+      "id": "docs_softlogic_live_session_flow_production_acceptance_checklist",
+      "community": 2,
+      "norm_label": "production acceptance checklist"
+    },
+    {
+      "label": "SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow",
+      "community": 4,
+      "norm_label": "softlogic_production_licensing_flow.md"
+    },
+    {
+      "label": "SoftLogic Production Licensing Flow",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "community": 4,
+      "norm_label": "softlogic production licensing flow"
+    },
+    {
+      "label": "Purpose",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_purpose",
+      "community": 4,
+      "norm_label": "purpose"
+    },
+    {
+      "label": "Production Roles",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_production_roles",
+      "community": 11,
+      "norm_label": "production roles"
+    },
+    {
+      "label": "Super Admin - SoftLogic Internal",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_super_admin_softlogic_internal",
+      "community": 11,
+      "norm_label": "super admin - softlogic internal"
+    },
+    {
+      "label": "Partner Admin",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_partner_admin",
+      "community": 11,
+      "norm_label": "partner admin"
+    },
+    {
+      "label": "Organization Admin",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_organization_admin",
+      "community": 11,
+      "norm_label": "organization admin"
+    },
+    {
+      "label": "Teacher",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_teacher",
+      "community": 11,
+      "norm_label": "teacher"
+    },
+    {
+      "label": "Student",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L88",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_student",
+      "community": 11,
+      "norm_label": "student"
+    },
+    {
+      "label": "Parent",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_parent",
+      "community": 11,
+      "norm_label": "parent"
+    },
+    {
+      "label": "Licensing Model",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L122",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_licensing_model",
+      "community": 4,
+      "norm_label": "licensing model"
+    },
+    {
+      "label": "License owner",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L124",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_license_owner",
+      "community": 4,
+      "norm_label": "license owner"
+    },
+    {
+      "label": "Subscription license counts",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L139",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_subscription_license_counts",
+      "community": 4,
+      "norm_label": "subscription license counts"
+    },
+    {
+      "label": "Student login and assignment policy",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L178",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_student_login_and_assignment_policy",
+      "community": 4,
+      "norm_label": "student login and assignment policy"
+    },
+    {
+      "label": "Admin surface policy",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L192",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_admin_surface_policy",
+      "community": 4,
+      "norm_label": "admin surface policy"
+    },
+    {
+      "label": "Organization Google Drive storage policy",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L202",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_organization_google_drive_storage_policy",
+      "community": 4,
+      "norm_label": "organization google drive storage policy"
+    },
+    {
+      "label": "Hardware AI credit policy",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L215",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_hardware_ai_credit_policy",
+      "community": 4,
+      "norm_label": "hardware ai credit policy"
+    },
+    {
+      "label": "Current implementation gap",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L229",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_current_implementation_gap",
+      "community": 4,
+      "norm_label": "current implementation gap"
+    },
+    {
+      "label": "Sales Channels",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L243",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_sales_channels",
+      "community": 4,
+      "norm_label": "sales channels"
+    },
+    {
+      "label": "Direct SoftLogic sale",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L245",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_direct_softlogic_sale",
+      "community": 4,
+      "norm_label": "direct softlogic sale"
+    },
+    {
+      "label": "Reseller in SoftLogic brand",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L267",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_reseller_in_softlogic_brand",
+      "community": 4,
+      "norm_label": "reseller in softlogic brand"
+    },
+    {
+      "label": "Reseller in reseller brand",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L298",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_reseller_in_reseller_brand",
+      "community": 4,
+      "norm_label": "reseller in reseller brand"
+    },
+    {
+      "label": "Manual Enterprise Licensing Flow",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L328",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "community": 6,
+      "norm_label": "manual enterprise licensing flow"
+    },
+    {
+      "label": "1. Lead received",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L332",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_1_lead_received",
+      "community": 6,
+      "norm_label": "1. lead received"
+    },
+    {
+      "label": "2. Demo and requirement capture",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L364",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_2_demo_and_requirement_capture",
+      "community": 6,
+      "norm_label": "2. demo and requirement capture"
+    },
+    {
+      "label": "3. Quotation prepared",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L383",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_3_quotation_prepared",
+      "community": 6,
+      "norm_label": "3. quotation prepared"
+    },
+    {
+      "label": "4. Customer approval and payment",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L429",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_4_customer_approval_and_payment",
+      "community": 6,
+      "norm_label": "4. customer approval and payment"
+    },
+    {
+      "label": "5. Super Admin creates partner/reseller when applicable",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L441",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_5_super_admin_creates_partner_reseller_when_applicable",
+      "community": 6,
+      "norm_label": "5. super admin creates partner/reseller when applicable"
+    },
+    {
+      "label": "6. Super Admin creates customer organization",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L467",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_6_super_admin_creates_customer_organization",
+      "community": 6,
+      "norm_label": "6. super admin creates customer organization"
+    },
+    {
+      "label": "7. Super Admin creates subscription/license",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L493",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_7_super_admin_creates_subscription_license",
+      "community": 6,
+      "norm_label": "7. super admin creates subscription/license"
+    },
+    {
+      "label": "8. Super Admin creates Organization Admin",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L528",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_8_super_admin_creates_organization_admin",
+      "community": 6,
+      "norm_label": "8. super admin creates organization admin"
+    },
+    {
+      "label": "9. Organization Admin creates Teachers, Students, and Parents",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L557",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_9_organization_admin_creates_teachers_students_and_parents",
+      "community": 6,
+      "norm_label": "9. organization admin creates teachers, students, and parents"
+    },
+    {
+      "label": "10. License enforcement",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L601",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_10_license_enforcement",
+      "community": 6,
+      "norm_label": "10. license enforcement"
+    },
+    {
+      "label": "Online Checkout Flow",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L644",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_online_checkout_flow",
+      "community": 4,
+      "norm_label": "online checkout flow"
+    },
+    {
+      "label": "Renewal, Upgrade, Downgrade, Expiry, And Cancellation",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L679",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_renewal_upgrade_downgrade_expiry_and_cancellation",
+      "community": 16,
+      "norm_label": "renewal, upgrade, downgrade, expiry, and cancellation"
+    },
+    {
+      "label": "Renewal",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L681",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_renewal",
+      "community": 16,
+      "norm_label": "renewal"
+    },
+    {
+      "label": "Upgrade",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L700",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_upgrade",
+      "community": 16,
+      "norm_label": "upgrade"
+    },
+    {
+      "label": "Downgrade",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L722",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_downgrade",
+      "community": 16,
+      "norm_label": "downgrade"
+    },
+    {
+      "label": "Expiry",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L733",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_expiry",
+      "community": 16,
+      "norm_label": "expiry"
+    },
+    {
+      "label": "Cancellation",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L744",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_cancellation",
+      "community": 16,
+      "norm_label": "cancellation"
+    },
+    {
+      "label": "Email Notifications",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L755",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_email_notifications",
+      "community": 4,
+      "norm_label": "email notifications"
+    },
+    {
+      "label": "Organization-Wise Data Isolation",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L785",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_organization_wise_data_isolation",
+      "community": 4,
+      "norm_label": "organization-wise data isolation"
+    },
+    {
+      "label": "Production Gaps To Implement Later",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L800",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_production_gaps_to_implement_later",
+      "community": 4,
+      "norm_label": "production gaps to implement later"
+    },
+    {
+      "label": "Acceptance Checklist",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L826",
+      "_origin": "ast",
+      "id": "docs_softlogic_production_licensing_flow_acceptance_checklist",
+      "community": 4,
+      "norm_label": "acceptance checklist"
+    },
+    {
+      "label": "SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow",
+      "community": 0,
+      "norm_label": "softlogic_user_journey_flow.md"
+    },
+    {
+      "label": "SoftLogic User Journey Flow",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "community": 0,
+      "norm_label": "softlogic user journey flow"
+    },
+    {
+      "label": "Purpose",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_purpose",
+      "community": 0,
+      "norm_label": "purpose"
+    },
+    {
+      "label": "Shared Rules For All Users",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "community": 8,
+      "norm_label": "shared rules for all users"
+    },
+    {
+      "label": "Account creation",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_account_creation",
+      "community": 8,
+      "norm_label": "account creation"
+    },
+    {
+      "label": "Login flow",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_login_flow",
+      "community": 8,
+      "norm_label": "login flow"
+    },
+    {
+      "label": "Organization boundary",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_organization_boundary",
+      "community": 8,
+      "norm_label": "organization boundary"
+    },
+    {
+      "label": "Admin surface rule",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_admin_surface_rule",
+      "community": 8,
+      "norm_label": "admin surface rule"
+    },
+    {
+      "label": "License boundary",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_license_boundary",
+      "community": 8,
+      "norm_label": "license boundary"
+    },
+    {
+      "label": "Student login activation",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_student_login_activation",
+      "community": 8,
+      "norm_label": "student login activation"
+    },
+    {
+      "label": "Organization storage rule",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L103",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_organization_storage_rule",
+      "community": 8,
+      "norm_label": "organization storage rule"
+    },
+    {
+      "label": "AI credit rule",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L114",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_ai_credit_rule",
+      "community": 8,
+      "norm_label": "ai credit rule"
+    },
+    {
+      "label": "Email types",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L126",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_email_types",
+      "community": 8,
+      "norm_label": "email types"
+    },
+    {
+      "label": "Role 1: Super Admin Journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L143",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_role_1_super_admin_journey",
+      "community": 14,
+      "norm_label": "role 1: super admin journey"
+    },
+    {
+      "label": "Who this user is",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L145",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_who_this_user_is",
+      "community": 14,
+      "norm_label": "who this user is"
+    },
+    {
+      "label": "First-time setup",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L166",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_first_time_setup",
+      "community": 14,
+      "norm_label": "first-time setup"
+    },
+    {
+      "label": "Daily journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L174",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_daily_journey",
+      "community": 14,
+      "norm_label": "daily journey"
+    },
+    {
+      "label": "Direct customer onboarding journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L183",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_direct_customer_onboarding_journey",
+      "community": 14,
+      "norm_label": "direct customer onboarding journey"
+    },
+    {
+      "label": "Reseller onboarding journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L198",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_reseller_onboarding_journey",
+      "community": 14,
+      "norm_label": "reseller onboarding journey"
+    },
+    {
+      "label": "Super Admin failure states",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L209",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_super_admin_failure_states",
+      "community": 14,
+      "norm_label": "super admin failure states"
+    },
+    {
+      "label": "Role 2: Partner Admin Journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L217",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_role_2_partner_admin_journey",
+      "community": 0,
+      "norm_label": "role 2: partner admin journey"
+    },
+    {
+      "label": "Who this user is",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L219",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_who_this_user_is_219",
+      "community": 0,
+      "norm_label": "who this user is"
+    },
+    {
+      "label": "Account creation journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L242",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_account_creation_journey",
+      "community": 0,
+      "norm_label": "account creation journey"
+    },
+    {
+      "label": "Customer onboarding journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L262",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_customer_onboarding_journey",
+      "community": 0,
+      "norm_label": "customer onboarding journey"
+    },
+    {
+      "label": "Reseller brand journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L274",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_reseller_brand_journey",
+      "community": 0,
+      "norm_label": "reseller brand journey"
+    },
+    {
+      "label": "Failure states",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L284",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_failure_states",
+      "community": 0,
+      "norm_label": "failure states"
+    },
+    {
+      "label": "Role 3: Organization Admin Journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L291",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_role_3_organization_admin_journey",
+      "community": 0,
+      "norm_label": "role 3: organization admin journey"
+    },
+    {
+      "label": "Who this user is",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L293",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_who_this_user_is_293",
+      "community": 0,
+      "norm_label": "who this user is"
+    },
+    {
+      "label": "Account creation journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L318",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_account_creation_journey_318",
+      "community": 0,
+      "norm_label": "account creation journey"
+    },
+    {
+      "label": "Teacher creation journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L331",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_teacher_creation_journey",
+      "community": 0,
+      "norm_label": "teacher creation journey"
+    },
+    {
+      "label": "Student creation journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L343",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_student_creation_journey",
+      "community": 0,
+      "norm_label": "student creation journey"
+    },
+    {
+      "label": "Parent creation journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L355",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_parent_creation_journey",
+      "community": 0,
+      "norm_label": "parent creation journey"
+    },
+    {
+      "label": "License management journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L367",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_license_management_journey",
+      "community": 0,
+      "norm_label": "license management journey"
+    },
+    {
+      "label": "Failure states",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L388",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_failure_states_388",
+      "community": 0,
+      "norm_label": "failure states"
+    },
+    {
+      "label": "Role 4: Teacher Journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L399",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_role_4_teacher_journey",
+      "community": 0,
+      "norm_label": "role 4: teacher journey"
+    },
+    {
+      "label": "Who this user is",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L401",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_who_this_user_is_401",
+      "community": 0,
+      "norm_label": "who this user is"
+    },
+    {
+      "label": "First login journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L425",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_first_login_journey",
+      "community": 0,
+      "norm_label": "first login journey"
+    },
+    {
+      "label": "Live class journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L433",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_live_class_journey",
+      "community": 0,
+      "norm_label": "live class journey"
+    },
+    {
+      "label": "Failure states",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L447",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_failure_states_447",
+      "community": 0,
+      "norm_label": "failure states"
+    },
+    {
+      "label": "Role 5: Student Journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L455",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_role_5_student_journey",
+      "community": 12,
+      "norm_label": "role 5: student journey"
+    },
+    {
+      "label": "Who this user is",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L457",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_who_this_user_is_457",
+      "community": 12,
+      "norm_label": "who this user is"
+    },
+    {
+      "label": "Account creation journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L482",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_account_creation_journey_482",
+      "community": 12,
+      "norm_label": "account creation journey"
+    },
+    {
+      "label": "First login journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L497",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_first_login_journey_497",
+      "community": 12,
+      "norm_label": "first login journey"
+    },
+    {
+      "label": "Join session by code",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L515",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_join_session_by_code",
+      "community": 12,
+      "norm_label": "join session by code"
+    },
+    {
+      "label": "After class",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L528",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_after_class",
+      "community": 12,
+      "norm_label": "after class"
+    },
+    {
+      "label": "Failure states",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L544",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_failure_states_544",
+      "community": 12,
+      "norm_label": "failure states"
+    },
+    {
+      "label": "Role 6: Parent Journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L553",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_role_6_parent_journey",
+      "community": 13,
+      "norm_label": "role 6: parent journey"
+    },
+    {
+      "label": "Who this user is",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L555",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_who_this_user_is_555",
+      "community": 13,
+      "norm_label": "who this user is"
+    },
+    {
+      "label": "Account creation journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L577",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_account_creation_journey_577",
+      "community": 13,
+      "norm_label": "account creation journey"
+    },
+    {
+      "label": "First login journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L605",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_first_login_journey_605",
+      "community": 13,
+      "norm_label": "first login journey"
+    },
+    {
+      "label": "Parent dashboard journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L615",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_parent_dashboard_journey",
+      "community": 13,
+      "norm_label": "parent dashboard journey"
+    },
+    {
+      "label": "Parent material access journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L635",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_parent_material_access_journey",
+      "community": 13,
+      "norm_label": "parent material access journey"
+    },
+    {
+      "label": "Failure states",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L644",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_failure_states_644",
+      "community": 13,
+      "norm_label": "failure states"
+    },
+    {
+      "label": "Frontend Routing Journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L653",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_frontend_routing_journey",
+      "community": 0,
+      "norm_label": "frontend routing journey"
+    },
+    {
+      "label": "Backend Permission Journey",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L676",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_backend_permission_journey",
+      "community": 0,
+      "norm_label": "backend permission journey"
+    },
+    {
+      "label": "Acceptance Checklist",
+      "file_type": "document",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L703",
+      "_origin": "ast",
+      "id": "docs_softlogic_user_journey_flow_acceptance_checklist",
+      "community": 0,
+      "norm_label": "acceptance checklist"
+    },
+    {
+      "label": "FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_checklist",
+      "community": 9,
+      "norm_label": "full_flutter_app_testing_checklist.md"
+    },
+    {
+      "label": "Full Flutter App Testing Checklist",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_checklist_full_flutter_app_testing_checklist",
+      "community": 9,
+      "norm_label": "full flutter app testing checklist"
+    },
+    {
+      "label": "Automated Test Proof",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_checklist_automated_test_proof",
+      "community": 9,
+      "norm_label": "automated test proof"
+    },
+    {
+      "label": "Auth And Welcome",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_checklist_auth_and_welcome",
+      "community": 9,
+      "norm_label": "auth and welcome"
+    },
+    {
+      "label": "Dashboard / Admin / Settings",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_checklist_dashboard_admin_settings",
+      "community": 9,
+      "norm_label": "dashboard / admin / settings"
+    },
+    {
+      "label": "Whiteboard",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_checklist_whiteboard",
+      "community": 9,
+      "norm_label": "whiteboard"
+    },
+    {
+      "label": "Windows Platform Proof",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_checklist_windows_platform_proof",
+      "community": 9,
+      "norm_label": "windows platform proof"
+    },
+    {
+      "label": "Android Platform Proof",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_checklist_android_platform_proof",
+      "community": 9,
+      "norm_label": "android platform proof"
+    },
+    {
+      "label": "Code-Health Evidence",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_checklist_code_health_evidence",
+      "community": 9,
+      "norm_label": "code-health evidence"
+    },
+    {
+      "label": "Final Client-Facing Status",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_checklist_final_client_facing_status",
+      "community": 9,
+      "norm_label": "final client-facing status"
+    },
+    {
+      "label": "FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report",
+      "community": 1,
+      "norm_label": "full_flutter_app_testing_report.md"
+    },
+    {
+      "label": "Full Flutter App Testing Report",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "community": 1,
+      "norm_label": "full flutter app testing report"
+    },
+    {
+      "label": "Executive Summary",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_executive_summary",
+      "community": 1,
+      "norm_label": "executive summary"
+    },
+    {
+      "label": "Environment Used",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_environment_used",
+      "community": 1,
+      "norm_label": "environment used"
+    },
+    {
+      "label": "Automated Verification Summary",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_automated_verification_summary",
+      "community": 1,
+      "norm_label": "automated verification summary"
+    },
+    {
+      "label": "Non-Whiteboard App Test Suites",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_non_whiteboard_app_test_suites",
+      "community": 1,
+      "norm_label": "non-whiteboard app test suites"
+    },
+    {
+      "label": "Whiteboard Test Suites",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_whiteboard_test_suites",
+      "community": 1,
+      "norm_label": "whiteboard test suites"
+    },
+    {
+      "label": "Automated Totals",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_automated_totals",
+      "community": 1,
+      "norm_label": "automated totals"
+    },
+    {
+      "label": "Platform Build And Launch Proof",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_platform_build_and_launch_proof",
+      "community": 1,
+      "norm_label": "platform build and launch proof"
+    },
+    {
+      "label": "Windows Desktop",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_windows_desktop",
+      "community": 1,
+      "norm_label": "windows desktop"
+    },
+    {
+      "label": "Android Emulator",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_android_emulator",
+      "community": 1,
+      "norm_label": "android emulator"
+    },
+    {
+      "label": "Feature-Area Coverage Summary",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L122",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_feature_area_coverage_summary",
+      "community": 1,
+      "norm_label": "feature-area coverage summary"
+    },
+    {
+      "label": "Auth",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L123",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_auth",
+      "community": 1,
+      "norm_label": "auth"
+    },
+    {
+      "label": "Dashboard",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L128",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_dashboard",
+      "community": 1,
+      "norm_label": "dashboard"
+    },
+    {
+      "label": "Admin",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L132",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_admin",
+      "community": 1,
+      "norm_label": "admin"
+    },
+    {
+      "label": "Settings",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L136",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_settings",
+      "community": 1,
+      "norm_label": "settings"
+    },
+    {
+      "label": "Profanity Filter",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L140",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_profanity_filter",
+      "community": 1,
+      "norm_label": "profanity filter"
+    },
+    {
+      "label": "Whiteboard",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L144",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_whiteboard",
+      "community": 1,
+      "norm_label": "whiteboard"
+    },
+    {
+      "label": "Analyze / Code-Health Evidence",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L150",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_analyze_code_health_evidence",
+      "community": 1,
+      "norm_label": "analyze / code-health evidence"
+    },
+    {
+      "label": "Manual QA Status",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L161",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_manual_qa_status",
+      "community": 1,
+      "norm_label": "manual qa status"
+    },
+    {
+      "label": "What was directly smoke-verified on running targets",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L162",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_what_was_directly_smoke_verified_on_running_targets",
+      "community": 1,
+      "norm_label": "what was directly smoke-verified on running targets"
+    },
+    {
+      "label": "Important truthfulness note",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L167",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_important_truthfulness_note",
+      "community": 1,
+      "norm_label": "important truthfulness note"
+    },
+    {
+      "label": "Known Limitations / Remaining Risks",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L181",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_known_limitations_remaining_risks",
+      "community": 1,
+      "norm_label": "known limitations / remaining risks"
+    },
+    {
+      "label": "Release Signoff Statement",
+      "file_type": "document",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L187",
+      "_origin": "ast",
+      "id": "reports_full_flutter_app_testing_report_release_signoff_statement",
+      "community": 1,
+      "norm_label": "release signoff statement"
+    },
+    {
+      "label": "PHASE1_CLOSURE_REPORT.md",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report",
+      "community": 5,
+      "norm_label": "phase1_closure_report.md"
+    },
+    {
+      "label": "Phase 1 Closure Report",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_phase_1_closure_report",
+      "community": 5,
+      "norm_label": "phase 1 closure report"
+    },
+    {
+      "label": "Status Totals",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_status_totals",
+      "community": 5,
+      "norm_label": "status totals"
+    },
+    {
+      "label": "Manual / Skipped Items",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_manual_skipped_items",
+      "community": 5,
+      "norm_label": "manual / skipped items"
+    },
+    {
+      "label": "Authentication & User Management",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_authentication_user_management",
+      "community": 5,
+      "norm_label": "authentication & user management"
+    },
+    {
+      "label": "Core Drawing & Canvas Features",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_core_drawing_canvas_features",
+      "community": 5,
+      "norm_label": "core drawing & canvas features"
+    },
+    {
+      "label": "Advanced Tools & Shapes",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_advanced_tools_shapes",
+      "community": 5,
+      "norm_label": "advanced tools & shapes"
+    },
+    {
+      "label": "Advanced Text Features",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L72",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_advanced_text_features",
+      "community": 5,
+      "norm_label": "advanced text features"
+    },
+    {
+      "label": "Canvas Management & Organization",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_canvas_management_organization",
+      "community": 5,
+      "norm_label": "canvas management & organization"
+    },
+    {
+      "label": "UI & Workspace Customization",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L106",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_ui_workspace_customization",
+      "community": 5,
+      "norm_label": "ui & workspace customization"
+    },
+    {
+      "label": "Settings & Preferences",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L117",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_settings_preferences",
+      "community": 5,
+      "norm_label": "settings & preferences"
+    },
+    {
+      "label": "Save & Persistence",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L127",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_save_persistence",
+      "community": 5,
+      "norm_label": "save & persistence"
+    },
+    {
+      "label": "Export Options",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L134",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_export_options",
+      "community": 5,
+      "norm_label": "export options"
+    },
+    {
+      "label": "Android Build & Platform Support",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L143",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_android_build_platform_support",
+      "community": 5,
+      "norm_label": "android build & platform support"
+    },
+    {
+      "label": "Regression Note",
+      "file_type": "document",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L154",
+      "_origin": "ast",
+      "id": "reports_phase1_closure_report_regression_note",
+      "community": 5,
+      "norm_label": "regression note"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "server",
+      "target": "server_cleanurlhandler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "server",
+      "target": "server_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "server_rationale_1",
+      "target": "server",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "server.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "server_cleanurlhandler",
+      "target": "server_cleanurlhandler_end_headers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "server.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "server_cleanurlhandler",
+      "target": "server_cleanurlhandler_maybe_rewrite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "server.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "server_cleanurlhandler",
+      "target": "server_cleanurlhandler_send_head",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "server.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "server_main",
+      "target": "server_cleanurlhandler",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "server_cleanurlhandler_send_head",
+      "target": "server_cleanurlhandler_maybe_rewrite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "theme",
+      "target": "theme_applytheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "theme",
+      "target": "theme_applyviewtocontainer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "theme",
+      "target": "theme_getpreferredtheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "theme",
+      "target": "theme_getstoredtheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "theme",
+      "target": "theme_getstoredview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "theme",
+      "target": "theme_restoreinitialui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "theme",
+      "target": "theme_restoreviews",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "theme",
+      "target": "theme_setstoredtheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "theme",
+      "target": "theme_setstoredview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "theme",
+      "target": "theme_toggletheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "theme_getpreferredtheme",
+      "target": "theme_getstoredtheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "theme_toggletheme",
+      "target": "theme_setstoredtheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "theme_restoreinitialui",
+      "target": "theme_getpreferredtheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "theme_restoreinitialui",
+      "target": "theme_applytheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "theme_toggletheme",
+      "target": "theme_applytheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "theme_restoreviews",
+      "target": "theme_getstoredview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "theme_restoreviews",
+      "target": "theme_applyviewtocontainer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "theme.js",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "theme_restoreinitialui",
+      "target": "theme_restoreviews",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "vercel",
+      "target": "vercel_cleanurls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vercel.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "vercel",
+      "target": "vercel_trailingslash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_actors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L520",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_api_map",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_data_ownership",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L176",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L656",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_failure_and_recovery_cases",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L146",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_license_checks_for_live_sessions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L581",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_organization_wise_access_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L728",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_production_acceptance_checklist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L708",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_production_gaps_to_complete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_softlogic_live_session_flow",
+      "target": "docs_softlogic_live_session_flow_purpose",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_actors",
+      "target": "docs_softlogic_live_session_flow_organization_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_actors",
+      "target": "docs_softlogic_live_session_flow_parent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_actors",
+      "target": "docs_softlogic_live_session_flow_partner_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_actors",
+      "target": "docs_softlogic_live_session_flow_student",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_actors",
+      "target": "docs_softlogic_live_session_flow_super_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_actors",
+      "target": "docs_softlogic_live_session_flow_teacher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L352",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_10_audio_video_through_livekit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L369",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_11_chat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L385",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_12_hand_raise",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L395",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_13_quiz",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L417",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_14_controls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L433",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_15_media_upload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L451",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_16_recording",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L473",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_17_teacher_ends_session",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L485",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_18_post_session_student_access",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L502",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_19_post_session_parent_access",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_1_teacher_prepares_class",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L195",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_2_teacher_creates_live_session",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L214",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_3_teacher_starts_session",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L233",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_4_teacher_generates_join_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L264",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_5_teacher_invites_students_by_email",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L288",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_6_student_logs_in_or_uses_session_only_qr_access",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L309",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_7_student_verifies_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L325",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_8_student_joins_session",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L334",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_end_to_end_session_flow",
+      "target": "docs_softlogic_live_session_flow_9_realtime_board_sync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L603",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_organization_wise_access_rules",
+      "target": "docs_softlogic_live_session_flow_organization_admin_access",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L628",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_organization_wise_access_rules",
+      "target": "docs_softlogic_live_session_flow_parent_session_material_access",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L591",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_organization_wise_access_rules",
+      "target": "docs_softlogic_live_session_flow_partner_admin_access",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L643",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_organization_wise_access_rules",
+      "target": "docs_softlogic_live_session_flow_recording_material_access",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L619",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_organization_wise_access_rules",
+      "target": "docs_softlogic_live_session_flow_student_session_access",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L583",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_organization_wise_access_rules",
+      "target": "docs_softlogic_live_session_flow_super_admin_access",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L611",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_organization_wise_access_rules",
+      "target": "docs_softlogic_live_session_flow_teacher_session_access",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L658",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_failure_and_recovery_cases",
+      "target": "docs_softlogic_live_session_flow_join_code_expired",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L690",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_failure_and_recovery_cases",
+      "target": "docs_softlogic_live_session_flow_license_expired",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L674",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_failure_and_recovery_cases",
+      "target": "docs_softlogic_live_session_flow_parent_not_linked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L682",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_failure_and_recovery_cases",
+      "target": "docs_softlogic_live_session_flow_parent_opens_unauthorized_recording",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L699",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_failure_and_recovery_cases",
+      "target": "docs_softlogic_live_session_flow_recording_processing_fails",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md",
+      "source_location": "L666",
+      "weight": 1.0,
+      "source": "docs_softlogic_live_session_flow_failure_and_recovery_cases",
+      "target": "docs_softlogic_live_session_flow_wrong_organization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L826",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_acceptance_checklist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L755",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_email_notifications",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_licensing_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L328",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L644",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_online_checkout_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L785",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_organization_wise_data_isolation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L800",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_production_gaps_to_implement_later",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_production_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_purpose",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L679",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_renewal_upgrade_downgrade_expiry_and_cancellation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L243",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_softlogic_production_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_sales_channels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_production_roles",
+      "target": "docs_softlogic_production_licensing_flow_organization_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_production_roles",
+      "target": "docs_softlogic_production_licensing_flow_parent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_production_roles",
+      "target": "docs_softlogic_production_licensing_flow_partner_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_production_roles",
+      "target": "docs_softlogic_production_licensing_flow_student",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_production_roles",
+      "target": "docs_softlogic_production_licensing_flow_super_admin_softlogic_internal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_production_roles",
+      "target": "docs_softlogic_production_licensing_flow_teacher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L192",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_licensing_model",
+      "target": "docs_softlogic_production_licensing_flow_admin_surface_policy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_licensing_model",
+      "target": "docs_softlogic_production_licensing_flow_current_implementation_gap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L215",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_licensing_model",
+      "target": "docs_softlogic_production_licensing_flow_hardware_ai_credit_policy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_licensing_model",
+      "target": "docs_softlogic_production_licensing_flow_license_owner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L202",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_licensing_model",
+      "target": "docs_softlogic_production_licensing_flow_organization_google_drive_storage_policy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_licensing_model",
+      "target": "docs_softlogic_production_licensing_flow_student_login_and_assignment_policy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_licensing_model",
+      "target": "docs_softlogic_production_licensing_flow_subscription_license_counts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L245",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_sales_channels",
+      "target": "docs_softlogic_production_licensing_flow_direct_softlogic_sale",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L298",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_sales_channels",
+      "target": "docs_softlogic_production_licensing_flow_reseller_in_reseller_brand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L267",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_sales_channels",
+      "target": "docs_softlogic_production_licensing_flow_reseller_in_softlogic_brand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L601",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_10_license_enforcement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L332",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_1_lead_received",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L364",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_2_demo_and_requirement_capture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L383",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_3_quotation_prepared",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L429",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_4_customer_approval_and_payment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L441",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_5_super_admin_creates_partner_reseller_when_applicable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L467",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_6_super_admin_creates_customer_organization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L493",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_7_super_admin_creates_subscription_license",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L528",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_8_super_admin_creates_organization_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L557",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_manual_enterprise_licensing_flow",
+      "target": "docs_softlogic_production_licensing_flow_9_organization_admin_creates_teachers_students_and_parents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L744",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_renewal_upgrade_downgrade_expiry_and_cancellation",
+      "target": "docs_softlogic_production_licensing_flow_cancellation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L722",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_renewal_upgrade_downgrade_expiry_and_cancellation",
+      "target": "docs_softlogic_production_licensing_flow_downgrade",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L733",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_renewal_upgrade_downgrade_expiry_and_cancellation",
+      "target": "docs_softlogic_production_licensing_flow_expiry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L681",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_renewal_upgrade_downgrade_expiry_and_cancellation",
+      "target": "docs_softlogic_production_licensing_flow_renewal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md",
+      "source_location": "L700",
+      "weight": 1.0,
+      "source": "docs_softlogic_production_licensing_flow_renewal_upgrade_downgrade_expiry_and_cancellation",
+      "target": "docs_softlogic_production_licensing_flow_upgrade",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L703",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_acceptance_checklist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L676",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_backend_permission_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L653",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_frontend_routing_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_purpose",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_role_1_super_admin_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L217",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_role_2_partner_admin_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L291",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_role_3_organization_admin_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L399",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_role_4_teacher_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L455",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_role_5_student_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L553",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_role_6_parent_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_softlogic_user_journey_flow",
+      "target": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "target": "docs_softlogic_user_journey_flow_account_creation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "target": "docs_softlogic_user_journey_flow_admin_surface_rule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "target": "docs_softlogic_user_journey_flow_ai_credit_rule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "target": "docs_softlogic_user_journey_flow_email_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "target": "docs_softlogic_user_journey_flow_license_boundary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "target": "docs_softlogic_user_journey_flow_login_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "target": "docs_softlogic_user_journey_flow_organization_boundary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "target": "docs_softlogic_user_journey_flow_organization_storage_rule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_shared_rules_for_all_users",
+      "target": "docs_softlogic_user_journey_flow_student_login_activation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L174",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_1_super_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_daily_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_1_super_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_direct_customer_onboarding_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L166",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_1_super_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_first_time_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_1_super_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_reseller_onboarding_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L209",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_1_super_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_super_admin_failure_states",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L145",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_1_super_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_who_this_user_is",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L242",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_2_partner_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_account_creation_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L262",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_2_partner_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_customer_onboarding_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L284",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_2_partner_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_failure_states",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L274",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_2_partner_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_reseller_brand_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L219",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_2_partner_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_who_this_user_is_219",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L318",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_3_organization_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_account_creation_journey_318",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L388",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_3_organization_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_failure_states_388",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L367",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_3_organization_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_license_management_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L355",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_3_organization_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_parent_creation_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L343",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_3_organization_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_student_creation_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L331",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_3_organization_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_teacher_creation_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L293",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_3_organization_admin_journey",
+      "target": "docs_softlogic_user_journey_flow_who_this_user_is_293",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L447",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_4_teacher_journey",
+      "target": "docs_softlogic_user_journey_flow_failure_states_447",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L425",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_4_teacher_journey",
+      "target": "docs_softlogic_user_journey_flow_first_login_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L433",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_4_teacher_journey",
+      "target": "docs_softlogic_user_journey_flow_live_class_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L401",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_4_teacher_journey",
+      "target": "docs_softlogic_user_journey_flow_who_this_user_is_401",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L482",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_5_student_journey",
+      "target": "docs_softlogic_user_journey_flow_account_creation_journey_482",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L528",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_5_student_journey",
+      "target": "docs_softlogic_user_journey_flow_after_class",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L544",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_5_student_journey",
+      "target": "docs_softlogic_user_journey_flow_failure_states_544",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L497",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_5_student_journey",
+      "target": "docs_softlogic_user_journey_flow_first_login_journey_497",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L515",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_5_student_journey",
+      "target": "docs_softlogic_user_journey_flow_join_session_by_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L457",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_5_student_journey",
+      "target": "docs_softlogic_user_journey_flow_who_this_user_is_457",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L577",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_6_parent_journey",
+      "target": "docs_softlogic_user_journey_flow_account_creation_journey_577",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L644",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_6_parent_journey",
+      "target": "docs_softlogic_user_journey_flow_failure_states_644",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L605",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_6_parent_journey",
+      "target": "docs_softlogic_user_journey_flow_first_login_journey_605",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L615",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_6_parent_journey",
+      "target": "docs_softlogic_user_journey_flow_parent_dashboard_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L635",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_6_parent_journey",
+      "target": "docs_softlogic_user_journey_flow_parent_material_access_journey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md",
+      "source_location": "L555",
+      "weight": 1.0,
+      "source": "docs_softlogic_user_journey_flow_role_6_parent_journey",
+      "target": "docs_softlogic_user_journey_flow_who_this_user_is_555",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_checklist",
+      "target": "reports_full_flutter_app_testing_checklist_full_flutter_app_testing_checklist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_checklist_full_flutter_app_testing_checklist",
+      "target": "reports_full_flutter_app_testing_checklist_android_platform_proof",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_checklist_full_flutter_app_testing_checklist",
+      "target": "reports_full_flutter_app_testing_checklist_auth_and_welcome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_checklist_full_flutter_app_testing_checklist",
+      "target": "reports_full_flutter_app_testing_checklist_automated_test_proof",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_checklist_full_flutter_app_testing_checklist",
+      "target": "reports_full_flutter_app_testing_checklist_code_health_evidence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_checklist_full_flutter_app_testing_checklist",
+      "target": "reports_full_flutter_app_testing_checklist_dashboard_admin_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_checklist_full_flutter_app_testing_checklist",
+      "target": "reports_full_flutter_app_testing_checklist_final_client_facing_status",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_checklist_full_flutter_app_testing_checklist",
+      "target": "reports_full_flutter_app_testing_checklist_whiteboard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_checklist_full_flutter_app_testing_checklist",
+      "target": "reports_full_flutter_app_testing_checklist_windows_platform_proof",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report",
+      "target": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "target": "reports_full_flutter_app_testing_report_analyze_code_health_evidence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "target": "reports_full_flutter_app_testing_report_automated_verification_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "target": "reports_full_flutter_app_testing_report_environment_used",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "target": "reports_full_flutter_app_testing_report_executive_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "target": "reports_full_flutter_app_testing_report_feature_area_coverage_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "target": "reports_full_flutter_app_testing_report_known_limitations_remaining_risks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L161",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "target": "reports_full_flutter_app_testing_report_manual_qa_status",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "target": "reports_full_flutter_app_testing_report_platform_build_and_launch_proof",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L187",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_full_flutter_app_testing_report",
+      "target": "reports_full_flutter_app_testing_report_release_signoff_statement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_automated_verification_summary",
+      "target": "reports_full_flutter_app_testing_report_automated_totals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_automated_verification_summary",
+      "target": "reports_full_flutter_app_testing_report_non_whiteboard_app_test_suites",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_automated_verification_summary",
+      "target": "reports_full_flutter_app_testing_report_whiteboard_test_suites",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_platform_build_and_launch_proof",
+      "target": "reports_full_flutter_app_testing_report_android_emulator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_platform_build_and_launch_proof",
+      "target": "reports_full_flutter_app_testing_report_windows_desktop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_feature_area_coverage_summary",
+      "target": "reports_full_flutter_app_testing_report_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_feature_area_coverage_summary",
+      "target": "reports_full_flutter_app_testing_report_auth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_feature_area_coverage_summary",
+      "target": "reports_full_flutter_app_testing_report_dashboard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_feature_area_coverage_summary",
+      "target": "reports_full_flutter_app_testing_report_profanity_filter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_feature_area_coverage_summary",
+      "target": "reports_full_flutter_app_testing_report_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L144",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_feature_area_coverage_summary",
+      "target": "reports_full_flutter_app_testing_report_whiteboard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_manual_qa_status",
+      "target": "reports_full_flutter_app_testing_report_important_truthfulness_note",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/FULL_FLUTTER_APP_TESTING_REPORT.md",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "reports_full_flutter_app_testing_report_manual_qa_status",
+      "target": "reports_full_flutter_app_testing_report_what_was_directly_smoke_verified_on_running_targets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report",
+      "target": "reports_phase1_closure_report_phase_1_closure_report",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_advanced_text_features",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_advanced_tools_shapes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_android_build_platform_support",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_authentication_user_management",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_canvas_management_organization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_core_drawing_canvas_features",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_export_options",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_manual_skipped_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_regression_note",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_save_persistence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_settings_preferences",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_status_totals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "reports/PHASE1_CLOSURE_REPORT.md",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "reports_phase1_closure_report_phase_1_closure_report",
+      "target": "reports_phase1_closure_report_ui_workspace_customization",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "4b6192c0466aabaa7cd043a7260499bb233b3cb0"
+}

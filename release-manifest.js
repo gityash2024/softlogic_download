@@ -3424,12 +3424,12 @@ npm test
     ]
   };
 
-  const pocRelease = {
-    version: "POC LLM",
+  const pocReleaseV1 = {
+    version: "Version 1",
     appVersion: "1.0.0-poc",
     build: "1",
-    status: "Proof of Concept",
-    releaseDate: new Date().toISOString().split('T')[0],
+    status: "Previous POC build",
+    releaseDate: "2026-08-10",
     title: "SoftLogic AI Proof of Concept (POC LLM)",
     summary: "Complete POC LLM integrating AI capabilities into the SoftLogic Whiteboard. This build includes all POC features, functionalities, and generative AI models.",
     artifacts: [
@@ -3461,6 +3461,46 @@ npm test
         "<strong>Smart Write:</strong> enhanced handwriting recognition using generative AI.",
         "<strong>Generative Text-to-Media:</strong> for creating educational assets on the canvas.",
         "<strong>Complete Proof of Concept:</strong> for LLM integration within the whiteboard environment."
+      ]
+    },
+    noteSections: []
+  };
+
+  const pocReleaseV2 = {
+    version: "Version 2",
+    appVersion: "0.2.0",
+    build: "2",
+    status: "Current POC build",
+    releaseDate: "2026-08-27",
+    title: "SoftLogic AI Proof of Concept (POC LLM)",
+    summary: "Latest POC LLM build with strengthened free-provider recovery, offline runtime support, and refined AI workspace output.",
+    artifacts: [
+      {
+        platform: "Android",
+        format: "APK",
+        label: "Download Android APK",
+        href: "https://drive.google.com/file/d/1duUmmTI9C2utYFzRzFDUYlCrTq8UV_r_/view?usp=sharing",
+        description: "Android release build for POC LLM on tablet, mobile, and whiteboard hardware.",
+        timestamp: "Aug 27, 2026"
+      },
+      {
+        platform: "Windows",
+        format: "EXE",
+        label: "Download Windows EXE",
+        href: "https://drive.google.com/file/d/140sMxr5MLa4NwH85DQcVFwDlepdCA_yD/view?usp=sharing",
+        description: "One-file Windows installer build for POC LLM testing on desktop stations.",
+        timestamp: "Aug 27, 2026"
+      }
+    ],
+    dashboardMode: "pocHero",
+    dashboardSection: {
+      title: "POC LLM Specifications and Features",
+      items: [
+        "<strong>Free provider recovery:</strong> retries transient gateway and image-generation failures before reporting an error.",
+        "<strong>Offline runtime + gateway:</strong> local on-device LLM support with streamed free-provider fallback for online tasks.",
+        "<strong>AI workspace polish:</strong> improved provider integration, structured results, and formatted AI output presentation.",
+        "<strong>Image generation:</strong> uses free providers with automatic fallback and bounded retry handling.",
+        "<strong>Complete Proof of Concept:</strong> AI tools, references, and whiteboard integrations remain available in one workspace."
       ]
     },
     noteSections: []
@@ -3538,8 +3578,8 @@ npm test
     },
     poc: {
       label: "POC",
-      currentVersion: "POC LLM",
-      releases: [pocRelease],
+      currentVersion: "Version 2",
+      releases: [pocReleaseV2, pocReleaseV1],
       softlogicAdmin: null,
       api: {
         backendBaseUrl: "https://softlogic-whiteboard-backend-testin.vercel.app",

@@ -4532,11 +4532,23 @@ html[data-theme="light"] .tag-enhancement {
   margin: 0 auto;
   align-items: stretch;
   height: 100%;
+  position: relative;
+}
+
+.poc-version-picker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 0;
 }
 
 @media (max-width: 900px) {
   .poc-hero-layout {
     flex-direction: column;
+  }
+
+  .poc-version-picker {
+    position: static;
   }
 }
 

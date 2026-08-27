@@ -1,0 +1,147 @@
+{
+  "comments.js": {
+    "mtime": 1779766395.9076753,
+    "ast_hash": "d4c906ae6a3aada399d074a7cbdef84c",
+    "semantic_hash": ""
+  },
+  "portal.js": {
+    "mtime": 1787813720.971356,
+    "ast_hash": "6fd01cca40e6e0d7d4af03ec74d3d138",
+    "semantic_hash": ""
+  },
+  "release-manifest.js": {
+    "mtime": 1787813720.971356,
+    "ast_hash": "b293ea701679225f66c2f6c7776267ef",
+    "semantic_hash": ""
+  },
+  "report-viewer.js": {
+    "mtime": 1779731186.6444995,
+    "ast_hash": "76b4f6ef2ce6433dd13c051b5cd9d1cf",
+    "semantic_hash": ""
+  },
+  "server.py": {
+    "mtime": 1779632789.4847305,
+    "ast_hash": "e74033ee68d4d825f77c4a23c58f8b62",
+    "semantic_hash": ""
+  },
+  "swagger/openapi-v1.0.0.json": {
+    "mtime": 1777398594.56316,
+    "ast_hash": "8d78b06adc96d6ffae8e3c0df69d2f3e",
+    "semantic_hash": ""
+  },
+  "theme.js": {
+    "mtime": 1780515722.036536,
+    "ast_hash": "bf33d508ea6bf349fc5cf20e6402b59a",
+    "semantic_hash": ""
+  },
+  "vercel.json": {
+    "mtime": 1779085210.8848448,
+    "ast_hash": "fe0f8ede344834782c16157745e1037d",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1779633972.7558272,
+    "ast_hash": "88a5f9044efd2081e96c1ac62e9c3db2",
+    "semantic_hash": ""
+  },
+  "access-creds.html": {
+    "mtime": 1786886051.6991942,
+    "ast_hash": "f24c289619c1b1c4f8376d0efc7c354a",
+    "semantic_hash": ""
+  },
+  "api-docs.html": {
+    "mtime": 1786886051.7011917,
+    "ast_hash": "f24c289619c1b1c4f8376d0efc7c354a",
+    "semantic_hash": ""
+  },
+  "doc-approval.html": {
+    "mtime": 1786886051.7041929,
+    "ast_hash": "f24c289619c1b1c4f8376d0efc7c354a",
+    "semantic_hash": ""
+  },
+  "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md": {
+    "mtime": 1779693495.4332964,
+    "ast_hash": "234b9b1391bc30470db4bc64eb5943d0",
+    "semantic_hash": ""
+  },
+  "docs/SOFTLOGIC_PRODUCTION_LICENSING_FLOW.md": {
+    "mtime": 1779693495.429685,
+    "ast_hash": "2f987db35f946d8e6d88e1ab422ddfb9",
+    "semantic_hash": ""
+  },
+  "docs/SOFTLOGIC_USER_JOURNEY_FLOW.md": {
+    "mtime": 1779693495.4312937,
+    "ast_hash": "63b4ad22c7f4e39428e20751f780ad41",
+    "semantic_hash": ""
+  },
+  "downloads.html": {
+    "mtime": 1786886051.7057104,
+    "ast_hash": "f24c289619c1b1c4f8376d0efc7c354a",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1787814284.1418357,
+    "ast_hash": "a126e39086aa11b1617402a6a544892f",
+    "semantic_hash": ""
+  },
+  "phase-status.html": {
+    "mtime": 1786886051.7097528,
+    "ast_hash": "f24c289619c1b1c4f8376d0efc7c354a",
+    "semantic_hash": ""
+  },
+  "readme.html": {
+    "mtime": 1786886051.7150803,
+    "ast_hash": "f24c289619c1b1c4f8376d0efc7c354a",
+    "semantic_hash": ""
+  },
+  "report.html": {
+    "mtime": 1786886051.7171001,
+    "ast_hash": "1322b0294def92f878e8abb6e29995f9",
+    "semantic_hash": ""
+  },
+  "reports/FULL_FLUTTER_APP_TESTING_CHECKLIST.md": {
+    "mtime": 1775890265.9320228,
+    "ast_hash": "27f280d97c0298b418a0d3e9158ec2d9",
+    "semantic_hash": ""
+  },
+  "reports/FULL_FLUTTER_APP_TESTING_REPORT.md": {
+    "mtime": 1775890265.9320228,
+    "ast_hash": "923453c7286d212a7affb759da2ea915",
+    "semantic_hash": ""
+  },
+  "reports/PHASE1_CLOSURE_REPORT.md": {
+    "mtime": 1775552419.4406295,
+    "ast_hash": "86ea229dac0f24bc9269f5709b6c8997",
+    "semantic_hash": ""
+  },
+  "softlogic-ai/index.html": {
+    "mtime": 1776354257.9693682,
+    "ast_hash": "18abe0ff5a4ef13f89fae4d5a93add56",
+    "semantic_hash": ""
+  },
+  "testing-reports.html": {
+    "mtime": 1786886051.7191184,
+    "ast_hash": "f24c289619c1b1c4f8376d0efc7c354a",
+    "semantic_hash": ""
+  },
+  "assets/app-icon.png": {
+    "mtime": 1775717612.544533,
+    "ast_hash": "10c02df97edb5567e4c54c5f63e1b0df",
+    "semantic_hash": ""
+  },
+  "assets/favicon.svg": {
+    "mtime": 1775392079.9888127,
+    "ast_hash": "69aad092dbd7031134132d19d5cc9ffe",
+    "semantic_hash": ""
+  },
+  "assets/softlogic-logo.png": {
+    "mtime": 1773553051.604222,
+    "ast_hash": "49806c3d5f43a4810b6c33a124d8db88",
+    "semantic_hash": ""
+  },
+  "favicon.png": {
+    "mtime": 1775717612.544533,
+    "ast_hash": "10c02df97edb5567e4c54c5f63e1b0df",
+    "semantic_hash": ""
+  }
+}
