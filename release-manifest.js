@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.30",
-  lastSynced: "2026-08-26",
+  currentVersion: "v1.0.33",
+  lastSynced: "2026-09-03",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -3278,7 +3278,7 @@ npm test
     ]
   });
 
-  const createReleasev1030 = ({
+  const createReleasev1033 = ({
     environment,
     primaryBadge,
     releaseType,
@@ -3297,76 +3297,76 @@ npm test
       softlogicExe,
       aiSmartBoardApk,
       aiSmartBoardExe,
-      releaseDate: "2026-08-26",
-      lastUpdatedAt: "2026-08-26 12:00 AM IST",
+      releaseDate: "2026-09-03",
+      lastUpdatedAt: "2026-09-03 10:30 PM IST",
     });
 
     return Object.assign(release, {
-      version: "v1.0.30",
-      appVersion: "1.0.30",
-      build: "30",
-      title: `SoftLogic Whiteboard v1.0.30 ${environment} release`,
+      version: "v1.0.33",
+      appVersion: "1.0.33",
+      build: "33",
+      title: `SoftLogic Whiteboard v1.0.33 ${environment} release`,
       summary:
-        "Version 1.0.30 aligns Android and Windows release versions for Google Play and Microsoft Store launch readiness. This is an optional update; existing functionality and white-label access remain unchanged.",
+        "Mandatory v1.0.33 release for Play Store review and managed deployments. It supports Android 16 interactive panels and keeps constrained-height board-tool actions reachable without changing existing whiteboard flows.",
       artifacts: release.artifacts.map((artifact) => ({
         ...artifact,
-        description: artifact.description.replaceAll("v1.0.24", "v1.0.30"),
+        description: artifact.description.replaceAll("v1.0.24", "v1.0.33"),
       })),
       downloadGroups: release.downloadGroups.map((group) => ({
         ...group,
-        description: group.description.replaceAll("v1.0.24", "v1.0.30"),
+        description: group.description.replaceAll("v1.0.24", "v1.0.33"),
       })),
       releaseSpotlight: {
         ...release.releaseSpotlight,
-        title: "SoftLogic Whiteboard v1.0.30",
+        title: "SoftLogic Whiteboard v1.0.33",
         description:
-          `${environment} v1.0.30 release artifacts are available for SoftLogic and AI Smart Board on Android and Windows.`,
-        version: "v1.0.30",
+          `${environment} v1.0.33 mandatory release artifacts are available for SoftLogic and AI Smart Board on Android and Windows.`,
+        version: "v1.0.33",
       },
       aiSetup: undefined,
       versionJumpNotice:
-        "Version 1.0.30 aligns Android and Windows release metadata for Google Play and Microsoft Store launch readiness. This is an optional update; no customer-facing release path or white-label behavior changes.",
+        "Mandatory update: install v1.0.33 for Play Store review readiness, Android 16 interactive-panel support, and the latest licensing recovery safeguards.",
       noteSections: [
         {
-          title: "Store launch version alignment",
+          title: "Play Store review and mandatory update",
           items: [
-            "Android and Windows release versions are aligned at v1.0.30 for Google Play and Microsoft Store launch readiness.",
-            "This is an optional update; no forced update is enabled.",
-            "Existing functionality, download access, white-label behavior, UI, and layout remain unchanged."
+            "Android and Windows release versions are aligned at v1.0.33 for Google Play and Microsoft Store review readiness.",
+            "Android 16 interactive-panel compatibility and the KTC constrained-height board-tool scrolling recovery are included; Insert Digital Book remains reachable.",
+            "Play Store activation migration and same-panel reinstall recovery safeguards are included without changing normal licensing, white-label behavior, UI, or layout."
           ]
         }
       ]
     });
   };
 
-  const stagingReleasev1030 = createReleasev1030({
+  const stagingReleasev1033 = createReleasev1033({
     environment: "Staging",
     primaryBadge: "Staging build",
     releaseType: "Staging",
-    status: "Current staging release",
+    status: "Current mandatory staging release",
     softlogicApk:
-      "https://drive.google.com/file/d/1g9jOOo9ZosuYH_4lf4yW2wPhgzGJM7SK/view?usp=sharing",
+      "https://drive.google.com/file/d/1ey84sYxLxrCW4L390QsHt59-lr6M8scZ/view?usp=sharing",
     softlogicExe:
-      "https://drive.google.com/file/d/1TPtzDBXVi3VSbdByd5g-vOM6f6lM7HbH/view?usp=sharing",
+      "https://drive.google.com/file/d/1QVtLFTAoBCn53mSuGuJU8eUw-QWhMReN/view?usp=sharing",
     aiSmartBoardApk:
-      "https://drive.google.com/file/d/16BnHIBEQeScj9_IPJLsoz1OKuTaAGHxf/view?usp=sharing",
+      "https://drive.google.com/file/d/1XyXFsQZI6wf3-yuguQjgtH8YYMkoGfwD/view?usp=sharing",
     aiSmartBoardExe:
-      "https://drive.google.com/file/d/1DpSCgqJ5ALVyKEjvND9GTLpai-R2l0rH/view?usp=sharing",
+      "https://drive.google.com/file/d/18LDV2dRfpn8SrWtnf1-DJ0umt6IRpkJa/view?usp=sharing",
   });
 
-  const productionReleasev1030 = createReleasev1030({
+  const productionReleasev1033 = createReleasev1033({
     environment: "Production",
     primaryBadge: "Production grade",
     releaseType: "Production grade",
-    status: "Current production release",
+    status: "Current mandatory production release",
     softlogicApk:
-      "https://drive.google.com/file/d/1tYpJc9k8k_xhu95knulMDUSF-CDAyw6g/view?usp=sharing",
+      "https://drive.google.com/file/d/1Jih3BNV7gSKIGOfjdcZvJAROI6OS0rXp/view?usp=sharing",
     softlogicExe:
-      "https://drive.google.com/file/d/1JbwxR6n-sI2ZKs1U0zW39JAgOUMFGxZz/view?usp=sharing",
+      "https://drive.google.com/file/d/1jzhxpOfk-uNBGyu5-0cKtTbTathVbIPO/view?usp=sharing",
     aiSmartBoardApk:
-      "https://drive.google.com/file/d/16e6T9yynartlrD0N89RSwA9wikgm7HGO/view?usp=sharing",
+      "https://drive.google.com/file/d/1EuRPn6_2tJfoqCswGEPkBKRRdfODYo6E/view?usp=sharing",
     aiSmartBoardExe:
-      "https://drive.google.com/file/d/1-VjXbkNPMpm9NtXCfpkFhFeG2pC4LLeW/view?usp=sharing",
+      "https://drive.google.com/file/d/1zyhoVmcjdhks0NcSbuUNxUYAVur9yorw/view?usp=sharing",
   });
 
 
@@ -3495,9 +3495,9 @@ npm test
   manifest.environments = {
     staging: {
       label: "Staging",
-      currentVersion: "v1.0.30",
+      currentVersion: "v1.0.33",
       releases: [
-        stagingReleasev1030,
+        stagingReleasev1033,
         stagingReleasev1024,
         stagingReleasev1023,
         stagingReleasev1022,
@@ -3525,9 +3525,9 @@ npm test
     },
     production: {
       label: "Production",
-      currentVersion: "v1.0.30",
+      currentVersion: "v1.0.33",
       releases: [
-        productionReleasev1030,
+        productionReleasev1033,
         productionReleasev1028,
         productionReleasev1023,
         productionReleasev1022,
