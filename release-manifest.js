@@ -1,6 +1,6 @@
 window.SOFTLOGIC_RELEASE_MANIFEST = {
-  currentVersion: "v1.0.33",
-  lastSynced: "2026-09-03",
+  currentVersion: "v1.0.34",
+  lastSynced: "2026-10-08",
   softlogicAdmin: {
     title: "SoftLogic Admin Console",
     description:
@@ -3369,6 +3369,105 @@ npm test
       "https://drive.google.com/file/d/1zyhoVmcjdhks0NcSbuUNxUYAVur9yorw/view?usp=sharing",
   });
 
+  const createAiSmartBoardIconReleasev1034 = ({
+    environment,
+    primaryBadge,
+    releaseType,
+    status,
+    softlogicApk,
+    softlogicExe,
+    aiSmartBoardApk,
+    aiSmartBoardExe,
+  }) => {
+    const release = createReleasev1033({
+      environment,
+      primaryBadge,
+      releaseType,
+      status,
+      softlogicApk,
+      softlogicExe,
+      aiSmartBoardApk,
+      aiSmartBoardExe,
+    });
+
+    return Object.assign(release, {
+      version: "v1.0.34",
+      appVersion: "1.0.34",
+      build: "34",
+      title: `AI Smart Board v1.0.34 ${environment} optional release`,
+      releaseDate: "2026-10-08",
+      lastUpdatedAt: "2026-10-08 11:13 AM IST",
+      summary:
+        `Optional AI Smart Board v1.0.34 ${environment.toLowerCase()} release with the updated launcher and Windows application icon. SoftLogic remains on v1.0.33 with its existing downloads and update policy unchanged.`,
+      artifacts: release.artifacts.map((artifact) => {
+        const isAiSmartBoard = artifact.platform.startsWith("AI Smart Board");
+        return {
+          ...artifact,
+          description: isAiSmartBoard
+            ? `AI Smart Board ${artifact.format} v1.0.34 ${environment.toLowerCase()} build with the updated application icon. This optional release does not change features or flows.`
+            : `SoftLogic ${artifact.format} remains on v1.0.33 with its existing ${environment.toLowerCase()} download and update policy.`,
+        };
+      }),
+      downloadGroups: release.downloadGroups.map((group) => ({
+        ...group,
+        description:
+          group.title === "AI Smart Board"
+            ? `Use the optional AI Smart Board v1.0.34 ${environment.toLowerCase()} build with its updated application icon.`
+            : `SoftLogic remains on v1.0.33 for ${environment.toLowerCase()} with its existing build and download links.`,
+      })),
+      releaseSpotlight: {
+        ...release.releaseSpotlight,
+        title: "AI Smart Board v1.0.34 optional release",
+        description:
+          `Optional AI Smart Board v1.0.34 ${environment.toLowerCase()} downloads are available. SoftLogic continues at v1.0.33.`,
+        status: "Optional AI Smart Board release",
+        version: "v1.0.34",
+      },
+      aiSetup: undefined,
+      versionJumpNotice: undefined,
+      noteSections: [
+        {
+          title: "AI Smart Board icon update",
+          items: [
+            "AI Smart Board Android and Windows launcher/application icons are updated to the approved branding asset.",
+            "This is an optional v1.0.34+34 release; no feature, API, authentication, UI, or workflow change is included.",
+            "SoftLogic remains on v1.0.33 with its existing downloads, release history, and update policy unchanged.",
+          ],
+        },
+      ],
+    });
+  };
+
+  const stagingReleasev1034 = createAiSmartBoardIconReleasev1034({
+    environment: "Staging",
+    primaryBadge: "Staging build",
+    releaseType: "Staging",
+    status: "Optional AI Smart Board staging release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1ey84sYxLxrCW4L390QsHt59-lr6M8scZ/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1QVtLFTAoBCn53mSuGuJU8eUw-QWhMReN/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1f5uloW39YosRhL56IuKFh2klW_6QDnZ_/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1Q6G1COfgqIv-eU8OYnuEkSWCSG7ygwfi/view?usp=sharing",
+  });
+
+  const productionReleasev1034 = createAiSmartBoardIconReleasev1034({
+    environment: "Production",
+    primaryBadge: "Production grade",
+    releaseType: "Production grade",
+    status: "Optional AI Smart Board production release",
+    softlogicApk:
+      "https://drive.google.com/file/d/1Jih3BNV7gSKIGOfjdcZvJAROI6OS0rXp/view?usp=sharing",
+    softlogicExe:
+      "https://drive.google.com/file/d/1jzhxpOfk-uNBGyu5-0cKtTbTathVbIPO/view?usp=sharing",
+    aiSmartBoardApk:
+      "https://drive.google.com/file/d/1BeVuXCByv3vmkoCuPN7pXOCWY5pPp9ro/view?usp=sharing",
+    aiSmartBoardExe:
+      "https://drive.google.com/file/d/1bZRtjC8vWNFqKtq0RcDUKw_vV2uKFrsn/view?usp=sharing",
+  });
+
 
   const sharedAdmin = {
     ...manifest.softlogicAdmin,
@@ -3495,8 +3594,9 @@ npm test
   manifest.environments = {
     staging: {
       label: "Staging",
-      currentVersion: "v1.0.33",
+      currentVersion: "v1.0.34",
       releases: [
+        stagingReleasev1034,
         stagingReleasev1033,
         stagingReleasev1024,
         stagingReleasev1023,
@@ -3525,8 +3625,9 @@ npm test
     },
     production: {
       label: "Production",
-      currentVersion: "v1.0.33",
+      currentVersion: "v1.0.34",
       releases: [
+        productionReleasev1034,
         productionReleasev1033,
         productionReleasev1028,
         productionReleasev1023,
