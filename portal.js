@@ -374,7 +374,13 @@
 
 
   const renderDownloads = () => {
-    const pocHeroPanel = $("#poc-hero-panel");
+    let pocHeroPanel = $("#poc-hero-panel");
+    if (activeEnvironmentKey === "poc" && !pocHeroPanel) {
+      pocHeroPanel = document.createElement("section");
+      pocHeroPanel.className = "poc-hero-panel";
+      pocHeroPanel.id = "poc-hero-panel";
+      $("#panel-downloads").append(pocHeroPanel);
+    }
     const downloadSpotlight = $(".download-spotlight");
     const releaseHighlights = $(".release-highlights");
     

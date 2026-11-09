@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   "portal.js": {
-    "mtime": 1794214637.8977458,
-    "ast_hash": "7ac69c663938bed2a2a734b876937908",
+    "mtime": 1794214962.8346941,
+    "ast_hash": "a09af2c2effb4f1b27e35e0425cd7b61",
     "semantic_hash": ""
   },
   "release-manifest.js": {
@@ -45,18 +45,18 @@
     "semantic_hash": ""
   },
   "access-creds.html": {
-    "mtime": 1794214637.8721116,
-    "ast_hash": "ccab8e872de245ae7ed60c476920673b",
+    "mtime": 1794214962.8346941,
+    "ast_hash": "2ea225ad54dea3d38bb8d2a5fe4c911d",
     "semantic_hash": ""
   },
   "api-docs.html": {
-    "mtime": 1794214637.8751023,
-    "ast_hash": "ccab8e872de245ae7ed60c476920673b",
+    "mtime": 1794214962.8356926,
+    "ast_hash": "2ea225ad54dea3d38bb8d2a5fe4c911d",
     "semantic_hash": ""
   },
   "doc-approval.html": {
-    "mtime": 1794214637.8784707,
-    "ast_hash": "ccab8e872de245ae7ed60c476920673b",
+    "mtime": 1794214962.8356926,
+    "ast_hash": "2ea225ad54dea3d38bb8d2a5fe4c911d",
     "semantic_hash": ""
   },
   "docs/SOFTLOGIC_LIVE_SESSION_FLOW.md": {
@@ -75,23 +75,23 @@
     "semantic_hash": ""
   },
   "downloads.html": {
-    "mtime": 1794214637.881481,
-    "ast_hash": "ccab8e872de245ae7ed60c476920673b",
+    "mtime": 1794214962.8366933,
+    "ast_hash": "2ea225ad54dea3d38bb8d2a5fe4c911d",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1794214637.8834817,
-    "ast_hash": "0ffa384cc12b2d0c2006050472c4449d",
+    "mtime": 1794214962.8366933,
+    "ast_hash": "6ed8f13ffb09ae4808e8f20e26465484",
     "semantic_hash": ""
   },
   "phase-status.html": {
-    "mtime": 1794214637.8864825,
-    "ast_hash": "ccab8e872de245ae7ed60c476920673b",
+    "mtime": 1794214962.8379822,
+    "ast_hash": "2ea225ad54dea3d38bb8d2a5fe4c911d",
     "semantic_hash": ""
   },
   "readme.html": {
-    "mtime": 1794214637.8884828,
-    "ast_hash": "ccab8e872de245ae7ed60c476920673b",
+    "mtime": 1794214962.8379822,
+    "ast_hash": "2ea225ad54dea3d38bb8d2a5fe4c911d",
     "semantic_hash": ""
   },
   "report.html": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "testing-reports.html": {
-    "mtime": 1794214637.8926554,
-    "ast_hash": "ccab8e872de245ae7ed60c476920673b",
+    "mtime": 1794214962.8409953,
+    "ast_hash": "2ea225ad54dea3d38bb8d2a5fe4c911d",
     "semantic_hash": ""
   },
   "assets/app-icon.png": {
