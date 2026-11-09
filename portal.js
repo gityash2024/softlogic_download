@@ -40,12 +40,8 @@
   let swaggerInitializing = false;
   const tabRoutes = {
     downloads: "/downloads",
-    swagger: "/api-docs",
-    phases: "/phase-status",
     access: "/access-creds",
-    readme: "/readme",
     reports: "/testing-reports",
-    "doc-approval": "/doc-approval",
   };
   const tabsByRoute = Object.entries(tabRoutes).reduce(
     (routes, [tab, route]) => ({
@@ -56,20 +52,14 @@
     {
       "/": "downloads",
       "/index.html": "downloads",
-      "/swagger": "swagger",
-      "/phases": "phases",
       "/access": "access",
       "/reports": "reports",
     }
   );
   const tabTitles = {
     downloads: "SoftLogic Whiteboard Releases",
-    swagger: "SoftLogic API Docs",
-    phases: "SoftLogic Phase Status",
     access: "SoftLogic Access & Creds",
-    readme: "SoftLogic README",
     reports: "SoftLogic Testing Reports",
-    "doc-approval": "SoftLogic Doc Approval",
   };
   const escapeHtml = (value) =>
     String(value ?? "")

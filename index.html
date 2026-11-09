@@ -6,7 +6,7 @@
     <title>SoftLogic Whiteboard Releases</title>
     <meta
       name="description"
-      content="Versioned downloads, API documentation, phase status, release notes, README, and project structure for SoftLogic Whiteboard."
+      content="Versioned downloads, access information, and testing reports for SoftLogic Whiteboard."
     />
     <meta name="theme-color" content="#0d1117" />
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/app-icon.png" />
@@ -28,7 +28,7 @@
       src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"
       defer
     ></script>
-    <script src="./portal.js?v=202608271250" defer></script>
+    <script src="./portal.js?v=20261109tabs" defer></script>
   </head>
   <body>
     <header class="site-header" aria-label="SoftLogic Whiteboard release portal">
@@ -95,30 +95,6 @@
           </button>
           <button
             class="tab-button"
-            id="tab-swagger"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-swagger"
-            data-tab="swagger"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            API Docs
-          </button>
-          <button
-            class="tab-button"
-            id="tab-phases"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-phases"
-            data-tab="phases"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            Phase Status
-          </button>
-          <button
-            class="tab-button"
             id="tab-access"
             type="button"
             role="tab"
@@ -131,18 +107,6 @@
           </button>
           <button
             class="tab-button"
-            id="tab-readme"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-readme"
-            data-tab="readme"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            README
-          </button>
-          <button
-            class="tab-button"
             id="tab-reports"
             type="button"
             role="tab"
@@ -152,18 +116,6 @@
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             Testing Reports
-          </button>
-          <button
-            class="tab-button"
-            id="tab-doc-approval"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-doc-approval"
-            data-tab="doc-approval"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-            Doc Approval
           </button>
         </nav>
         <div class="sidebar-footer">
