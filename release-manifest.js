@@ -3591,11 +3591,78 @@ npm test
     accessNote: "Install the provided builds to explore all AI features and whiteboard integrations without restrictions."
   };
 
+  const stagingReleasev1043 = createReleasev1024({
+    environment: "Staging",
+    primaryBadge: "Staging build",
+    releaseType: "Staging",
+    status: "Current optional staging release",
+    softlogicApk: "https://drive.google.com/file/d/186nV646DuAnFVJDty9oaNvEksi8cLg6Q/view?usp=sharing",
+    softlogicExe: "https://drive.google.com/file/d/1qm40_09ZLC7odlDcSup2FfHKH7Z9fxuZ/view?usp=sharing",
+    aiSmartBoardApk: "https://drive.google.com/file/d/1SpXQsbmpe2JHqY4boBKJcZLlBPUXDurJ/view?usp=sharing",
+    aiSmartBoardExe: "https://drive.google.com/file/d/1pcUEy_XKljph7QwluWbZId0zXTvXaFDz/view?usp=sharing",
+    releaseDate: "2026-11-09",
+    lastUpdatedAt: "2026-11-09",
+  });
+  Object.assign(stagingReleasev1043, {
+    version: "v1.0.43",
+    appVersion: "1.0.43",
+    build: "43",
+    secondaryBadge: "Optional update",
+    title: "Phase 2 main-staging release for SoftLogic AI and AI Smart Board",
+    summary: "Optional v1.0.43+43 staging update for both flavours on Android and Windows. Phase 2 AI features use the existing main-staging API and update channels, alongside Phase 1 functionality.",
+    artifacts: stagingReleasev1043.artifacts.map((artifact) => ({
+      ...artifact,
+      description: artifact.description.replaceAll("v1.0.24", "v1.0.43"),
+    })),
+    downloadGroups: stagingReleasev1043.downloadGroups.map((group) => ({
+      ...group,
+      description: group.description.replaceAll("v1.0.24", "v1.0.43") + " Optional update with Phase 2 AI enabled.",
+    })),
+    releaseSpotlight: {
+      eyebrow: "Staging environment",
+      title: "Phase 2 · v1.0.43 optional release",
+      description: "SoftLogic AI and AI Smart Board v1.0.43 downloads are available for Android and Windows, connected to main staging.",
+      status: "Optional staging update",
+      type: "Staging",
+      version: "v1.0.43",
+    },
+    aiSetup: undefined,
+    versionJumpNotice: "Versions between the previous staging release and v1.0.43 were used for isolated Phase 2 development and local validation. This main-staging release is optional.",
+    noteSections: [
+      {
+        title: "Phase 2 AI",
+        items: [
+          "Free and Pro AI modes, shared mode controls, availability checks and clear fallback notices.",
+          "Text responses, image and web references, selection analysis and OCR, with completion and insertion safeguards.",
+          "PPT and PDF generation with verified progress, retry and cancellation controls.",
+          "Optional on-device text model setup for supported offline tools. Pro, online references and media features require internet.",
+        ],
+      },
+      {
+        title: "Main staging",
+        items: [
+          "Both flavours use the main-staging API and existing staging update channels. The admin AI workspace includes the completed redesign.",
+          "Legacy spendable credits were reconciled into Free for the same owners; non-superadmin Pro balances start at zero.",
+          "Stripe and Razorpay remain in TEST mode. Production and POC releases are unchanged.",
+        ],
+      },
+      {
+        title: "Build verification and acceptance",
+        items: [
+          "Both APKs retain their package IDs and existing Android signing certificate. Windows downloads are one-file installers with preserved upgrade identities.",
+          "All four uploaded files were checked against the release SHA-256 checksums. Windows installers are not Authenticode signed.",
+          "Automated backend, admin and Flutter regression checks passed. Device upgrades, signed-in UI and full sandbox checkout/refund remain manual acceptance checks.",
+        ],
+      },
+    ],
+  });
+
   manifest.environments = {
     staging: {
       label: "Staging",
-      currentVersion: "v1.0.34",
+      currentVersion: "v1.0.43",
       releases: [
+        stagingReleasev1043,
         stagingReleasev1034,
         stagingReleasev1033,
         stagingReleasev1024,
